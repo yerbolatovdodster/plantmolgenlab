@@ -1,0 +1,262 @@
+# Настройки Pages CMS (https://pagescms.org)
+media: {input: static/images, output: /images}
+content:
+- name: home-ru
+  label: Главная (рус)
+  type: file
+  path: content/ru/_index.md
+  fields:
+  - {name: title, label: Название лаборатории, type: string}
+  - {name: lede, label: Подзаголовок, type: text}
+  - name: facts
+    label: Цифры
+    type: object
+    list: true
+    fields:
+    - {name: value, label: Число (например 10 или ~500), type: string}
+    - {name: label, label: Подпись, type: string}
+  - {name: strip_caption, label: Подпись к графику, type: text}
+  - {name: cultivars_text, label: Текст в блоке «Сорта», type: text}
+  - {name: app_text, label: Текст в блоке CropPopStructure, type: text}
+- name: home-kk
+  label: Басты бет (қаз)
+  type: file
+  path: content/kk/_index.md
+  fields:
+  - {name: title, label: Название лаборатории, type: string}
+  - {name: lede, label: Подзаголовок, type: text}
+  - name: facts
+    label: Цифры
+    type: object
+    list: true
+    fields:
+    - {name: value, label: Число (например 10 или ~500), type: string}
+    - {name: label, label: Подпись, type: string}
+  - {name: strip_caption, label: Подпись к графику, type: text}
+  - {name: cultivars_text, label: Текст в блоке «Сорта», type: text}
+  - {name: app_text, label: Текст в блоке CropPopStructure, type: text}
+- name: home-en
+  label: Home (eng)
+  type: file
+  path: content/en/_index.md
+  fields:
+  - {name: title, label: Название лаборатории, type: string}
+  - {name: lede, label: Подзаголовок, type: text}
+  - name: facts
+    label: Цифры
+    type: object
+    list: true
+    fields:
+    - {name: value, label: Число (например 10 или ~500), type: string}
+    - {name: label, label: Подпись, type: string}
+  - {name: strip_caption, label: Подпись к графику, type: text}
+  - {name: cultivars_text, label: Текст в блоке «Сорта», type: text}
+  - {name: app_text, label: Текст в блоке CropPopStructure, type: text}
+- name: contact-ru
+  label: Контакты (рус)
+  type: file
+  path: content/ru/contact.md
+  fields:
+  - {name: title, label: Заголовок, type: string}
+  - {name: body, label: Текст, type: rich-text}
+- name: contact-kk
+  label: Байланыс (қаз)
+  type: file
+  path: content/kk/contact.md
+  fields:
+  - {name: title, label: Заголовок, type: string}
+  - {name: body, label: Текст, type: rich-text}
+- name: contact-en
+  label: Contact (eng)
+  type: file
+  path: content/en/contact.md
+  fields:
+  - {name: title, label: Заголовок, type: string}
+  - {name: body, label: Текст, type: rich-text}
+- name: news-ru
+  label: Новости (рус)
+  type: collection
+  path: content/ru/news
+  filename: '{year}-{month}-{day}-{primary}.md'
+  exclude:
+  - _index.md
+  view:
+    fields:
+    - title
+    - date
+    sort:
+    - date
+  fields:
+  - {name: title, label: Заголовок, type: string, required: true}
+  - {name: date, label: Дата, type: date, required: true}
+  - {name: description, label: Краткое описание, type: text}
+  - {name: image, label: Картинка, type: image}
+  - {name: body, label: Текст, type: rich-text}
+- name: news-kk
+  label: Жаңалықтар (қаз)
+  type: collection
+  path: content/kk/news
+  filename: '{year}-{month}-{day}-{primary}.md'
+  exclude:
+  - _index.md
+  view:
+    fields:
+    - title
+    - date
+    sort:
+    - date
+  fields:
+  - {name: title, label: Заголовок, type: string, required: true}
+  - {name: date, label: Дата, type: date, required: true}
+  - {name: description, label: Краткое описание, type: text}
+  - {name: image, label: Картинка, type: image}
+  - {name: body, label: Текст, type: rich-text}
+- name: news-en
+  label: News (eng)
+  type: collection
+  path: content/en/news
+  filename: '{year}-{month}-{day}-{primary}.md'
+  exclude:
+  - _index.md
+  view:
+    fields:
+    - title
+    - date
+    sort:
+    - date
+  fields:
+  - {name: title, label: Заголовок, type: string, required: true}
+  - {name: date, label: Дата, type: date, required: true}
+  - {name: description, label: Краткое описание, type: text}
+  - {name: image, label: Картинка, type: image}
+  - {name: body, label: Текст, type: rich-text}
+- name: team
+  label: Команда
+  type: file
+  path: data/team.yaml
+  fields:
+  - name: members
+    label: Сотрудники
+    type: object
+    list: true
+    fields:
+    - {name: name, label: Имя и фамилия (рус/қаз), type: string, required: true}
+    - {name: name_en, label: Имя латиницей (для английской версии), type: string}
+    - name: group
+      label: Группа
+      type: select
+      options:
+        values:
+        - {value: lead, label: Руководитель}
+        - {value: staff, label: Сотрудник}
+        - {value: students, label: Студент}
+        - {value: alumni, label: Выпускник}
+    - {name: role_ru, label: Должность (рус), type: string}
+    - {name: role_kk, label: Лауазымы (қаз), type: string}
+    - {name: role_en, label: Position (eng), type: string}
+    - {name: bio_ru, label: О себе (рус), type: text}
+    - {name: bio_kk, label: Өзі туралы (қаз), type: text}
+    - {name: bio_en, label: Bio (eng), type: text}
+    - {name: email, label: Почта, type: string}
+    - {name: orcid, label: ORCID (например 0000-0002-1825-0097), type: string}
+    - {name: photo, label: Фото, type: image}
+- name: publications
+  label: Публикации
+  type: file
+  path: data/publications.yaml
+  fields:
+  - name: items
+    label: Статьи
+    type: object
+    list: true
+    fields:
+    - name: type
+      label: Тип
+      type: select
+      options:
+        values:
+        - {value: article, label: Статья}
+        - {value: book, label: Монография / каталог}
+    - {name: year, label: Год, type: number, required: true}
+    - {name: title, label: Название, type: string, required: true}
+    - {name: authors, label: Авторы, type: string}
+    - {name: journal, label: Журнал, type: string}
+    - {name: doi, label: 'DOI (без https://doi.org/)', type: string}
+    - {name: url, label: Ссылка, type: string}
+- name: research-ru
+  label: Исследования (рус)
+  type: collection
+  path: content/ru/research
+  exclude:
+  - _index.md
+  fields:
+  - {name: title, label: Название, type: string, required: true}
+  - {name: description, label: Короткое описание (для главной), type: text}
+  - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: body, label: Текст, type: rich-text}
+- name: research-kk
+  label: Зерттеулер (қаз)
+  type: collection
+  path: content/kk/research
+  exclude:
+  - _index.md
+  fields:
+  - {name: title, label: Название, type: string, required: true}
+  - {name: description, label: Короткое описание (для главной), type: text}
+  - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: body, label: Текст, type: rich-text}
+- name: research-en
+  label: Research (eng)
+  type: collection
+  path: content/en/research
+  exclude:
+  - _index.md
+  fields:
+  - {name: title, label: Название, type: string, required: true}
+  - {name: description, label: Короткое описание (для главной), type: text}
+  - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: body, label: Текст, type: rich-text}
+- name: projects
+  label: Проекты
+  type: file
+  path: data/projects.yaml
+  fields:
+  - name: items
+    label: Проекты
+    type: object
+    list: true
+    fields:
+    - name: kind
+      label: Тип
+      type: select
+      options:
+        values:
+        - {value: national, label: Грант / программа РК}
+        - {value: international, label: Международный проект}
+    - {name: years, label: Годы (например 2024–2026), type: string}
+    - {name: code, label: Номер гранта, type: string}
+    - {name: lead, label: Руководитель, type: string}
+    - {name: title_ru, label: Название (рус), type: text, required: true}
+    - {name: title_kk, label: Атауы (қаз), type: text}
+    - {name: title_en, label: Title (eng), type: text}
+- name: cultivars
+  label: Сорта
+  type: file
+  path: data/cultivars.yaml
+  fields:
+  - name: crops
+    label: Культуры
+    type: object
+    list: true
+    fields:
+    - {name: crop_ru, label: Культура (рус), type: string}
+    - {name: crop_kk, label: Дақыл (қаз), type: string}
+    - {name: crop_en, label: Crop (eng), type: string}
+    - name: varieties
+      label: Сорта
+      type: object
+      list: true
+      fields:
+      - {name: name_ru, label: Название (кириллица), type: string}
+      - {name: name_en, label: Название (латиница), type: string}
+      - {name: year, label: Год, type: number}
