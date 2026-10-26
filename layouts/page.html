@@ -6,7 +6,7 @@
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
     {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
   </header>
-  {{ with .Params.image }}<img class="page-image" src="{{ . | relURL }}" alt="">{{ end }}
+  {{ with .Params.image }}<img class="page-image" src="{{ strings.TrimPrefix "/" . | relURL }}" alt="">{{ end }}
   <div class="prose">{{ .Content }}</div>
   {{ if .Params.app_button }}
   <p class="page-actions">
