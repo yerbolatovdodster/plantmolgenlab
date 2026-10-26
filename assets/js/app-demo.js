@@ -212,7 +212,6 @@
     await click(el('run-btn'));
     el('run-btn').classList.add('busy'); el('run-label').textContent = 'Running…';
     el('runs-card').classList.add('gone'); el('progress').classList.add('on');
-    place(pos.x + 260, pos.y - 60, 900);
     var lis = stage.querySelectorAll('.d-steps li');
     for (var s = 0; s < lis.length; s++) {
       lis[s].className = 'run';
