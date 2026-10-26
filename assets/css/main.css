@@ -694,8 +694,11 @@ h3 { font-size: 1.08rem; }
 .team-intro { text-align: center; margin-left: auto; margin-right: auto; }
 .team-intro .lede { margin-left: auto; margin-right: auto; }
 .team-top { display: block; }
-.team-photo { margin: 0 auto; max-width: 680px; text-align: center; }
-.team-photo img { width: 100%; height: auto; border-radius: var(--r-md); display: block; box-shadow: 0 24px 48px -28px rgba(20, 50, 30, 0.45); }
+.team-photo { margin: 0; max-width: none; text-align: center; }
+.team-photo img {
+  width: 100%; height: clamp(320px, 52vw, 680px); object-fit: cover; object-position: center 12%;
+  border-radius: var(--r-lg); display: block;
+}
 .team-photo figcaption { margin-top: 12px; color: var(--muted); font-size: 0.85rem; }
 .team-lead { margin-top: clamp(40px, 5vw, 64px); }
 .people.people-lead { grid-template-columns: 1fr; }

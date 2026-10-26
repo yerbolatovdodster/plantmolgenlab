@@ -1,6 +1,6 @@
 ---
-photo: "images/team/group.jpg"
-photo_caption: "V Международный конгресс по селекции растений, Анталья, Турция, декабрь 2025"
+photo: "images/team/lab.jpg"
+photo_caption: ""
 title: "Команда"
 description: "Сотрудники лаборатории молекулярной генетики."
 ---

@@ -1,6 +1,6 @@
 ---
-photo: "images/team/group.jpg"
-photo_caption: "Өсімдіктер селекциясы бойынша V халықаралық конгресс, Анталья, Түркия, 2025 жылғы желтоқсан"
+photo: "images/team/lab.jpg"
+photo_caption: ""
 title: "Ұжым"
 description: "Молекулалық генетика зертханасының қызметкерлері."
 ---
