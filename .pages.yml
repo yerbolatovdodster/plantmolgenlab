@@ -161,7 +161,7 @@ content:
     - {name: orcid, label: ORCID (например 0000-0002-1825-0097), type: string}
     - {name: photo, label: Фото, type: image}
 - name: publications
-  label: Публикации
+  label: Публикации (вручную)
   type: file
   path: data/publications.yaml
   fields:
@@ -183,6 +183,7 @@ content:
     - {name: journal, label: Журнал, type: string}
     - {name: doi, label: 'DOI (без https://doi.org/)', type: string}
     - {name: url, label: Ссылка, type: string}
+    - {name: hide, label: 'Скрыть на сайте (например, ошибочно найденную автоматически статью — укажите её DOI)', type: boolean}
 - name: research-ru
   label: Исследования (рус)
   type: collection
