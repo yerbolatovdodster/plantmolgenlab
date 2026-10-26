@@ -7,11 +7,29 @@ disableKinds = ["taxonomy", "term"]
 [params]
   # Адрес приложения на сервере лаборатории
   appURL = "https://croppopstructure.plantmolgenlab.kz"
-  # Почта для связи. Когда заведёте почту на домене, замените, например, на info@plantmolgenlab.kz
-  email = "ipbbkz@gmail.com"
-  phone = "+7 (727) 394-80-06"
+  # Почта для связи (контакты, подвал, кнопка «Запросить доступ»)
+  email = "yerlant@yahoo.com"
+  # Карта: адрес для Google Maps
+  mapQuery = "Тимирязева 45, Алматы, Казахстан"
   researchgate = "https://www.researchgate.net/lab/Yerlan-Turuspekov-Lab"
   kazflora = "https://kazflora.kz"
+
+# Ссылки в подвале сайта
+[[params.links]]
+  name = "ResearchGate"
+  url = "https://www.researchgate.net/lab/Yerlan-Turuspekov-Lab"
+[[params.links]]
+  name = "genes.kz"
+  url = "https://genes.kz"
+[[params.links]]
+  name = "daqyl.kz"
+  url = "https://daqyl.kz"
+[[params.links]]
+  name = "kazflora.kz"
+  url = "https://kazflora.kz"
+[[params.links]]
+  name = "ipbb.kz"
+  url = "https://ipbb.kz"
 
 [markup.goldmark.renderer]
   unsafe = true   # нужно, чтобы текст из визуального редактора Pages CMS отображался корректно

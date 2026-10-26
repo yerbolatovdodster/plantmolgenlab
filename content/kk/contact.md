@@ -1,10 +1,12 @@
 ---
 title: "Байланыс"
+layout: contact
 ---
 
-**Молекулалық генетика зертханасы**
-Өсімдіктер биологиясы және биотехнологиясы институты
+**Молекулалық генетика зертханасы**\
+Өсімдіктер биологиясы және биотехнологиясы институты\
 Тимирязев к-сі, 45, Алматы 050040, Қазақстан
 
-Телефон: [+7 (727) 394-80-06](tel:+77273948006)
-Пошта: [ipbbkz@gmail.com](mailto:ipbbkz@gmail.com)
+Пошта: [yerlant@yahoo.com](mailto:yerlant@yahoo.com)
+
+[Зертхана ResearchGate-те](https://www.researchgate.net/lab/Yerlan-Turuspekov-Lab)

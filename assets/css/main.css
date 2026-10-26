@@ -596,3 +596,95 @@ p { margin: 0 0 1em; }
     -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 40%); mask-image: linear-gradient(0deg, transparent 0%, #000 40%);
   }
 }
+
+/* ═════════ Компактный масштаб ═════════
+   Меньше заголовки и отступы по всему сайту. Чтобы вернуть крупный вариант — удалите этот блок. */
+:root { --space: clamp(48px, 6vw, 84px); }
+html { scroll-padding-top: 76px; }
+body { font-size: 1rem; }
+h1 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+h2 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
+h3 { font-size: 1.08rem; }
+
+.header-row { min-height: 64px; }
+.logo { height: 30px; }
+.menu a { font-size: 0.9rem; padding: 7px 11px; }
+@media (max-width: 1120px) { .site-nav { top: 64px; } }
+
+.hero { padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(32px, 4vw, 48px); }
+.hero-institute { margin-bottom: 14px; font-size: 0.95rem; }
+.hero-title { font-size: clamp(2rem, 4.4vw, 3.3rem); line-height: 1.02; letter-spacing: -0.04em; max-width: 18ch; margin-bottom: 18px; }
+.lede { font-size: clamp(1rem, 1.25vw, 1.12rem); }
+.hero-actions { margin-top: 24px; }
+.btn { padding: 11px 20px; font-size: 0.92rem; }
+
+.section-head { margin-bottom: 18px; }
+.area-list > li > a { padding: clamp(22px, 2.4vw, 30px); border-radius: var(--r-md); }
+.area-list h3, .area-list h2 { font-size: clamp(1.15rem, 1.6vw, 1.35rem); margin-bottom: 10px; }
+.area-list p { margin-bottom: 16px; font-size: 0.95rem; }
+.area-more { padding-top: 16px; font-size: 0.92rem; }
+.chips li { font-size: 0.8rem; padding: 4px 10px; }
+
+.app-panel { padding: clamp(28px, 3.6vw, 48px); border-radius: var(--r-md); }
+.app-panel h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
+.app-panel p { font-size: 0.97rem; }
+
+.project-list li, .news-list li { padding: 15px 0; }
+.project-title { font-size: 1rem; }
+.news-list a { font-size: 1rem; }
+
+.page { padding-top: clamp(36px, 5vw, 64px); }
+.page-head { margin-bottom: 32px; }
+.page-head h1 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); letter-spacing: -0.035em; }
+.page-banner .page-head { padding-top: clamp(44px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 72px); }
+.prose h2 { font-size: 1.3rem; }
+
+.team-group { margin-top: 40px; }
+.team-group h2 { font-size: clamp(1.15rem, 1.8vw, 1.4rem); margin-bottom: 14px; }
+.people { gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.person { padding: 16px; grid-template-columns: 48px 1fr; gap: 14px; }
+.avatar { width: 48px; height: 48px; font-size: 0.92rem; }
+.person h3 { font-size: 0.98rem; }
+.role { font-size: 0.88rem; }
+.people-lead .person { grid-template-columns: 104px 1fr; gap: 26px; padding: clamp(20px, 2.6vw, 30px); border-radius: var(--r-md); }
+.people-lead .avatar { width: 104px; height: 104px; font-size: 1.7rem; }
+.people-lead .person h3 { font-size: clamp(1.2rem, 1.9vw, 1.45rem); }
+.bio { font-size: 0.94rem; }
+
+.pub-year { grid-template-columns: 7rem 1fr; padding-top: 20px; margin-top: 20px; }
+.pub-year h2 { font-size: clamp(1.3rem, 2vw, 1.6rem); }
+.pubs { gap: 8px; }
+.pubs li { padding: 15px 18px; border-radius: var(--r-sm); }
+.pub-title { font-size: 0.98rem; margin-bottom: 6px; }
+.pub-meta, .pub-journal { font-size: 0.86rem; }
+
+.analysis-list li { padding: 14px 16px; border-radius: var(--r-sm); }
+.analysis-list span { font-size: 0.88rem; }
+.tool-top { padding-top: clamp(28px, 3.5vw, 48px); }
+.tool-hero h1 { font-size: clamp(2rem, 3vw, 2.8rem); }
+.block { margin-top: 40px; }
+
+.footer-panel { padding: clamp(24px, 3vw, 36px); border-radius: var(--r-md); }
+.footer-brand .logo { height: 32px; margin-bottom: 12px; }
+.footer-grid p, .footer-links { font-size: 0.88rem; }
+
+/* ───────── Карта ───────── */
+.map { position: relative; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--line); background: var(--surface-2); }
+.map iframe { display: block; width: 100%; height: 100%; border: 0; }
+.map-link {
+  position: absolute; left: 10px; bottom: 10px; font-size: 0.8rem; font-weight: 500;
+  background: var(--surface); color: var(--ink); text-decoration: none;
+  padding: 5px 11px; border-radius: 999px; box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+.map-link:hover { color: var(--leaf); }
+.map-page { height: clamp(320px, 42vw, 460px); }
+.map-footer { height: 200px; border-radius: var(--r-sm); }
+.footer-grid { grid-template-columns: 1.3fr 0.8fr 0.8fr 1.6fr; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.contact-info p { margin-bottom: 1.1em; }
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .map-footer { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }

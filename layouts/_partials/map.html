@@ -1,0 +1,7 @@
+{{- $q := site.Params.mapQuery -}}
+{{- $lang := site.Language.Lang -}}
+<div class="map{{ with .class }} {{ . }}{{ end }}">
+  <iframe title="{{ i18n "map_title" }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    src="https://maps.google.com/maps?q={{ $q | urlquery }}&hl={{ $lang }}&z=16&output=embed"></iframe>
+  <a class="map-link" href="https://www.google.com/maps/search/?api=1&query={{ $q | urlquery }}">{{ i18n "open_map" }}</a>
+</div>

@@ -4,12 +4,7 @@
       <div class="footer-brand">
         <a href="{{ site.Home.RelPermalink }}" aria-label="plantmolgenlab">{{ partial "logo.html" . }}</a>
         <p>{{ site.Title }}<br>{{ site.Params.institute }}</p>
-      </div>
-      <div>
-        <p class="footer-title">{{ i18n "contacts" }}</p>
-        <p>{{ site.Params.address }}</p>
-        <p><a href="tel:{{ site.Params.phone | replaceRE "[^+0-9]" "" }}">{{ site.Params.phone }}</a><br>
-        <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+        <p>{{ site.Params.address }}<br><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
       </div>
       <div>
         <p class="footer-title">{{ i18n "menu" }}</p>
@@ -21,11 +16,10 @@
       <div>
         <p class="footer-title">{{ i18n "links" }}</p>
         <ul class="footer-links">
-          <li><a href="{{ site.Params.researchgate }}">ResearchGate</a></li>
-          <li><a href="{{ site.Params.kazflora }}">kazflora.kz</a></li>
-          <li><a href="https://ipbb.kz">ipbb.kz</a></li>
+          {{ range site.Params.links }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
         </ul>
       </div>
+      {{ partial "map.html" (dict "class" "map-footer") }}
     </div>
     <div class="footer-base">
       <p>© {{ now.Year }} {{ site.Title }}</p>

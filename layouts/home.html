@@ -11,15 +11,6 @@
 </section>
 
 
-{{ with .Params.facts }}
-<section class="facts wrap" aria-label="{{ site.Title }}">
-  <dl class="fact-grid">
-    {{ range . }}
-    <div class="fact"><dt>{{ .value }}</dt><dd>{{ .label }}</dd></div>
-    {{ end }}
-  </dl>
-</section>
-{{ end }}
 
 {{ with site.GetPage "/research" }}
 <section class="areas wrap" aria-labelledby="areas-h">

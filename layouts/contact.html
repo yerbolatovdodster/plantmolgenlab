@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head"><h1>{{ .Title }}</h1></header>
+  <div class="contact-grid">
+    <div class="prose contact-info">{{ .Content }}</div>
+    {{ partial "map.html" (dict "class" "map-page") }}
+  </div>
+</article>
+{{ end }}
