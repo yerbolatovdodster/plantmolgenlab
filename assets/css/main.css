@@ -804,3 +804,12 @@ h3 { font-size: 1.08rem; }
 .team-alumni { margin-top: var(--space); }
 .team-alumni .profile { --photo-w: clamp(190px, 18vw, 240px); }
 .team-alumni .profile-card { margin-top: 28px; }
+
+/* ═════════ Без скруглённых углов ═════════
+   Прямые углы у всех элементов сайта. Макет приложения в демо CropPopStructure не трогаем,
+   чтобы он оставался похожим на настоящий интерфейс. Чтобы вернуть скругления — удалите этот блок. */
+:root { --r-sm: 0; --r-md: 0; --r-lg: 0; }
+*:not(.demo-stage, .demo-stage *),
+*:not(.demo-stage, .demo-stage *)::before,
+*:not(.demo-stage, .demo-stage *)::after { border-radius: 0 !important; }
+.map iframe { border-radius: 0; }
