@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $lang := site.Language.Lang }}
 <article class="page wrap">
-  <header class="page-head">
+  <header class="page-head{{ if .Params.photo }} team-intro{{ end }}">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
   </header>
