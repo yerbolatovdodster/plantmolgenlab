@@ -1,4 +1,4 @@
 ---
 title: "Research"
-description: "Main research directions of the lab."
+description: "Two directions: genomic breeding of Kazakhstan's crops and DNA genotyping of the wild flora."
 ---

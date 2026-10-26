@@ -1,0 +1,24 @@
+# Сорта, созданные при участии лаборатории (источник: страница на ipbb.kz).
+crops:
+  - crop_ru: "Ячмень"
+    crop_kk: "Арпа"
+    crop_en: "Barley"
+    varieties:
+      - { name_ru: "Тлек", name_en: "Tlek", year: 2009 }
+      - { name_ru: "Красноводопад-100", name_en: "Krasnovodopad-100", year: 2011 }
+      - { name_ru: "Шахристан", name_en: "Shakhristan", year: 2013 }
+      - { name_ru: "Бозман", name_en: "Bozman", year: 2014 }
+      - { name_ru: "Казыгурт", name_en: "Kazygurt", year: 2015 }
+      - { name_ru: "Шашбаулым", name_en: "Shashbaulym", year: 2017 }
+  - crop_ru: "Пшеница"
+    crop_kk: "Бидай"
+    crop_en: "Wheat"
+    varieties:
+      - { name_ru: "Премьера", name_en: "Premiera", year: 2011 }
+      - { name_ru: "Зарина", name_en: "Zarina", year: 2017 }
+  - crop_ru: "Соя"
+    crop_kk: "Соя"
+    crop_en: "Soybean"
+    varieties:
+      - { name_ru: "Зара", name_en: "Zara" }
+      - { name_ru: "Данелия", name_en: "Danelia" }

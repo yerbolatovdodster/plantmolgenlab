@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ $lang := site.Language.Lang }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  {{ $items := hugo.Data.projects.items }}
+  {{ range slice "national" "international" }}
+    {{ $k := . }}
+    {{ with where $items "kind" $k }}
+    <section class="block">
+      <h2>{{ i18n $k }}</h2>
+      {{ partial "project-list.html" (dict "items" . "lang" $lang) }}
+    </section>
+    {{ end }}
+  {{ end }}
+  {{ range .Pages.ByWeight }}
+  <section class="block">
+    <h2>{{ .Title }}</h2>
+    <div class="prose">{{ .Content }}</div>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

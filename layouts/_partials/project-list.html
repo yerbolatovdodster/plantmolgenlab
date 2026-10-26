@@ -1,0 +1,15 @@
+{{ $lang := .lang }}
+<ol class="project-list">
+  {{ range .items }}
+  <li>
+    <div class="project-meta">
+      {{ with .years }}<span>{{ . }}</span>{{ end }}
+      {{ with .code }}<span class="code">{{ . }}</span>{{ end }}
+    </div>
+    <div>
+      <p class="project-title">{{ or (index . (printf "title_%s" $lang)) .title_ru }}</p>
+      {{ with .lead }}<p class="project-lead">{{ i18n "project_lead" }}: {{ . }}</p>{{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ol>

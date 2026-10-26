@@ -7,8 +7,11 @@ disableKinds = ["taxonomy", "term"]
 [params]
   # Адрес приложения на сервере лаборатории
   appURL = "https://croppopstructure.plantmolgenlab.kz"
-  email = "info@plantmolgenlab.kz"
-  github = ""
+  # Почта для связи. Когда заведёте почту на домене, замените, например, на info@plantmolgenlab.kz
+  email = "ipbbkz@gmail.com"
+  phone = "+7 (727) 394-80-06"
+  researchgate = "https://www.researchgate.net/lab/Yerlan-Turuspekov-Lab"
+  kazflora = "https://kazflora.kz"
 
 [markup.goldmark.renderer]
   unsafe = true   # нужно, чтобы текст из визуального редактора Pages CMS отображался корректно
@@ -19,12 +22,11 @@ disableKinds = ["taxonomy", "term"]
   weight = 1
   label = "Рус"
   locale = "ru"
-  title = "Лаборатория молекулярной генетики растений"
+  title = "Лаборатория молекулярной генетики"
   [languages.ru.params]
-    shortTitle = "PlantMolGen Lab"
     institute = "Институт биологии и биотехнологии растений"
-    address = "Алматы, Казахстан"   # впишите полный адрес
-    description = "Лаборатория молекулярной генетики растений: популяционная геномика злаков, GWAS и филогеномика растений."
+    address = "ул. Тимирязева, 45, Алматы 050040, Казахстан"
+    description = "Лаборатория молекулярной генетики ИББР: геномная селекция культур Казахстана и ДНК-генотипирование дикой флоры."
   [[languages.ru.menus.main]]
     name = "Исследования"
     pageRef = "/research"
@@ -38,8 +40,8 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/publications"
     weight = 30
   [[languages.ru.menus.main]]
-    name = "Новости"
-    pageRef = "/news"
+    name = "Проекты"
+    pageRef = "/projects"
     weight = 40
   [[languages.ru.menus.main]]
     name = "Контакты"
@@ -58,12 +60,11 @@ disableKinds = ["taxonomy", "term"]
   weight = 2
   label = "Қаз"
   locale = "kk"
-  title = "Өсімдіктердің молекулалық генетикасы зертханасы"
+  title = "Молекулалық генетика зертханасы"
   [languages.kk.params]
-    shortTitle = "PlantMolGen Lab"
     institute = "Өсімдіктер биологиясы және биотехнологиясы институты"
-    address = "Алматы, Қазақстан"
-    description = "Өсімдіктердің молекулалық генетикасы зертханасы: дәнді дақылдардың популяциялық геномикасы, GWAS және өсімдіктер филогеномикасы."
+    address = "Тимирязев к-сі, 45, Алматы 050040, Қазақстан"
+    description = "ӨББИ молекулалық генетика зертханасы: Қазақстан дақылдарының геномдық селекциясы және жабайы флораны ДНҚ-генотиптеу."
   [[languages.kk.menus.main]]
     name = "Зерттеулер"
     pageRef = "/research"
@@ -77,8 +78,8 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/publications"
     weight = 30
   [[languages.kk.menus.main]]
-    name = "Жаңалықтар"
-    pageRef = "/news"
+    name = "Жобалар"
+    pageRef = "/projects"
     weight = 40
   [[languages.kk.menus.main]]
     name = "Байланыс"
@@ -97,12 +98,11 @@ disableKinds = ["taxonomy", "term"]
   weight = 3
   label = "Eng"
   locale = "en"
-  title = "Plant Molecular Genetics Lab"
+  title = "Plant Molecular Genetics Laboratory"
   [languages.en.params]
-    shortTitle = "PlantMolGen Lab"
     institute = "Institute of Plant Biology and Biotechnology"
-    address = "Almaty, Kazakhstan"
-    description = "Plant Molecular Genetics Lab: cereal population genomics, GWAS and plant phylogenomics."
+    address = "45 Timiryazev St., Almaty 050040, Kazakhstan"
+    description = "Plant Molecular Genetics Laboratory at IPBB: genomic breeding of Kazakhstan's crops and DNA genotyping of the wild flora."
   [[languages.en.menus.main]]
     name = "Research"
     pageRef = "/research"
@@ -116,8 +116,8 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/publications"
     weight = 30
   [[languages.en.menus.main]]
-    name = "News"
-    pageRef = "/news"
+    name = "Projects"
+    pageRef = "/projects"
     weight = 40
   [[languages.en.menus.main]]
     name = "Contact"

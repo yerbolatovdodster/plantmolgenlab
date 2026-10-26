@@ -1,4 +1,4 @@
 ---
 title: "Team"
-description: "The people who work in the lab."
+description: "People of the Plant Molecular Genetics Laboratory."
 ---

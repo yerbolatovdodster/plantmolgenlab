@@ -15,6 +15,8 @@
       <a href="{{ .RelPermalink }}">
         <h2>{{ .Title }}</h2>
         {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        <span class="area-more">{{ i18n "learn_more" }}</span>
       </a>
     </li>
     {{ end }}

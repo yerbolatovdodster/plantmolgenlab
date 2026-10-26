@@ -1,6 +1,12 @@
 ---
-title: "Plant Molecular Genetics Lab"
-lede: "We study the genetic diversity of cereals and wild plants of Kazakhstan, from SNP genotyping to phylogenomics."
-strip_caption: "This is what a population structure analysis looks like: each column is one sample, colours are proportions of four ancestral populations (illustration, K = 4). Hover over a column to see the proportions."
+title: "Plant Molecular Genetics Laboratory"
+lede: "We study the genetic diversity of Kazakhstan's crops and wild flora, from SNP genotyping and gene discovery to new cultivars and a DNA bank of rare species."
+facts:
+  - { value: "10", label: "wheat, barley and soybean cultivars co-developed by the lab" }
+  - { value: "~500", label: "wild plant species of Kazakhstan in our DNA bank" }
+  - { value: "60+", label: "publications in 2012–2019" }
+  - { value: "30+", label: "young scientists trained since 1996" }
+strip_caption: "This is what a population structure analysis looks like: each column is a sample, colours are ancestry proportions (illustration, K = 4). Hover over a column to see the proportions."
+cultivars_text: "The lab co-develops cultivars with Kazakhstan's breeding centres: molecular markers speed up selection and confirm varietal purity."
 app_text: "A web app for population structure analysis from SNP data. Upload VCF or PLINK files, and PCA and ADMIXTURE run on the lab server."
 ---

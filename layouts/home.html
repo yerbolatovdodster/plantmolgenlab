@@ -1,28 +1,56 @@
 {{ define "main" }}
+{{ $lang := site.Language.Lang }}
 <section class="hero wrap">
   <p class="hero-institute">{{ site.Params.institute }}</p>
   <h1 class="hero-title">{{ site.Title }}</h1>
   {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+  <p class="hero-actions">
+    {{ with site.GetPage "/research" }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "explore_research" }}</a>{{ end }}
+    {{ with site.GetPage "/tools" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">CropPopStructure</a>{{ end }}
+  </p>
 </section>
 
 <figure class="strip wrap">
-  <svg id="structure-strip" class="strip-svg" viewBox="0 0 1200 200" preserveAspectRatio="none"
-       role="img" aria-label="{{ i18n "structure_alt" }}"
-       data-sample="{{ i18n "sample" }}" data-ancestry="{{ i18n "ancestry" }}"></svg>
-  {{ with .Params.strip_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  <div class="strip-frame">
+    <svg id="structure-strip" class="strip-svg" viewBox="0 0 1200 200" preserveAspectRatio="none"
+         role="img" aria-label="{{ i18n "structure_alt" }}" data-sample="{{ i18n "sample" }}"></svg>
+  </div>
+  <figcaption>
+    <ul class="legend" aria-hidden="true">
+      <li><i style="background:var(--k1)"></i>K1</li>
+      <li><i style="background:var(--k2)"></i>K2</li>
+      <li><i style="background:var(--k3)"></i>K3</li>
+      <li><i style="background:var(--k4)"></i>K4</li>
+    </ul>
+    {{ with .Params.strip_caption }}<p>{{ . }}</p>{{ end }}
+  </figcaption>
 </figure>
 {{ $js := resources.Get "js/structure.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" defer></script>
 
+{{ with .Params.facts }}
+<section class="facts wrap" aria-label="{{ site.Title }}">
+  <dl class="fact-grid">
+    {{ range . }}
+    <div class="fact"><dt>{{ .value }}</dt><dd>{{ .label }}</dd></div>
+    {{ end }}
+  </dl>
+</section>
+{{ end }}
+
 {{ with site.GetPage "/research" }}
 <section class="areas wrap" aria-labelledby="areas-h">
-  <h2 id="areas-h">{{ i18n "research" }}</h2>
+  <div class="section-head">
+    <h2 id="areas-h">{{ i18n "research" }}</h2>
+  </div>
   <ul class="area-list">
     {{ range .Pages.ByWeight }}
     <li>
       <a href="{{ .RelPermalink }}">
         <h3>{{ .Title }}</h3>
         {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        <span class="area-more">{{ i18n "learn_more" }}</span>
       </a>
     </li>
     {{ end }}
@@ -30,18 +58,49 @@
 </section>
 {{ end }}
 
-<section class="app-band" aria-labelledby="app-h">
-  <div class="wrap app-grid">
+{{ with hugo.Data.cultivars.crops }}
+<section class="cultivars wrap" aria-labelledby="cult-h">
+  <div class="cultivars-intro">
+    <h2 id="cult-h">{{ i18n "cultivars_title" }}</h2>
+    {{ with $.Params.cultivars_text }}<p>{{ . }}</p>{{ end }}
+  </div>
+  <div class="crop-grid">
+    {{ range . }}
+    <div class="crop">
+      <h3>{{ or (index . (printf "crop_%s" $lang)) .crop_ru }}</h3>
+      <ul>
+        {{ range .varieties }}
+        <li><span>{{ if eq $lang "en" }}{{ .name_en }}{{ else }}{{ .name_ru }}{{ end }}</span>{{ with .year }}<span class="year">{{ . }}</span>{{ end }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="app-band wrap" aria-labelledby="app-h">
+  <div class="app-panel">
     <div>
       <h2 id="app-h">CropPopStructure</h2>
       {{ with .Params.app_text }}<p>{{ . }}</p>{{ end }}
     </div>
     <div class="app-actions">
       <a class="btn btn-light" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
-      {{ with site.GetPage "/tools" }}<a class="link-light" href="{{ .RelPermalink }}">{{ i18n "how_it_works" }}</a>{{ end }}
+      {{ with site.GetPage "/tools" }}<a class="btn btn-ghost-light" href="{{ .RelPermalink }}">{{ i18n "how_it_works" }}</a>{{ end }}
     </div>
   </div>
 </section>
+
+{{ with hugo.Data.projects.items }}
+<section class="projects-home wrap" aria-labelledby="proj-h">
+  <div class="section-head">
+    <h2 id="proj-h">{{ i18n "projects" }}</h2>
+    {{ with site.GetPage "/projects" }}<a href="{{ .RelPermalink }}">{{ i18n "all_projects" }}</a>{{ end }}
+  </div>
+  {{ partial "project-list.html" (dict "items" (first 4 .) "lang" $lang) }}
+</section>
+{{ end }}
 
 {{ with site.GetPage "/news" }}
 <section class="news wrap" aria-labelledby="news-h">

@@ -60,7 +60,7 @@
     });
     var title = document.createElementNS(NS, 'title');
     title.textContent = sampleLabel + ' ' + (i + 1) + ': ' + order.map(function (j) {
-      return ancLabel + ' ' + (j + 1) + ' ' + Math.round(s.q[j] * 100) + '%';
+      return 'K' + (j + 1) + ' ' + Math.round(s.q[j] * 100) + '%';
     }).join(', ');
     bar.appendChild(title);
     frag.appendChild(bar);

@@ -2,8 +2,11 @@
 title: "Контакты"
 ---
 
-**Лаборатория молекулярной генетики растений**
+**Лаборатория молекулярной генетики**
 Институт биологии и биотехнологии растений
-Алматы, Казахстан <!-- впишите полный адрес -->
+ул. Тимирязева, 45, Алматы 050040, Казахстан
 
-Почта: [info@plantmolgenlab.kz](mailto:info@plantmolgenlab.kz)
+Телефон: [+7 (727) 394-80-06](tel:+77273948006)
+Почта: [ipbbkz@gmail.com](mailto:ipbbkz@gmail.com)
+
+[Лаборатория в ResearchGate](https://www.researchgate.net/lab/Yerlan-Turuspekov-Lab)
