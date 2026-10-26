@@ -159,6 +159,10 @@ content:
     - {name: bio_ru, label: О себе (рус), type: text}
     - {name: bio_kk, label: Өзі туралы (қаз), type: text}
     - {name: bio_en, label: Bio (eng), type: text}
+    - {name: years, label: Годы в лаборатории (для выпускников), type: string}
+    - {name: now_ru, label: 'Где сейчас (рус, для выпускников)', type: text}
+    - {name: now_kk, label: Қазір қайда (қаз), type: text}
+    - {name: now_en, label: Now at (eng), type: text}
     - {name: email, label: Почта, type: string}
     - {name: orcid, label: ORCID (например 0000-0002-1825-0097), type: string}
     - {name: photo, label: 'Фото для профиля (вертикальное, лучше 3:4)', type: image}

@@ -798,3 +798,9 @@ h3 { font-size: 1.08rem; }
   .lightbox img { max-width: calc(100vw - 24px); }
   .lb-prev, .lb-next { top: auto; bottom: 16px; transform: none; }
 }
+.profile-years { color: #BFD3C5; font-size: 0.88rem; margin: -4px 0 10px; }
+.profile-now { margin: 0 0 12px; font-size: 0.92rem; color: #E7F0E9; line-height: 1.5; }
+.profile-now span { display: block; font-size: 0.78rem; font-weight: 600; color: #9FCB8C; margin-bottom: 3px; }
+.team-alumni { margin-top: var(--space); }
+.team-alumni .profile { --photo-w: clamp(190px, 18vw, 240px); }
+.team-alumni .profile-card { margin-top: 28px; }

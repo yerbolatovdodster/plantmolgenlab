@@ -2,6 +2,7 @@
 {{- $name := .name -}}{{- if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end -}}
 {{- $role := or (index . (printf "role_%s" $lang)) .role_ru -}}
 {{- $bio := or (index . (printf "bio_%s" $lang)) .bio_ru -}}
+{{- $now := or (index . (printf "now_%s" $lang)) .now_ru -}}
 <article class="profile">
   <div class="profile-photo">
     {{- with .photo }}
@@ -17,6 +18,8 @@
   <div class="profile-card">
     <h3>{{ $name }}</h3>
     {{ with $role }}<p class="profile-role">{{ . }}</p>{{ end }}
+    {{ with .years }}<p class="profile-years">{{ i18n "years_in_lab" }}: {{ . }}</p>{{ end }}
+    {{ with $now }}<p class="profile-now"><span>{{ i18n "now" }}</span>{{ . }}</p>{{ end }}
     {{ with $bio }}<p class="profile-bio">{{ . }}</p>{{ end }}
     {{ if or .email .orcid }}
     <p class="profile-links">

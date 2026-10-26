@@ -17,7 +17,7 @@
   {{ end }}
 
   {{/* ── Профили: руководитель, затем группы ── */}}
-  {{ range slice "lead" "staff" "phd" "masters" "students" "alumni" }}
+  {{ range slice "lead" "staff" "phd" "masters" "students" }}
     {{ $group := . }}
     {{ with where $members "group" $group }}
     <section class="team-group">
@@ -62,5 +62,12 @@
   <script src="{{ $js.RelPermalink }}" defer></script>
   {{ end }}
 
+  {{/* ── Выпускники (после карусели) ── */}}
+  {{ with where $members "group" "alumni" }}
+  <section class="team-group team-alumni">
+    <h2>{{ i18n "group_alumni" }}</h2>
+    <div class="profiles">{{ range . }}{{ partial "profile.html" . }}{{ end }}</div>
+  </section>
+  {{ end }}
 </article>
 {{ end }}
