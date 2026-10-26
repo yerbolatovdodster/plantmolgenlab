@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="wrap">
+  <header class="tool-hero">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    <p class="page-actions">
+      <a class="btn" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
+      <a class="btn btn-ghost" href="mailto:{{ site.Params.email }}?subject=CropPopStructure">{{ i18n "request_access" }}</a>
+    </p>
+  </header>
+
+  {{ partial "app-demo.html" . }}
+
+  {{ with .Params.analyses }}
+  <section class="tool-analyses" aria-labelledby="an-h">
+    <div class="section-head"><h2 id="an-h">{{ $.Params.analyses_title }}</h2></div>
+    <ul class="analysis-list">
+      {{ range . }}<li><b>{{ .name }}</b><span>{{ .text }}</span></li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  <div class="tool-grid page">
+    <div class="prose">{{ .Content }}</div>
+    <div class="prose">
+      {{ with .Params.formats }}{{ . | markdownify }}{{ end }}
+    </div>
+  </div>
+</article>
+{{ end }}

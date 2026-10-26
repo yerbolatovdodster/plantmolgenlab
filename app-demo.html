@@ -1,0 +1,121 @@
+{{/* Анимированное демо CropPopStructure. Иллюстрация интерфейса, данные выдуманы.
+     Сценарий — в assets/js/app-demo.js. */}}
+<figure class="demo" id="app-demo" aria-labelledby="demo-cap">
+  <div class="demo-viewport">
+    <div class="demo-stage" aria-hidden="true">
+      <div class="d-browser">
+        <span class="d-dot"></span><span class="d-dot"></span><span class="d-dot"></span>
+        <span class="d-url">{{ site.Params.appURL | replaceRE "^https?://" "" }}</span>
+      </div>
+
+      <div class="d-app">
+        <header class="d-head">
+          <span class="d-logo">Crop <b>Pop</b> Structure</span>
+          <nav class="d-nav">
+            <span class="d-tab is-on" data-el="nav-new">New analysis</span>
+            <span class="d-tab">HapMap → VCF</span>
+            <span class="d-tab" data-el="nav-results">Results</span>
+            <span class="d-tab">Help</span>
+          </nav>
+        </header>
+
+        <div class="d-body">
+          <aside class="d-side">
+            <label class="d-label">VCF file (.vcf or .vcf.gz)</label>
+            <div class="d-file">
+              <span class="d-browse" data-el="vcf-btn">Browse…</span>
+              <span class="d-fname" data-el="vcf-name">No file selected</span>
+            </div>
+            <div class="d-upbar"><i data-el="vcf-bar"></i></div>
+
+            <label class="d-label">Population file</label>
+            <div class="d-file">
+              <span class="d-browse" data-el="pop-btn">Browse…</span>
+              <span class="d-fname" data-el="pop-name">No file selected</span>
+            </div>
+            <div class="d-upbar"><i data-el="pop-bar"></i></div>
+            <p class="d-hint">population&lt;TAB&gt;sample, one sample per line</p>
+
+            <label class="d-label">Run name</label>
+            <div class="d-input" data-el="name-input"><span data-el="name-text"></span><i class="d-caret"></i></div>
+
+            <div class="d-adv">Advanced parameters <span>⌄</span></div>
+            <span class="d-run" data-el="run-btn"><span class="d-play">▶</span><span data-el="run-label">Run analysis</span></span>
+          </aside>
+
+          <section class="d-main">
+            <!-- экран 1: проверка входных данных и прошлые запуски -->
+            <div class="d-screen is-on" data-screen="form">
+              <div class="d-card">
+                <div class="d-card-h">Input check</div>
+                <div class="d-check" data-el="check">Upload a VCF and a population file to start.</div>
+              </div>
+              <div class="d-card d-grow" data-el="runs-card">
+                <div class="d-card-h">Previous runs</div>
+                <div class="d-table">
+                  <div class="d-tr d-th"><span>label</span><span>created</span><span>status</span></div>
+                  <div class="d-tr"><span>wheat_35k_hapmap</span><span>2026-10-09 09:09</span><span>completed</span></div>
+                  <div class="d-tr"><span>wheat_35k_2</span><span>2026-10-09 08:24</span><span>completed</span></div>
+                  <div class="d-tr"><span>wheat_35k</span><span>2026-10-08 07:08</span><span>completed</span></div>
+                </div>
+              </div>
+              <div class="d-card d-grow d-progress" data-el="progress">
+                <div class="d-card-h">Pipeline <span class="d-pct" data-el="pct">0%</span></div>
+                <div class="d-pbar"><i data-el="pbar"></i></div>
+                <ol class="d-steps">
+                  <li>Filtering SNPs (MAF ≥ 0.05, missing ≤ 20%)</li>
+                  <li>Diversity and PCA</li>
+                  <li>sNMF, K = 2–8 with cross-entropy</li>
+                  <li>DAPC and kinship</li>
+                  <li>NJ tree, AMOVA and pairwise FST</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- экран 2: результаты -->
+            <div class="d-screen" data-screen="results">
+              <div class="d-res-head">
+                <span class="d-res-title">Barley 86 accessions</span>
+                <span class="d-badge">completed</span>
+              </div>
+              <div class="d-rtabs">
+                <span class="d-rtab is-on" data-el="tab-pca">PCA</span>
+                <span class="d-rtab" data-el="tab-snmf">sNMF</span>
+                <span class="d-rtab">DAPC</span>
+                <span class="d-rtab">Kinship</span>
+                <span class="d-rtab">NJ tree</span>
+                <span class="d-rtab">FST</span>
+              </div>
+              <div class="d-plot is-on" data-plot="pca">
+                <svg viewBox="0 0 520 300" data-el="pca"></svg>
+              </div>
+              <div class="d-plot" data-plot="snmf">
+                <div class="d-k">K = 4 <span>lowest cross-entropy</span></div>
+                <svg viewBox="0 0 520 250" preserveAspectRatio="none" data-el="snmf"></svg>
+                <div class="d-tip" data-el="tip"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <svg class="d-cursor" data-el="cursor" viewBox="0 0 24 24" width="26" height="26">
+        <path d="M4 2.5 L4 19.5 L8.6 15.2 L11.6 21.6 L14.4 20.3 L11.4 14 L17.6 14 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span class="d-ripple" data-el="ripple"></span>
+    </div>
+  </div>
+
+  <figcaption id="demo-cap" class="demo-cap">
+    <ol class="demo-steps">
+      <li data-step="1">{{ i18n "demo_step1" }}</li>
+      <li data-step="2">{{ i18n "demo_step2" }}</li>
+      <li data-step="3">{{ i18n "demo_step3" }}</li>
+      <li data-step="4">{{ i18n "demo_step4" }}</li>
+    </ol>
+    <button class="demo-toggle" type="button" data-pause="{{ i18n "demo_pause" }}" data-play="{{ i18n "demo_play" }}">{{ i18n "demo_pause" }}</button>
+  </figcaption>
+  <p class="demo-note">{{ i18n "demo_note" }}</p>
+</figure>
+{{ $js := resources.Get "js/app-demo.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>

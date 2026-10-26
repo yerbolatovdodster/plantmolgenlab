@@ -1,0 +1,180 @@
+# Публикации лаборатории. Удобнее всего редактировать через Pages CMS.
+# Источник: страница лаборатории на ipbb.kz (2012–2019). Новые статьи добавляйте сверху.
+# type: article (статья) или book (монография, каталог)
+items:
+  - type: article
+    year: 2019
+    authors: "Almerekova S., Sariev B., Abugalieva A., Chudinov V., Sereda G., Tokhetova L., Ortaev A., Tsygankov V., Blake T., Chao S., Genievskaya Y., Abugalieva S., Turuspekov Y."
+    title: "Association mapping for agronomic traits in six-rowed spring barley from the USA harvested in Kazakhstan"
+    journal: "PLOS ONE 14(8): e0221064"
+    doi: "10.1371/journal.pone.0221064"
+  - type: article
+    year: 2019
+    authors: "Genievskaya Y.A., Fedorenko Y., Sarbayev A.T., Amalova A., Abugalieva S.I., Griffiths S., Turuspekov Y.K."
+    title: "QTL mapping of adult-plant resistance to leaf and stem rusts in Pamyati Azieva × Paragon mapping population…"
+    journal: "Vavilov Journal of Genetics and Breeding 23(7): 887–895"
+    doi: "10.18699/VJ19.563"
+  - type: article
+    year: 2019
+    authors: "Anuarbek S., Abugalieva S., Turuspekov Y."
+    title: "Validation of bread wheat KASP markers in durum lines in Kazakhstan"
+    journal: "Proceedings of the Latvian Academy of Sciences, Section B 73(5): 462–465"
+    doi: "10.2478/prolas-2019-0071"
+  - type: article
+    year: 2018
+    authors: "Genievskaya Y., Almerekova S., Sariev B., Chudinov V., Tokhetova L., Sereda G., Ortaev A., Tsygankov V., Blake T., Chao S., Sato K., Abugalieva S., Turuspekov Y."
+    title: "Marker-trait associations in two-rowed spring barley accessions from Kazakhstan and the USA"
+    journal: "PLOS ONE 13(10): e0205421"
+    doi: "10.1371/journal.pone.0205421"
+  - type: article
+    year: 2018
+    authors: "Zatybekov A., Abugalieva S., Didorenko S., Rsaliyev A., Turuspekov Y."
+    title: "GWAS of soybean breeding collection for resistance to fungal diseases in condition of South-East and South Kazakhstan"
+    journal: "Vavilov Journal of Genetics and Breeding 22(5): 536–543"
+    doi: "10.18699/VJ18.392"
+  - type: article
+    year: 2018
+    authors: "Turuspekov Y., Genievskaya Y., Baibulatova A., Zatybekov A., Kotuhov Y., Imanbayeva A., Abugalieva S."
+    title: "Phylogenetic taxonomy of Artemisia L. species from Kazakhstan based on matK analyses"
+    journal: "Proceedings of the Latvian Academy of Sciences, Section B 72(1): 29–37"
+    doi: "10.1515/prolas-2017-0068"
+  - type: article
+    year: 2018
+    authors: "Almerekova Sh.S., Abugalieva S.I., Mukhitdinov N.M."
+    title: "Taxonomic assessment of the Oxytropis species from South-East of Kazakhstan…"
+    journal: "Vavilov Journal of Genetics and Breeding 22(2): 285–290"
+    doi: "10.18699/VJ18.362"
+  - type: article
+    year: 2018
+    authors: "Almerekova S., Lisztes-Szabo Z., Mukhitdinov N., Kurmanbayeva M., Abidkulova K., Sramko G."
+    title: "Genetic diversity and population genetic structure of the endangered Kazakh endemic Oxytropis almaatensis (Fabaceae)"
+    journal: "Acta Botanica Hungarica 60(3–4): 263–278"
+    doi: "10.1556/034.2018.1"
+  - type: article
+    year: 2018
+    authors: "Zhang J., Zhao J., Zhou Q., Hu J., Ma Y., Zhao X., Zhao P., Turuspekov Y., Xie Zh., Chen G."
+    title: "The agronomic performance of sand rice (Agriophyllum squarrosum), a potential semi-arid crop species"
+    journal: "Genetic Resources and Crop Evolution"
+    doi: "10.1007/s10722-018-0689-3"
+  - type: article
+    year: 2018
+    authors: "Kubentayev S.A., Suleimenov A.N., Kotukhov Y.A., Danilova A.N., Sumbembayev A.A."
+    title: "Phytocenotic characteristics and stocks of the main medicinal plants of the South-Western Altai (East Kazakhstan)"
+    journal: "EurAsian Journal of BioSciences 12: 355–368"
+    doi: ""
+  - type: article
+    year: 2018
+    authors: "Kotukhov Y.A., Danilova A.N., Anufriyeva O.A., Suleimenov A.N., Sumbembayev A.A., Kubentaev S.A."
+    title: "Ecological and biological features of Cypripedium at Katon-Karagay state national natural park"
+    journal: "Plant Archives 18(2): 1499–1502"
+    doi: ""
+  - type: article
+    year: 2017
+    authors: "Abugalieva S., Volkova L., Genievskaya Y., Ivaschenko A., Kotukhov Y., Sakauova G., Turuspekov Y."
+    title: "Taxonomic assessment of Allium species from Kazakhstan based on ITS and matK markers"
+    journal: "BMC Plant Biology 17(Suppl 2)"
+    doi: "10.1186/s12870-017-1194-0"
+  - type: article
+    year: 2017
+    authors: "Turuspekov Y., Baibulatova A., Yermekbayev K., Tokhetova L., Chudinov V., Sereda G., Ganal M.W., Griffiths S., Abugalieva S."
+    title: "GWAS for plant growth stages and yield components in spring wheat (Triticum aestivum L.) harvested in three regions of Kazakhstan"
+    journal: "BMC Plant Biology 17(Suppl 1)"
+    doi: "10.1186/s12870-017-1131-2"
+  - type: article
+    year: 2017
+    authors: "Zatybekov A., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek Sh., Turuspekov Y."
+    title: "GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan"
+    journal: "BMC Plant Biology 17(Suppl 1)"
+    doi: "10.1186/s12870-017-1125-0"
+  - type: article
+    year: 2017
+    authors: "Genievskaya Y., Abugalieva S., Zhubanysheva A., Turuspekov Y."
+    title: "Morphological description and DNA barcoding study of sand rice (Agriophyllum squarrosum, Chenopodiaceae) collected in Kazakhstan"
+    journal: "BMC Plant Biology 17(Suppl 1)"
+    doi: "10.1186/s12870-017-1132-1"
+  - type: article
+    year: 2017
+    authors: "Almerekova Sh., Mukhitdinov N., Abugalieva S."
+    title: "Phylogenetic study of the endemic species Oxytropis almaatensis (Fabaceae) based on nuclear ribosomal DNA ITS sequences"
+    journal: "BMC Plant Biology 17(Suppl 1)"
+    doi: "10.1186/s12870-017-1128-x"
+  - type: article
+    year: 2017
+    authors: "Turuspekov Y., Plieske J., Ganal M., Akhunov E., Abugalieva S."
+    title: "Phylogenetic analysis of wheat cultivars in Kazakhstan based on the wheat 90K single nucleotide polymorphism array"
+    journal: "Plant Genetic Resources 15(1): 29–35"
+    doi: "10.1017/S1479262115000325"
+  - type: article
+    year: 2016
+    authors: "Turuspekov Y., Ormanbekova D., Rsaliev A., Abugalieva S."
+    title: "Genome-wide association study on stem rust resistance in Kazakh spring barley lines"
+    journal: "BMC Plant Biology 16(Suppl 1)"
+    doi: "10.1186/s12870-015-0686-z"
+  - type: article
+    year: 2016
+    authors: "Volis S., Ormanbekova D., Yermekbayev K., Abugalieva S., Turuspekov Y., Shulgina I."
+    title: "Genetic architecture of adaptation to novel environmental conditions in a predominantly selfing allopolyploid plant"
+    journal: "Heredity"
+    doi: "10.1038/hdy.2016.2"
+  - type: article
+    year: 2015
+    authors: "Volis S., Ormanbekova D., Yermekbayev K., Song M., Shulgina I."
+    title: "The conservation value of peripheral populations and a relationship between quantitative trait and molecular variation"
+    journal: "Evolutionary Biology 42(4)"
+    doi: ""
+  - type: article
+    year: 2015
+    authors: "Volis S., Ormanbekova D., Yermekbayev K."
+    title: "Role of phenotypic plasticity and population differentiation in adaptation to novel environmental conditions"
+    journal: "Ecology and Evolution 5(17): 3818–3829"
+    doi: ""
+  - type: article
+    year: 2015
+    authors: "Volis S., Ormanbekova D., Yermekbayev K., Song M., Shulgina I."
+    title: "Multi-approaches analysis reveals local adaptation in the emmer wheat (Triticum dicoccoides)…"
+    journal: "PLOS ONE 10(3): e0121153"
+    doi: ""
+  - type: article
+    year: 2014
+    authors: "Turuspekov Y., Abugalieva S., Ermekbayev K., Sato K."
+    title: "Genetic characterization of wild barley populations (Hordeum vulgare ssp. spontaneum) from Kazakhstan based on genome wide SNP analysis"
+    journal: "Breeding Science 64: 399–403"
+    doi: ""
+  - type: article
+    year: 2014
+    authors: "Abugalieva A.I., Turuspekov Y.K., Abugalieva S.I., Savin T.V."
+    title: "Genetic markers and biochemical evaluation in the winter triticale identification and breeding"
+    journal: "Communications in Agricultural and Applied Biological Sciences 79(4): 233–239"
+    doi: ""
+  - type: article
+    year: 2013
+    authors: "Turuspekov Y., Sariev B., Chudinov V., Sereda G., Tokhetova L., Ortaev A., Tsygankov V., Doszhanov M., Volis S., Abugalieva S."
+    title: "Genotype × environment interaction patterns for grain yield of spring barley in different regions of Kazakhstan"
+    journal: "Russian Journal of Genetics 49(2): 196–205"
+    doi: ""
+
+  # ───── Монографии и каталоги ─────
+  - type: book
+    year: 2017
+    authors: "Абугалиева С.И., Туруспеков Е.К."
+    title: "Молекулярно-генетические особенности формирования продуктивности и качества зерна мягкой пшеницы"
+    journal: "Монография. Алматы, 310 с. ISBN 978-601-7343-29-3"
+    doi: ""
+  - type: book
+    year: 2017
+    authors: "Абугалиева С.И., Дидоренко С.В., Туруспеков Е.К."
+    title: "Генетическое разнообразие сои Glycine max (L.) Merr."
+    journal: "Монография. Алматы, 210 с. ISBN 978-601-7343-30-9"
+    doi: ""
+  - type: book
+    year: 2017
+    authors: "Туруспеков Е.К., Мырзагалиева А.Б., Котухов Ю.А., Данилова А.Н., Огарь Н.П., Амалова А.Ы., Абугалиева С.И."
+    title: "Каталог эндемичных, редких, исчезающих и дикорастущих хозяйственно-ценных видов растений Казахстана. 1. Восточный Казахстан"
+    journal: "Алматы, 250 с. ISBN 978-601-332-051-9"
+    doi: ""
+  - type: book
+    year: 2011
+    authors: "Абугалиева А.И., Туруспеков Е.К., Абугалиева С.И., Драчева Л.М., Скокбаев С.О., Савин Т.В."
+    title: "Генетические ресурсы культурного и дикого ячменя"
+    journal: "Алматы, 334 с."
+    doi: ""

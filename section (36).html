@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  {{ if eq .Section "news" }}
+    {{ partial "news-list.html" (dict "pages" .Pages.ByDate.Reverse) }}
+  {{ else }}
+  <ul class="area-list area-list-page">
+    {{ range .Pages.ByWeight }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <h2>{{ .Title }}</h2>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        <span class="area-more">{{ i18n "learn_more" }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</article>
+{{ end }}

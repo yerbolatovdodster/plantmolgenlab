@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="prose page-note">{{ . }}</div>{{ end }}
+  </header>
+
+  {{/* Ручной список (Pages CMS) + автоматический из OpenAlex.
+       При совпадении DOI показывается ручная запись; hide: true скрывает статью. */}}
+  {{ $manual := hugo.Data.publications.items | default slice }}
+  {{ $auto := hugo.Data.publications_auto.items | default slice }}
+  {{ $known := slice }}
+  {{ range $manual }}{{ with .doi }}{{ $known = $known | append (lower .) }}{{ end }}{{ end }}
+
+  {{ $all := slice }}
+  {{ range $manual }}{{ if not .hide }}{{ $all = $all | append . }}{{ end }}{{ end }}
+  {{ range $auto }}{{ if not (and .doi (in $known (lower .doi))) }}{{ $all = $all | append . }}{{ end }}{{ end }}
+
+  {{ $articles := where $all "type" "!=" "book" }}
+  {{ $books := where $all "type" "book" }}
+
+  <p class="pub-count">{{ i18n "articles" }}: {{ len $articles }}{{ with $books }} · {{ i18n "books" }}: {{ len . }}{{ end }}</p>
+
+  {{ $years := slice }}
+  {{ range $articles }}{{ $years = $years | append (int .year) }}{{ end }}
+  {{ range sort ($years | uniq) "value" "desc" }}
+    {{ $y := . }}
+    <section class="pub-year">
+      <h2>{{ $y }}</h2>
+      <ol class="pubs">
+        {{ range $articles }}{{ if eq (int .year) $y }}{{ partial "pub.html" . }}{{ end }}{{ end }}
+      </ol>
+    </section>
+  {{ end }}
+
+  {{ with $books }}
+  <section class="pub-year">
+    <h2 class="pub-books-h">{{ i18n "books" }}</h2>
+    <ol class="pubs">{{ range sort . "year" "desc" }}{{ partial "pub.html" . }}{{ end }}</ol>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

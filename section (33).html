@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ $lang := site.Language.Lang }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  {{ $members := hugo.Data.team.members }}
+  {{ range slice "lead" "staff" "students" "alumni" }}
+    {{ $group := . }}
+    {{ $people := where $members "group" $group }}
+    {{ with $people }}
+    <section class="team-group">
+      <h2>{{ i18n $group }}</h2>
+      <ul class="people{{ if eq $group "lead" }} people-lead{{ end }}">
+        {{ range . }}
+        {{ $name := .name }}
+        {{ if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end }}
+        {{ $role := or (index . (printf "role_%s" $lang)) .role_ru }}
+        {{ $bio := or (index . (printf "bio_%s" $lang)) .bio_ru }}
+        <li class="person">
+          {{ partial "avatar.html" (dict "name" $name "photo" .photo) }}
+          <div>
+            <h3>{{ $name }}</h3>
+            {{ with $role }}<p class="role">{{ . }}</p>{{ end }}
+            {{ with $bio }}<p class="bio">{{ . }}</p>{{ end }}
+            <p class="person-links">
+              {{ with .email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+              {{ with .orcid }}<a href="https://orcid.org/{{ . }}">ORCID</a>{{ end }}
+            </p>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  {{ end }}
+</article>
+{{ end }}
