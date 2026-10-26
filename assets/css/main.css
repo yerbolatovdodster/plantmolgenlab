@@ -607,7 +607,8 @@ h2 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 h3 { font-size: 1.08rem; }
 
 .header-row { min-height: 64px; }
-.logo { height: 30px; }
+.logo { height: 38px; }
+@media (max-width: 480px) { .logo { height: 32px; } }
 .menu a { font-size: 0.9rem; padding: 7px 11px; }
 @media (max-width: 1120px) { .site-nav { top: 64px; } }
 
@@ -665,7 +666,7 @@ h3 { font-size: 1.08rem; }
 .block { margin-top: 40px; }
 
 .footer-panel { padding: clamp(24px, 3vw, 36px); border-radius: var(--r-md); }
-.footer-brand .logo { height: 32px; margin-bottom: 12px; }
+.footer-brand .logo { height: 40px; margin-bottom: 12px; }
 .footer-grid p, .footer-links { font-size: 0.88rem; }
 
 /* ───────── Карта ───────── */
@@ -814,3 +815,7 @@ h3 { font-size: 1.08rem; }
 .langs a, .demo-steps li::before { border-radius: 4px; }
 .demo-viewport { border-radius: var(--r-lg); }
 .profile-photo, .profile-photo img, .profile-blank, .profile-card { border-radius: 0; }
+
+/* Знак логотипа: столбцы популяционной структуры */
+.lm-k1 { fill: #1F5A3A; } .lm-k2 { fill: #4E9A35; } .lm-k3 { fill: #D9A62E; } .lm-k4 { fill: #5F86C0; }
+@media (prefers-color-scheme: dark) { .lm-k1 { fill: #2E7D52; } .lm-k2 { fill: #7BC25E; } .lm-k3 { fill: #E2B44A; } .lm-k4 { fill: #7EA3DA; } }
