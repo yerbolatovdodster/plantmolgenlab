@@ -10,23 +10,6 @@
   </p>
 </section>
 
-<figure class="strip wrap">
-  <div class="strip-frame">
-    <svg id="structure-strip" class="strip-svg" viewBox="0 0 1200 200" preserveAspectRatio="none"
-         role="img" aria-label="{{ i18n "structure_alt" }}" data-sample="{{ i18n "sample" }}"></svg>
-  </div>
-  <figcaption>
-    <ul class="legend" aria-hidden="true">
-      <li><i style="background:var(--k1)"></i>K1</li>
-      <li><i style="background:var(--k2)"></i>K2</li>
-      <li><i style="background:var(--k3)"></i>K3</li>
-      <li><i style="background:var(--k4)"></i>K4</li>
-    </ul>
-    {{ with .Params.strip_caption }}<p>{{ . }}</p>{{ end }}
-  </figcaption>
-</figure>
-{{ $js := resources.Get "js/structure.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}" defer></script>
 
 {{ with .Params.facts }}
 <section class="facts wrap" aria-label="{{ site.Title }}">
@@ -58,26 +41,6 @@
 </section>
 {{ end }}
 
-{{ with hugo.Data.cultivars.crops }}
-<section class="cultivars wrap" aria-labelledby="cult-h">
-  <div class="cultivars-intro">
-    <h2 id="cult-h">{{ i18n "cultivars_title" }}</h2>
-    {{ with $.Params.cultivars_text }}<p>{{ . }}</p>{{ end }}
-  </div>
-  <div class="crop-grid">
-    {{ range . }}
-    <div class="crop">
-      <h3>{{ or (index . (printf "crop_%s" $lang)) .crop_ru }}</h3>
-      <ul>
-        {{ range .varieties }}
-        <li><span>{{ if eq $lang "en" }}{{ .name_en }}{{ else }}{{ .name_ru }}{{ end }}</span>{{ with .year }}<span class="year">{{ . }}</span>{{ end }}</li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-  </div>
-</section>
-{{ end }}
 
 <section class="app-band wrap" aria-labelledby="app-h">
   <div class="app-panel">

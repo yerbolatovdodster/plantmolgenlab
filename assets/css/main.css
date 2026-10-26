@@ -192,7 +192,7 @@ p { margin: 0 0 1em; }
 @media (prefers-reduced-motion: reduce) { .strip-svg.is-drawing .bar { animation: none; } }
 
 /* ───────── Факты ───────── */
-.facts { margin-bottom: var(--space); }
+.facts { margin-top: clamp(24px, 4vw, 48px); margin-bottom: var(--space); }
 .fact-grid {
   margin: 0; display: grid; grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--line);
