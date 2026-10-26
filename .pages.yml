@@ -161,7 +161,7 @@ content:
     - {name: bio_en, label: Bio (eng), type: text}
     - {name: email, label: Почта, type: string}
     - {name: orcid, label: ORCID (например 0000-0002-1825-0097), type: string}
-    - {name: photo, label: Фото, type: image}
+    - {name: photo, label: 'Фото для профиля (вертикальное, лучше 3:4)', type: image}
 - name: team-page-ru
   label: Страница «Команда» (рус)
   type: file
@@ -169,7 +169,8 @@ content:
   fields:
   - {name: title, label: Заголовок, type: string}
   - {name: description, label: Подзаголовок, type: text}
-  - {name: pi_photo, label: Большое фото руководителя, type: image}
+  - {name: photo, label: Общее фото команды, type: image}
+  - {name: photo_caption, label: Подпись к общему фото, type: string}
 - name: team-page-kk
   label: «Ұжым» беті (қаз)
   type: file
@@ -177,7 +178,8 @@ content:
   fields:
   - {name: title, label: Заголовок, type: string}
   - {name: description, label: Подзаголовок, type: text}
-  - {name: pi_photo, label: Большое фото руководителя, type: image}
+  - {name: photo, label: Общее фото команды, type: image}
+  - {name: photo_caption, label: Подпись к общему фото, type: string}
 - name: team-page-en
   label: Team page (eng)
   type: file
@@ -185,7 +187,8 @@ content:
   fields:
   - {name: title, label: Заголовок, type: string}
   - {name: description, label: Подзаголовок, type: text}
-  - {name: pi_photo, label: Большое фото руководителя, type: image}
+  - {name: photo, label: Общее фото команды, type: image}
+  - {name: photo_caption, label: Подпись к общему фото, type: string}
 - name: gallery
   label: Фотографии (карусель на странице «Команда»)
   type: file

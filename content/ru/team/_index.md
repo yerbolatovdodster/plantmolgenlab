@@ -1,5 +1,5 @@
 ---
-pi_photo: "images/team/turuspekov-hero.jpg"
+photo: "images/team/lab.jpg"
 title: "Команда"
 description: "Сотрудники лаборатории молекулярной генетики."
 ---

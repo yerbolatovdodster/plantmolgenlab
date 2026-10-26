@@ -8,33 +8,23 @@
   </header>
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
-  {{/* ── Руководитель: большое фото ── */}}
-  {{ range first 1 (where $members "group" "lead") }}
-    {{ $name := .name }}{{ if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end }}
-    {{ $role := or (index . (printf "role_%s" $lang)) .role_ru }}
-    {{ $bio := or (index . (printf "bio_%s" $lang)) .bio_ru }}
-    <section class="pi" aria-label="{{ i18n "group_lead" }}">
-      {{ with $.Params.pi_photo }}
-      <figure class="pi-hero">
-        <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $name }}" fetchpriority="high">
-        <figcaption class="pi-overlay">
-          <span class="pi-label">{{ i18n "group_lead" }}</span>
-          <span class="pi-name">{{ $name }}</span>
-        </figcaption>
-      </figure>
-      {{ end }}
-      <div class="pi-info">
-        <div>
-          {{ if not $.Params.pi_photo }}<h2 class="pi-name-plain">{{ $name }}</h2>{{ end }}
-          {{ with $role }}<p class="pi-role">{{ . }}</p>{{ end }}
-          <p class="person-links">
-            {{ with .email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
-            {{ with .orcid }}<a href="https://orcid.org/{{ . }}">ORCID</a>{{ end }}
-          </p>
-        </div>
-        {{ with $bio }}<p class="pi-bio">{{ . }}</p>{{ end }}
-      </div>
+  {{/* ── Общее фото команды ── */}}
+  {{ with .Params.photo }}
+  <figure class="team-photo">
+    <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Title }}" fetchpriority="high">
+    {{ with $.Params.photo_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{ end }}
+
+  {{/* ── Профили: руководитель, затем группы ── */}}
+  {{ range slice "lead" "staff" "phd" "masters" "students" "alumni" }}
+    {{ $group := . }}
+    {{ with where $members "group" $group }}
+    <section class="team-group">
+      <h2>{{ i18n (printf "group_%s" $group) }}</h2>
+      <div class="profiles">{{ range . }}{{ partial "profile.html" . }}{{ end }}</div>
     </section>
+    {{ end }}
   {{ end }}
 
   {{/* ── Карусель фотографий ── */}}
@@ -72,15 +62,5 @@
   <script src="{{ $js.RelPermalink }}" defer></script>
   {{ end }}
 
-  {{/* ── Группы сотрудников ── */}}
-  {{ range slice "staff" "phd" "masters" "students" "alumni" }}
-    {{ $group := . }}
-    {{ with where $members "group" $group }}
-    <section class="team-group">
-      <h2>{{ i18n (printf "group_%s" $group) }}</h2>
-      <ul class="people">{{ range . }}{{ partial "person.html" . }}{{ end }}</ul>
-    </section>
-    {{ end }}
-  {{ end }}
 </article>
 {{ end }}
