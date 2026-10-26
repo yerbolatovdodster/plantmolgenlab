@@ -1,0 +1,131 @@
+baseURL = "https://plantmolgenlab.kz/"
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  # Адрес приложения на сервере лаборатории
+  appURL = "https://croppopstructure.plantmolgenlab.kz"
+  email = "info@plantmolgenlab.kz"
+  github = ""
+
+[markup.goldmark.renderer]
+  unsafe = true   # нужно, чтобы текст из визуального редактора Pages CMS отображался корректно
+
+# ───────────── Русский (основной) ─────────────
+[languages.ru]
+  contentDir = "content/ru"
+  weight = 1
+  label = "Рус"
+  locale = "ru"
+  title = "Лаборатория молекулярной генетики растений"
+  [languages.ru.params]
+    shortTitle = "PlantMolGen Lab"
+    institute = "Институт биологии и биотехнологии растений"
+    address = "Алматы, Казахстан"   # впишите полный адрес
+    description = "Лаборатория молекулярной генетики растений: популяционная геномика злаков, GWAS и филогеномика растений."
+  [[languages.ru.menus.main]]
+    name = "Исследования"
+    pageRef = "/research"
+    weight = 10
+  [[languages.ru.menus.main]]
+    name = "Команда"
+    pageRef = "/team"
+    weight = 20
+  [[languages.ru.menus.main]]
+    name = "Публикации"
+    pageRef = "/publications"
+    weight = 30
+  [[languages.ru.menus.main]]
+    name = "Новости"
+    pageRef = "/news"
+    weight = 40
+  [[languages.ru.menus.main]]
+    name = "Контакты"
+    pageRef = "/contact"
+    weight = 50
+  [[languages.ru.menus.main]]
+    name = "CropPopStructure"
+    pageRef = "/tools"
+    weight = 60
+    [languages.ru.menus.main.params]
+      class = "nav-app"
+
+# ───────────── Қазақша ─────────────
+[languages.kk]
+  contentDir = "content/kk"
+  weight = 2
+  label = "Қаз"
+  locale = "kk"
+  title = "Өсімдіктердің молекулалық генетикасы зертханасы"
+  [languages.kk.params]
+    shortTitle = "PlantMolGen Lab"
+    institute = "Өсімдіктер биологиясы және биотехнологиясы институты"
+    address = "Алматы, Қазақстан"
+    description = "Өсімдіктердің молекулалық генетикасы зертханасы: дәнді дақылдардың популяциялық геномикасы, GWAS және өсімдіктер филогеномикасы."
+  [[languages.kk.menus.main]]
+    name = "Зерттеулер"
+    pageRef = "/research"
+    weight = 10
+  [[languages.kk.menus.main]]
+    name = "Ұжым"
+    pageRef = "/team"
+    weight = 20
+  [[languages.kk.menus.main]]
+    name = "Жарияланымдар"
+    pageRef = "/publications"
+    weight = 30
+  [[languages.kk.menus.main]]
+    name = "Жаңалықтар"
+    pageRef = "/news"
+    weight = 40
+  [[languages.kk.menus.main]]
+    name = "Байланыс"
+    pageRef = "/contact"
+    weight = 50
+  [[languages.kk.menus.main]]
+    name = "CropPopStructure"
+    pageRef = "/tools"
+    weight = 60
+    [languages.kk.menus.main.params]
+      class = "nav-app"
+
+# ───────────── English ─────────────
+[languages.en]
+  contentDir = "content/en"
+  weight = 3
+  label = "Eng"
+  locale = "en"
+  title = "Plant Molecular Genetics Lab"
+  [languages.en.params]
+    shortTitle = "PlantMolGen Lab"
+    institute = "Institute of Plant Biology and Biotechnology"
+    address = "Almaty, Kazakhstan"
+    description = "Plant Molecular Genetics Lab: cereal population genomics, GWAS and plant phylogenomics."
+  [[languages.en.menus.main]]
+    name = "Research"
+    pageRef = "/research"
+    weight = 10
+  [[languages.en.menus.main]]
+    name = "Team"
+    pageRef = "/team"
+    weight = 20
+  [[languages.en.menus.main]]
+    name = "Publications"
+    pageRef = "/publications"
+    weight = 30
+  [[languages.en.menus.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 40
+  [[languages.en.menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 50
+  [[languages.en.menus.main]]
+    name = "CropPopStructure"
+    pageRef = "/tools"
+    weight = 60
+    [languages.en.menus.main.params]
+      class = "nav-app"

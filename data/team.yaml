@@ -1,0 +1,43 @@
+# Сотрудники лаборатории. Удобнее всего редактировать через Pages CMS.
+# group: lead (руководитель), staff (сотрудники), students (студенты), alumni (выпускники)
+# photo: путь к фото в static/images, например /images/team/ivanov.jpg (можно оставить пустым)
+members:
+  - name: "Имя Фамилия"
+    name_en: "Name Surname"
+    group: lead
+    role_ru: "Заведующий лабораторией, PhD"
+    role_kk: "Зертхана меңгерушісі, PhD"
+    role_en: "Head of the lab, PhD"
+    bio_ru: "Коротко о научных интересах."
+    bio_kk: "Ғылыми қызығушылықтары туралы қысқаша."
+    bio_en: "A short note on research interests."
+    email: ""
+    orcid: ""
+    photo: ""
+  - name: "Имя Фамилия"
+    name_en: "Name Surname"
+    group: staff
+    role_ru: "Научный сотрудник"
+    role_kk: "Ғылыми қызметкер"
+    role_en: "Researcher"
+    email: ""
+    orcid: ""
+    photo: ""
+  - name: "Имя Фамилия"
+    name_en: "Name Surname"
+    group: staff
+    role_ru: "Лаборант, биоинформатика"
+    role_kk: "Зертханашы, биоинформатика"
+    role_en: "Laboratory assistant, bioinformatics"
+    email: ""
+    orcid: ""
+    photo: ""
+  - name: "Имя Фамилия"
+    name_en: "Name Surname"
+    group: students
+    role_ru: "Магистрант"
+    role_kk: "Магистрант"
+    role_en: "Master's student"
+    email: ""
+    orcid: ""
+    photo: ""

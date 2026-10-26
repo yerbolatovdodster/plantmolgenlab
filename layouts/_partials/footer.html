@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-title">{{ site.Title }}</p>
+      <p>{{ site.Params.institute }}<br>{{ site.Params.address }}</p>
+    </div>
+    <div>
+      <p class="footer-title">{{ i18n "contacts" }}</p>
+      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+      {{ with site.Params.github }}<br><a href="{{ . }}">GitHub</a>{{ end }}</p>
+    </div>
+    <div>
+      <p class="footer-title">CropPopStructure</p>
+      <p><a href="{{ site.Params.appURL }}">{{ site.Params.appURL | replaceRE "^https?://" "" }}</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© {{ now.Year }} {{ site.Title }}</p>
+  </div>
+</footer>

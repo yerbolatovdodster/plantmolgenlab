@@ -1,0 +1,12 @@
+{{ with .pages }}
+<ol class="news-list">
+  {{ range . }}
+  <li>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ol>
+{{ else }}
+<p class="muted">{{ i18n "no_news" }}</p>
+{{ end }}

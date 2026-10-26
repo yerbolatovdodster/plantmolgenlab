@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <p class="page-actions">
+    <a class="btn" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
+    <a class="btn btn-ghost" href="mailto:{{ site.Params.email }}?subject=CropPopStructure">{{ i18n "request_access" }}</a>
+  </p>
+</article>
+{{ end }}

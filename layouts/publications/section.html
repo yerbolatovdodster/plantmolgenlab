@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  {{ $items := hugo.Data.publications.items }}
+  {{ $years := slice }}
+  {{ range $items }}{{ $years = $years | append (int .year) }}{{ end }}
+  {{ range sort ($years | uniq) "value" "desc" }}
+    {{ $y := . }}
+    <section class="pub-year">
+      <h2>{{ $y }}</h2>
+      <ol class="pubs">
+        {{ range $items }}{{ if eq (int .year) $y }}
+        <li>
+          <p class="pub-title">{{ with .url }}<a href="{{ . }}">{{ end }}{{ .title }}{{ if .url }}</a>{{ end }}</p>
+          <p class="pub-meta">{{ .authors }}{{ with .journal }}. <em>{{ . }}</em>{{ end }}{{ with .doi }}. <a href="https://doi.org/{{ . }}">doi:{{ . }}</a>{{ end }}</p>
+        </li>
+        {{ end }}{{ end }}
+      </ol>
+    </section>
+  {{ end }}
+</article>
+{{ end }}

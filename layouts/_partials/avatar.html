@@ -1,0 +1,9 @@
+{{- $name := .name -}}
+{{- with .photo -}}
+<img class="avatar" src="{{ . | relURL }}" alt="" loading="lazy" width="120" height="120">
+{{- else -}}
+{{- $parts := split $name " " -}}
+{{- $init := "" -}}
+{{- range first 2 $parts }}{{ $init = printf "%s%s" $init (substr . 0 1) }}{{ end -}}
+<span class="avatar avatar-initials" aria-hidden="true">{{ $init }}</span>
+{{- end -}}

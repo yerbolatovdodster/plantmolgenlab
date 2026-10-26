@@ -1,0 +1,55 @@
+{{ define "main" }}
+<section class="hero wrap">
+  <p class="hero-institute">{{ site.Params.institute }}</p>
+  <h1 class="hero-title">{{ site.Title }}</h1>
+  {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+</section>
+
+<figure class="strip wrap">
+  <svg id="structure-strip" class="strip-svg" viewBox="0 0 1200 200" preserveAspectRatio="none"
+       role="img" aria-label="{{ i18n "structure_alt" }}"
+       data-sample="{{ i18n "sample" }}" data-ancestry="{{ i18n "ancestry" }}"></svg>
+  {{ with .Params.strip_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{ $js := resources.Get "js/structure.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+
+{{ with site.GetPage "/research" }}
+<section class="areas wrap" aria-labelledby="areas-h">
+  <h2 id="areas-h">{{ i18n "research" }}</h2>
+  <ul class="area-list">
+    {{ range .Pages.ByWeight }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <h3>{{ .Title }}</h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+<section class="app-band" aria-labelledby="app-h">
+  <div class="wrap app-grid">
+    <div>
+      <h2 id="app-h">CropPopStructure</h2>
+      {{ with .Params.app_text }}<p>{{ . }}</p>{{ end }}
+    </div>
+    <div class="app-actions">
+      <a class="btn btn-light" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
+      {{ with site.GetPage "/tools" }}<a class="link-light" href="{{ .RelPermalink }}">{{ i18n "how_it_works" }}</a>{{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with site.GetPage "/news" }}
+<section class="news wrap" aria-labelledby="news-h">
+  <div class="section-head">
+    <h2 id="news-h">{{ i18n "news" }}</h2>
+    <a href="{{ .RelPermalink }}">{{ i18n "all_news" }}</a>
+  </div>
+  {{ partial "news-list.html" (dict "pages" (first 4 .Pages.ByDate.Reverse)) }}
+</section>
+{{ end }}
+{{ end }}
