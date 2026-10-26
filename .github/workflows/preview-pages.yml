@@ -1,9 +1,15 @@
+# Предпросмотр сайта на GitHub Pages (бесплатно): https://<аккаунт>.github.io/<репозиторий>/
+# Включите: Settings → Pages → Source: GitHub Actions.
 name: Preview on GitHub Pages
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  # пересобрать сайт после автоматического обновления публикаций
+  workflow_run:
+    workflows: ["Update publications"]
+    types: [completed]
 
 permissions:
   contents: read
