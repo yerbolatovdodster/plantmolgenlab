@@ -1,0 +1,43 @@
+# Раз в неделю загружает публикации сотрудников из OpenAlex по их ORCID
+# (поле ORCID в Pages CMS → Команда) и обновляет data/publications_auto.yaml.
+# Запустить вручную: Actions → Update publications → Run workflow.
+name: Update publications
+
+on:
+  schedule:
+    - cron: "17 2 * * 1"   # каждый понедельник, 07:17 по Алматы
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publications
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - name: Fetch from OpenAlex
+        run: python3 scripts/fetch_publications.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/publications_auto.yaml; then
+            echo "Новых публикаций нет."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/publications_auto.yaml
+          git commit -m "Обновить публикации из OpenAlex"
+          git push
