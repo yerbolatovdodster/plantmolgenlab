@@ -1,5 +1,0 @@
-<li>
-  <p class="pub-title">{{ if .doi }}<a href="https://doi.org/{{ .doi }}">{{ .title }}</a>{{ else if .url }}<a href="{{ .url }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</p>
-  <p class="pub-meta">{{ .authors | markdownify }}{{ if eq .type "book" }} ({{ .year }}){{ end }}</p>
-  <p class="pub-journal">{{ with .journal }}<em>{{ . }}</em>{{ end }}{{ with .doi }}{{ if $.journal }} · {{ end }}<a href="https://doi.org/{{ . }}">doi:{{ . }}</a>{{ end }}{{ with .citations }} · <span class="pub-cites">{{ i18n "citations" }}: {{ . }}</span>{{ end }}</p>
-</li>

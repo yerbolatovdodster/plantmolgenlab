@@ -8,5 +8,5 @@ facts:
   - { value: "30+", label: "young scientists trained since 1996" }
 strip_caption: "This is what a population structure analysis looks like: each column is a sample, colours are ancestry proportions (illustration, K = 4). Hover over a column to see the proportions."
 cultivars_text: "The lab co-develops cultivars with Kazakhstan's breeding centres: molecular markers speed up selection and confirm varietal purity."
-app_text: "A web app for population structure analysis from SNP data. Upload VCF or PLINK files, and PCA and ADMIXTURE run on the lab server."
+app_text: "A web app for population structure analysis from SNP data. Upload a VCF and a population file, and PCA, sNMF, DAPC, AMOVA, FST and more run on the lab server."
 ---

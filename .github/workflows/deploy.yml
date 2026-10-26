@@ -1,0 +1,48 @@
+# Сборка сайта и загрузка на хостинг (hoster.kz, ps.kz и т.п.) по FTP.
+# Запускается при каждом изменении в ветке main, в том числе из Pages CMS.
+#
+# Один раз добавьте в репозитории: Settings → Secrets and variables → Actions:
+#   FTP_SERVER      адрес FTP, например ftp.plantmolgenlab.kz
+#   FTP_USERNAME    логин FTP из панели хостинга
+#   FTP_PASSWORD    пароль FTP
+#   FTP_SERVER_DIR  папка сайта на хостинге, обязательно со слешем на конце, например public_html/
+
+name: Build and deploy
+
+on:
+  # Когда будет хостинг и FTP-секреты, раскомментируйте две строки ниже
+  # push:
+  #   branches: [main]
+  # workflow_run:
+  #   workflows: ["Update publications"]
+  #   types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.168.0"
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Upload to hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./public/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
