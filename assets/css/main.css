@@ -805,11 +805,12 @@ h3 { font-size: 1.08rem; }
 .team-alumni .profile { --photo-w: clamp(190px, 18vw, 240px); }
 .team-alumni .profile-card { margin-top: 28px; }
 
-/* ═════════ Без скруглённых углов ═════════
-   Прямые углы у всех элементов сайта. Макет приложения в демо CropPopStructure не трогаем,
-   чтобы он оставался похожим на настоящий интерфейс. Чтобы вернуть скругления — удалите этот блок. */
-:root { --r-sm: 0; --r-md: 0; --r-lg: 0; }
-*:not(.demo-stage, .demo-stage *),
-*:not(.demo-stage, .demo-stage *)::before,
-*:not(.demo-stage, .demo-stage *)::after { border-radius: 0 !important; }
-.map iframe { border-radius: 0; }
+/* ═════════ Лёгкое скругление углов ═════════
+   Небольшие скругления по всему сайту. Профили сотрудников (фото и плашка) — с прямыми углами.
+   Макет приложения в демо CropPopStructure не трогаем. */
+:root { --r-sm: 4px; --r-md: 6px; --r-lg: 8px; }
+.menu a, .langs, .nav-toggle, .btn, .chips li, .demo-steps li, .demo-toggle,
+.map-link, .car-btn, .lb-btn { border-radius: 6px; }
+.langs a, .demo-steps li::before { border-radius: 4px; }
+.demo-viewport { border-radius: var(--r-lg); }
+.profile-photo, .profile-photo img, .profile-blank, .profile-card { border-radius: 0; }
