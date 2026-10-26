@@ -1,4 +1,5 @@
 ---
+banner: "images/banners/books.jpg"
 title: "Publications"
 description: "Papers in international peer-reviewed journals, monographs and catalogues."
 ---

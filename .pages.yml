@@ -148,7 +148,9 @@ content:
       options:
         values:
         - {value: lead, label: Руководитель}
-        - {value: staff, label: Сотрудник}
+        - {value: staff, label: Научный сотрудник}
+        - {value: phd, label: PhD-докторант}
+        - {value: masters, label: Магистрант}
         - {value: students, label: Студент}
         - {value: alumni, label: Выпускник}
     - {name: role_ru, label: Должность (рус), type: string}

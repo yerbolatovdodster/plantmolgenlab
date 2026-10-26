@@ -8,12 +8,12 @@
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
   {{ $members := hugo.Data.team.members }}
-  {{ range slice "lead" "staff" "students" "alumni" }}
+  {{ range slice "lead" "staff" "phd" "masters" "students" "alumni" }}
     {{ $group := . }}
     {{ $people := where $members "group" $group }}
     {{ with $people }}
     <section class="team-group">
-      <h2>{{ i18n $group }}</h2>
+      <h2>{{ i18n (printf "group_%s" $group) }}</h2>
       <ul class="people{{ if eq $group "lead" }} people-lead{{ end }}">
         {{ range . }}
         {{ $name := .name }}
