@@ -1,0 +1,17 @@
+{{ $lang := site.Language.Lang }}
+        {{ $name := .name }}
+        {{ if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end }}
+        {{ $role := or (index . (printf "role_%s" $lang)) .role_ru }}
+        {{ $bio := or (index . (printf "bio_%s" $lang)) .bio_ru }}
+        <li class="person">
+          {{ partial "avatar.html" (dict "name" $name "photo" .photo) }}
+          <div>
+            <h3>{{ $name }}</h3>
+            {{ with $role }}<p class="role">{{ . }}</p>{{ end }}
+            {{ with $bio }}<p class="bio">{{ . }}</p>{{ end }}
+            <p class="person-links">
+              {{ with .email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+              {{ with .orcid }}<a href="https://orcid.org/{{ . }}">ORCID</a>{{ end }}
+            </p>
+          </div>
+        </li>

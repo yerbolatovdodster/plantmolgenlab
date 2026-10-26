@@ -8,31 +8,30 @@
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
   {{ $members := hugo.Data.team.members }}
-  {{ range slice "lead" "staff" "phd" "masters" "students" "alumni" }}
+  {{ $groups := slice "lead" "staff" "phd" "masters" "students" "alumni" }}
+  {{ with .Params.photo }}
+  <div class="team-top">
+    <figure class="team-photo">
+      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ or $.Params.photo_caption $.Title }}">
+      {{ with $.Params.photo_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+    </figure>
+    {{ with where $members "group" "lead" }}
+    <section class="team-group team-lead">
+      <h2>{{ i18n "group_lead" }}</h2>
+      <ul class="people people-lead">{{ range . }}{{ partial "person.html" . }}{{ end }}</ul>
+    </section>
+    {{ end }}
+  </div>
+  {{ $groups = slice "staff" "phd" "masters" "students" "alumni" }}
+  {{ end }}
+  {{ range $groups }}
     {{ $group := . }}
     {{ $people := where $members "group" $group }}
     {{ with $people }}
     <section class="team-group">
       <h2>{{ i18n (printf "group_%s" $group) }}</h2>
       <ul class="people{{ if eq $group "lead" }} people-lead{{ end }}">
-        {{ range . }}
-        {{ $name := .name }}
-        {{ if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end }}
-        {{ $role := or (index . (printf "role_%s" $lang)) .role_ru }}
-        {{ $bio := or (index . (printf "bio_%s" $lang)) .bio_ru }}
-        <li class="person">
-          {{ partial "avatar.html" (dict "name" $name "photo" .photo) }}
-          <div>
-            <h3>{{ $name }}</h3>
-            {{ with $role }}<p class="role">{{ . }}</p>{{ end }}
-            {{ with $bio }}<p class="bio">{{ . }}</p>{{ end }}
-            <p class="person-links">
-              {{ with .email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
-              {{ with .orcid }}<a href="https://orcid.org/{{ . }}">ORCID</a>{{ end }}
-            </p>
-          </div>
-        </li>
-        {{ end }}
+        {{ range . }}{{ partial "person.html" . }}{{ end }}
       </ul>
     </section>
     {{ end }}

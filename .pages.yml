@@ -162,6 +162,33 @@ content:
     - {name: email, label: Почта, type: string}
     - {name: orcid, label: ORCID (например 0000-0002-1825-0097), type: string}
     - {name: photo, label: Фото, type: image}
+- name: team-page-ru
+  label: Страница «Команда» (рус)
+  type: file
+  path: content/ru/team/_index.md
+  fields:
+  - {name: title, label: Заголовок, type: string}
+  - {name: description, label: Подзаголовок, type: text}
+  - {name: photo, label: Общее фото лаборатории, type: image}
+  - {name: photo_caption, label: 'Подпись к фото (например, где и когда снято)', type: string}
+- name: team-page-kk
+  label: «Ұжым» беті (қаз)
+  type: file
+  path: content/kk/team/_index.md
+  fields:
+  - {name: title, label: Заголовок, type: string}
+  - {name: description, label: Подзаголовок, type: text}
+  - {name: photo, label: Общее фото лаборатории, type: image}
+  - {name: photo_caption, label: 'Подпись к фото (например, где и когда снято)', type: string}
+- name: team-page-en
+  label: Team page (eng)
+  type: file
+  path: content/en/team/_index.md
+  fields:
+  - {name: title, label: Заголовок, type: string}
+  - {name: description, label: Подзаголовок, type: text}
+  - {name: photo, label: Общее фото лаборатории, type: image}
+  - {name: photo_caption, label: 'Подпись к фото (например, где и когда снято)', type: string}
 - name: publications
   label: Публикации (вручную)
   type: file
