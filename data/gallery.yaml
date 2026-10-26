@@ -1,0 +1,63 @@
+# Фотографии для карусели на странице «Команда». Удобнее всего редактировать через Pages CMS.
+# Порядок на сайте = порядок в списке. Подпись можно оставить пустой.
+items:
+  - image: images/gallery/01-seminar-2026.jpg
+    caption_ru: "Семинар с гостем из Okayama University, ИББР, июль 2026"
+    caption_kk: "Okayama University қонағымен семинар, ӨББИ, 2026 жылғы шілде"
+    caption_en: "Seminar with a guest from Okayama University, IPBB, July 2026"
+  - image: images/gallery/02-academy-2024.jpg
+    caption_ru: "Представление новых академиков НАН РК, Алматы, август 2024"
+    caption_kk: "ҚР ҰҒА жаңа академиктерін таныстыру, Алматы, 2024 жылғы тамыз"
+    caption_en: "Introduction of new academicians of the National Academy of Sciences, Almaty, August 2024"
+  - image: images/gallery/03-lab-team.jpg
+    caption_ru: "Коллектив лаборатории"
+    caption_kk: "Зертхана ұжымы"
+    caption_en: "The lab team"
+  - image: images/gallery/04-expedition.jpg
+    caption_ru: "Экспедиция в горы"
+    caption_kk: "Тауға экспедиция"
+    caption_en: "Field trip to the mountains"
+  - image: images/gallery/05-antalya-congress-2025.jpg
+    caption_ru: "V Международный конгресс по селекции растений, Анталья, декабрь 2025"
+    caption_kk: "Өсімдіктер селекциясы бойынша V халықаралық конгресс, Анталья, 2025 жылғы желтоқсан"
+    caption_en: "V International Plant Breeding Congress, Antalya, December 2025"
+  - image: images/gallery/06-antalya-2025.jpg
+    caption_ru: "Анталья, 2025"
+    caption_kk: "Анталья, 2025"
+    caption_en: "Antalya, 2025"
+  - image: images/gallery/07-greenhouse.jpg
+    caption_ru: "В теплице с пшеницей"
+    caption_kk: "Бидай өсірілген жылыжайда"
+    caption_en: "In the wheat greenhouse"
+  - image: images/gallery/08-awards.jpg
+    caption_ru: "Награждение сотрудников лаборатории"
+    caption_kk: "Зертхана қызметкерлерін марапаттау"
+    caption_en: "Awards for lab members"
+  - image: images/gallery/09-ibc-madrid-2024.jpg
+    caption_ru: "Доклад на XX Международном ботаническом конгрессе, Мадрид, 2024"
+    caption_kk: "XX Халықаралық ботаникалық конгрестегі баяндама, Мадрид, 2024"
+    caption_en: "Talk at the XX International Botanical Congress, Madrid, 2024"
+  - image: images/gallery/10-field-1.jpg
+    caption_ru: "Полевые работы"
+    caption_kk: "Далалық жұмыстар"
+    caption_en: "Field work"
+  - image: images/gallery/11-field-2.jpg
+    caption_ru: "Полевые работы"
+    caption_kk: "Далалық жұмыстар"
+    caption_en: "Field work"
+  - image: images/gallery/12-field-3.jpg
+    caption_ru: "Полевые работы"
+    caption_kk: "Далалық жұмыстар"
+    caption_en: "Field work"
+  - image: images/gallery/13-lab-work-1.jpg
+    caption_ru: "Работа в лаборатории"
+    caption_kk: "Зертханадағы жұмыс"
+    caption_en: "Work in the lab"
+  - image: images/gallery/14-lab-work-2.jpg
+    caption_ru: "Работа в лаборатории"
+    caption_kk: "Зертханадағы жұмыс"
+    caption_en: "Work in the lab"
+  - image: images/gallery/15-lab-work-3.jpg
+    caption_ru: "Работа в лаборатории"
+    caption_kk: "Зертханадағы жұмыс"
+    caption_en: "Work in the lab"

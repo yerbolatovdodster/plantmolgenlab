@@ -169,8 +169,7 @@ content:
   fields:
   - {name: title, label: Заголовок, type: string}
   - {name: description, label: Подзаголовок, type: text}
-  - {name: photo, label: Общее фото лаборатории, type: image}
-  - {name: photo_caption, label: 'Подпись к фото (например, где и когда снято)', type: string}
+  - {name: pi_photo, label: Большое фото руководителя, type: image}
 - name: team-page-kk
   label: «Ұжым» беті (қаз)
   type: file
@@ -178,8 +177,7 @@ content:
   fields:
   - {name: title, label: Заголовок, type: string}
   - {name: description, label: Подзаголовок, type: text}
-  - {name: photo, label: Общее фото лаборатории, type: image}
-  - {name: photo_caption, label: 'Подпись к фото (например, где и когда снято)', type: string}
+  - {name: pi_photo, label: Большое фото руководителя, type: image}
 - name: team-page-en
   label: Team page (eng)
   type: file
@@ -187,8 +185,21 @@ content:
   fields:
   - {name: title, label: Заголовок, type: string}
   - {name: description, label: Подзаголовок, type: text}
-  - {name: photo, label: Общее фото лаборатории, type: image}
-  - {name: photo_caption, label: 'Подпись к фото (например, где и когда снято)', type: string}
+  - {name: pi_photo, label: Большое фото руководителя, type: image}
+- name: gallery
+  label: Фотографии (карусель на странице «Команда»)
+  type: file
+  path: data/gallery.yaml
+  fields:
+  - name: items
+    label: Фотографии
+    type: object
+    list: true
+    fields:
+    - {name: image, label: Фото, type: image, required: true}
+    - {name: caption_ru, label: Подпись (рус), type: string}
+    - {name: caption_kk, label: Қолтаңба (қаз), type: string}
+    - {name: caption_en, label: Caption (eng), type: string}
 - name: publications
   label: Публикации (вручную)
   type: file

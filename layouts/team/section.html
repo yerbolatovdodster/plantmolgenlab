@@ -1,38 +1,84 @@
 {{ define "main" }}
 {{ $lang := site.Language.Lang }}
+{{ $members := hugo.Data.team.members }}
 <article class="page wrap">
-  <header class="page-head{{ if .Params.photo }} team-intro{{ end }}">
+  <header class="page-head team-intro">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
   </header>
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
-  {{ $members := hugo.Data.team.members }}
-  {{ $groups := slice "lead" "staff" "phd" "masters" "students" "alumni" }}
-  {{ with .Params.photo }}
-  <div class="team-top">
-    <figure class="team-photo">
-      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ or $.Params.photo_caption $.Title }}">
-      {{ with $.Params.photo_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
-    </figure>
-    {{ with where $members "group" "lead" }}
-    <section class="team-group team-lead">
-      <h2>{{ i18n "group_lead" }}</h2>
-      <ul class="people people-lead">{{ range . }}{{ partial "person.html" . }}{{ end }}</ul>
+  {{/* ── Руководитель: большое фото ── */}}
+  {{ range first 1 (where $members "group" "lead") }}
+    {{ $name := .name }}{{ if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end }}
+    {{ $role := or (index . (printf "role_%s" $lang)) .role_ru }}
+    {{ $bio := or (index . (printf "bio_%s" $lang)) .bio_ru }}
+    <section class="pi" aria-label="{{ i18n "group_lead" }}">
+      {{ with $.Params.pi_photo }}
+      <figure class="pi-hero">
+        <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $name }}" fetchpriority="high">
+        <figcaption class="pi-overlay">
+          <span class="pi-label">{{ i18n "group_lead" }}</span>
+          <span class="pi-name">{{ $name }}</span>
+        </figcaption>
+      </figure>
+      {{ end }}
+      <div class="pi-info">
+        <div>
+          {{ if not $.Params.pi_photo }}<h2 class="pi-name-plain">{{ $name }}</h2>{{ end }}
+          {{ with $role }}<p class="pi-role">{{ . }}</p>{{ end }}
+          <p class="person-links">
+            {{ with .email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+            {{ with .orcid }}<a href="https://orcid.org/{{ . }}">ORCID</a>{{ end }}
+          </p>
+        </div>
+        {{ with $bio }}<p class="pi-bio">{{ . }}</p>{{ end }}
+      </div>
     </section>
-    {{ end }}
-  </div>
-  {{ $groups = slice "staff" "phd" "masters" "students" "alumni" }}
   {{ end }}
-  {{ range $groups }}
+
+  {{/* ── Карусель фотографий ── */}}
+  {{ with hugo.Data.gallery.items }}
+  <section class="gallery" aria-labelledby="gal-h">
+    <div class="section-head">
+      <h2 id="gal-h">{{ i18n "gallery_title" }}</h2>
+      <div class="car-nav">
+        <button class="car-btn" type="button" data-dir="-1" aria-label="{{ i18n "prev" }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="car-btn" type="button" data-dir="1" aria-label="{{ i18n "next" }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+    <div class="car-track" tabindex="0" role="region" aria-label="{{ i18n "gallery_title" }}">
+      {{ range $i, $g := . }}
+        {{ $cap := or (index $g (printf "caption_%s" $lang)) $g.caption_ru }}
+        {{ $src := strings.TrimPrefix "/" $g.image }}
+        {{ $w := 4 }}{{ $h := 3 }}
+        {{ with (os.Stat (path.Join "static" $src)) }}{{ with imageConfig (path.Join "static" $src) }}{{ $w = .Width }}{{ $h = .Height }}{{ end }}{{ end }}
+        <figure class="car-item">
+          <button class="car-open" type="button" data-index="{{ $i }}" aria-label="{{ i18n "view_photo" }}{{ with $cap }}: {{ . }}{{ end }}">
+            <img src="{{ $src | relURL }}" width="{{ $w }}" height="{{ $h }}" alt="{{ $cap }}" loading="{{ if lt $i 3 }}eager{{ else }}lazy{{ end }}" decoding="async">
+          </button>
+          {{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+      {{ end }}
+    </div>
+    <dialog class="lightbox" aria-label="{{ i18n "gallery_title" }}">
+      <figure><img alt=""><figcaption></figcaption></figure>
+      <button class="lb-btn lb-close" type="button" aria-label="{{ i18n "close" }}">×</button>
+      <button class="lb-btn lb-prev" type="button" aria-label="{{ i18n "prev" }}">‹</button>
+      <button class="lb-btn lb-next" type="button" aria-label="{{ i18n "next" }}">›</button>
+    </dialog>
+  </section>
+  {{ $js := resources.Get "js/gallery.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{ end }}
+
+  {{/* ── Группы сотрудников ── */}}
+  {{ range slice "staff" "phd" "masters" "students" "alumni" }}
     {{ $group := . }}
-    {{ $people := where $members "group" $group }}
-    {{ with $people }}
+    {{ with where $members "group" $group }}
     <section class="team-group">
       <h2>{{ i18n (printf "group_%s" $group) }}</h2>
-      <ul class="people{{ if eq $group "lead" }} people-lead{{ end }}">
-        {{ range . }}{{ partial "person.html" . }}{{ end }}
-      </ul>
+      <ul class="people">{{ range . }}{{ partial "person.html" . }}{{ end }}</ul>
     </section>
     {{ end }}
   {{ end }}

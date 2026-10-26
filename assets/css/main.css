@@ -689,20 +689,81 @@ h3 { font-size: 1.08rem; }
 }
 @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
 
-/* ───────── Команда: общее фото ─────────
-   Заголовок и фото по центру, руководитель и группы ниже. */
+.people.people-lead { grid-template-columns: 1fr; }
+
+/* ═════════ Страница «Команда» ═════════ */
 .team-intro { text-align: center; margin-left: auto; margin-right: auto; }
 .team-intro .lede { margin-left: auto; margin-right: auto; }
-.team-top { display: block; }
-.team-photo { margin: 0; max-width: none; text-align: center; }
-.team-photo img {
-  width: 100%; height: auto; object-fit: initial;
-  border-radius: var(--r-lg); display: block;
+
+/* Руководитель: большое фото */
+.pi { margin-bottom: var(--space); }
+.pi-hero { position: relative; margin: 0; border-radius: var(--r-lg); overflow: hidden; background: #2a2016; }
+.pi-hero img {
+  display: block; width: 100%; height: clamp(320px, 50vw, 640px);
+  object-fit: cover; object-position: 65% 25%;
 }
-.team-photo figcaption { margin-top: 12px; color: var(--muted); font-size: 0.85rem; }
-.team-lead { margin-top: clamp(40px, 5vw, 64px); }
-.people.people-lead { grid-template-columns: 1fr; }
-@media (max-width: 560px) {
-  .team-lead .person { grid-template-columns: 64px 1fr; gap: 16px; }
-  .team-lead .avatar { width: 64px; height: 64px; font-size: 1.2rem; }
+.pi-overlay {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: clamp(20px, 3.5vw, 44px);
+  background: linear-gradient(0deg, rgba(10, 16, 12, .78) 0%, rgba(10, 16, 12, .35) 55%, transparent 100%);
+  color: #fff; display: flex; flex-direction: column; gap: 6px;
+}
+.pi-label { font-size: 0.85rem; font-weight: 500; color: #D3E8CC; }
+.pi-name { font-size: clamp(1.5rem, 3.2vw, 2.6rem); font-weight: 650; letter-spacing: -0.03em; line-height: 1.1; }
+.pi-info {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: clamp(16px, 3vw, 48px); margin-top: 22px; align-items: start;
+}
+.pi-role { font-weight: 550; margin: 0 0 10px; }
+.pi-bio { margin: 0; color: var(--muted); max-width: 70ch; }
+.pi-name-plain { margin-bottom: 8px; }
+@media (max-width: 760px) { .pi-info { grid-template-columns: 1fr; } }
+
+/* Карусель */
+.gallery { margin-bottom: var(--space); }
+.car-nav { display: flex; gap: 8px; }
+.car-btn {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.car-btn:hover { background: var(--surface-2); }
+.car-track {
+  --car-h: clamp(240px, 30vw, 380px);
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-padding: 0; padding-bottom: 6px; scrollbar-width: thin;
+  overscroll-behavior-x: contain;
+}
+.car-track:focus-visible { outline-offset: 6px; }
+.car-item { flex: none; margin: 0; scroll-snap-align: start; max-width: 86vw; }
+.car-open { display: block; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: var(--r-sm); overflow: hidden; }
+.car-item img {
+  display: block; height: var(--car-h); width: auto; max-width: 86vw; object-fit: cover;
+  transition: transform .4s ease;
+}
+.car-open:hover img { transform: scale(1.02); }
+.car-item figcaption { margin-top: 8px; font-size: 0.84rem; color: var(--muted); width: 0; min-width: 100%; }
+
+/* Просмотр во весь экран */
+.lightbox {
+  width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0;
+  border: 0; background: rgba(8, 12, 10, .94); color: #fff;
+}
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox::backdrop { background: rgba(8, 12, 10, .94); }
+.lightbox figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 56px 64px; }
+.lightbox img { max-width: calc(100vw - 128px); max-height: calc(100vh - 140px); border-radius: 8px; }
+.lightbox figcaption { font-size: 0.95rem; color: #D5DDD7; text-align: center; }
+.lb-btn {
+  position: absolute; width: 44px; height: 44px; border-radius: 50%; border: 0;
+  background: rgba(255,255,255,.12); color: #fff; font-size: 28px; line-height: 1; cursor: pointer;
+}
+.lb-btn:hover { background: rgba(255,255,255,.24); }
+.lb-close { top: 16px; right: 16px; }
+.lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 600px) {
+  .lightbox figure { padding: 56px 12px; }
+  .lightbox img { max-width: calc(100vw - 24px); }
+  .lb-prev, .lb-next { top: auto; bottom: 16px; transform: none; }
 }
