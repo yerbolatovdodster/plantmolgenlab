@@ -264,6 +264,32 @@ content:
   - {name: description, label: Короткое описание (для главной), type: text}
   - {name: weight, label: Порядок (меньше = выше), type: number}
   - {name: body, label: Текст, type: rich-text}
+- name: featured
+  label: Избранные публикации (на страницах направлений)
+  type: file
+  path: data/featured.yaml
+  fields:
+  - name: items
+    label: Публикации
+    type: object
+    list: true
+    fields:
+    - name: direction
+      label: Направление
+      type: select
+      options:
+        values:
+        - {value: genomic-breeding, label: Геномная селекция}
+        - {value: wild-flora, label: ДНК-генотипирование флоры}
+    - {name: doi, label: 'DOI (без https://doi.org/) — остальное подтянется само', type: string}
+    - {name: image, label: 'Картинка: графический абстракт, рисунок или постер', type: image}
+    - {name: summary_ru, label: Пояснение (рус), type: text}
+    - {name: summary_kk, label: Түсініктеме (қаз), type: text}
+    - {name: summary_en, label: Summary (eng), type: text}
+    - {name: title, label: Название (если статьи нет в списке публикаций), type: string}
+    - {name: authors, label: Авторы (если статьи нет в списке), type: string}
+    - {name: journal, label: Журнал (если статьи нет в списке), type: string}
+    - {name: year, label: Год (если статьи нет в списке), type: number}
 - name: projects
   label: Проекты
   type: file

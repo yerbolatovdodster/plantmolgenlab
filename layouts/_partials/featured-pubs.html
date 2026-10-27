@@ -1,0 +1,46 @@
+{{- /* Избранные публикации направления. Данные — data/featured.yaml, детали статьи — по DOI из списка публикаций. */ -}}
+{{- $dir := .File.ContentBaseName -}}
+{{- $lang := site.Language.Lang -}}
+{{- $items := where (hugo.Data.featured.items | default slice) "direction" $dir -}}
+{{- with $items -}}
+{{- $all := slice -}}
+{{- range hugo.Data.publications.items | default slice }}{{ $all = $all | append . }}{{ end -}}
+{{- range hugo.Data.publications_auto.items | default slice }}{{ $all = $all | append . }}{{ end -}}
+<section class="featured" aria-labelledby="feat-h">
+  <h2 id="feat-h">{{ i18n "featured_pubs" }}</h2>
+  <ol class="feat-list">
+  {{- range . -}}
+    {{- $doi := lower (.doi | default "") -}}
+    {{- $p := dict -}}
+    {{- range $all }}{{ if and $doi .doi (eq (lower .doi) $doi) (not $p.title) }}{{ $p = . }}{{ end }}{{ end -}}
+    {{- $title := or .title $p.title -}}
+    {{- $authors := or .authors $p.authors -}}
+    {{- $journal := or .journal $p.journal -}}
+    {{- $year := or .year $p.year -}}
+    {{- $summary := index . (printf "summary_%s" $lang) -}}
+    {{- $url := cond (ne $doi "") (printf "https://doi.org/%s" $doi) (or .url $p.url "") -}}
+    {{- $jshort := index (split ($journal | default "") " ") 0 -}}
+    <li class="feat">
+      <div class="feat-media">
+        {{- with .image }}
+        <a href="{{ strings.TrimPrefix "/" . | relURL }}" target="_blank" rel="noopener">
+          <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $title }}" loading="lazy">
+        </a>
+        {{- else }}
+        <div class="feat-blank">
+          <span class="feat-journal">{{ replaceRE `\s*\d.*$` "" ($journal | default "") }}</span>
+          <span class="feat-year">{{ $year }}</span>
+        </div>
+        {{- end }}
+      </div>
+      <div class="feat-body">
+        <h3>{{ if $url }}<a href="{{ $url }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</h3>
+        {{ with $authors }}<p class="feat-authors">{{ . | markdownify }}</p>{{ end }}
+        <p class="feat-meta">{{ with $journal }}<em>{{ . }}</em>{{ end }}{{ with $year }} · {{ . }}{{ end }}{{ with $doi }} · <a href="https://doi.org/{{ . }}">doi:{{ . }}</a>{{ end }}</p>
+        {{ with $summary }}<p class="feat-summary">{{ . }}</p>{{ end }}
+      </div>
+    </li>
+  {{- end }}
+  </ol>
+</section>
+{{- end -}}
