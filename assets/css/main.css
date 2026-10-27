@@ -825,7 +825,7 @@ h3 { font-size: 1.08rem; }
 .has-side-bg { position: relative; isolation: isolate; }
 .has-side-bg::before {
   content: ""; position: absolute; z-index: -1;
-  top: 0; right: calc(var(--gutter) * -1); width: min(56%, 640px); height: min(100%, 860px);
+  top: 0; right: calc(var(--gutter) * -1); width: min(56%, 640px); height: 100%;
   background: var(--side-bg) right top / contain no-repeat;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 22%, #000 55%), linear-gradient(0deg, transparent 0%, #000 30%);
   -webkit-mask-composite: source-in;
@@ -839,3 +839,31 @@ h3 { font-size: 1.08rem; }
   .has-side-bg::before { width: 70%; opacity: .22; }
   .has-side-bg .page-head, .has-side-bg .prose { max-width: none; }
 }
+
+/* Шапка страницы с пейзажем (параметр hero) */
+.page-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: clamp(380px, 46vw, 600px); display: flex; align-items: flex-end;
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: var(--hero) center 45% / cover no-repeat;
+}
+.page-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 92%, transparent) 0%, color-mix(in srgb, var(--bg) 70%, transparent) 32%, transparent 62%),
+    linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 60%, transparent) 18%, transparent 45%);
+}
+.page-hero > .wrap { width: 100%; }
+.page-hero .page-head { padding-top: 120px; margin-bottom: 0; padding-bottom: 8px; }
+.page-hero .page-head > * { max-width: 36rem; }
+.page-hero .lede { color: var(--ink); }
+.page-after-hero { padding-top: 28px; }
+.page-after-hero.has-side-bg::before { top: -40px; }
+@media (max-width: 760px) {
+  .page-hero { min-height: 340px; }
+  .page-hero::after { background: linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 85%, transparent) 45%, color-mix(in srgb, var(--bg) 20%, transparent) 100%); }
+}
+.has-side-bg { min-height: 760px; }
+@media (max-width: 860px) { .has-side-bg { min-height: 0; } }

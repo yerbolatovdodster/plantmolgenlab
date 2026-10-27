@@ -3,6 +3,7 @@ title: "DNA genotyping of Kazakhstan's wild flora"
 description: "A DNA bank and DNA barcoding of endemic, rare and endangered plant species of Kazakhstan."
 weight: 20
 bg: "images/banners/herbarium-alignment.webp"
+hero: "images/banners/mountains.jpg"
 topics: ["DNA bank", "DNA barcoding", "Endemics", "kazflora.kz"]
 ---
 

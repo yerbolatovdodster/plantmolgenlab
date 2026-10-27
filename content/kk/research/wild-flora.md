@@ -3,6 +3,7 @@ title: "Қазақстанның жабайы флорасын ДНҚ-генот
 description: "Қазақстанның эндемик, сирек және жойылып бара жатқан өсімдік түрлерінің ДНҚ-банкі және ДНҚ-баркодтауы."
 weight: 20
 bg: "images/banners/herbarium-alignment.webp"
+hero: "images/banners/mountains.jpg"
 topics: ["ДНҚ-банк", "ДНҚ-баркодтау", "Эндемиктер", "kazflora.kz"]
 ---
 

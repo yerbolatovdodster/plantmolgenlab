@@ -1,11 +1,14 @@
 {{ define "main" }}
-<article class="page wrap{{ with .Params.bg }} has-side-bg{{ end }}"{{ with .Params.bg }} style="--side-bg: url('{{ strings.TrimPrefix "/" . | relURL }}')"{{ end }}>
-  <header class="page-head">
+{{ with .Params.hero }}<div class="page-hero" style="--hero: url('{{ strings.TrimPrefix "/" . | relURL }}')"><div class="wrap">{{ end }}
+  {{ if .Params.hero }}<header class="page-head">{{ else }}<article class="page wrap{{ with .Params.bg }} has-side-bg{{ end }}"{{ with .Params.bg }} style="--side-bg: url('{{ strings.TrimPrefix "/" . | relURL }}')"{{ end }}>
+  <header class="page-head">{{ end }}
     {{ if eq .Section "news" }}<time class="page-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
     {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
   </header>
+  {{ if .Params.hero }}</div></div>
+<article class="page page-after-hero wrap{{ with .Params.bg }} has-side-bg{{ end }}"{{ with .Params.bg }} style="--side-bg: url('{{ strings.TrimPrefix "/" . | relURL }}')"{{ end }}>{{ end }}
   {{ with .Params.image }}<img class="page-image" src="{{ strings.TrimPrefix "/" . | relURL }}" alt="">{{ end }}
   <div class="prose">{{ .Content }}</div>
   {{ if .Params.app_button }}

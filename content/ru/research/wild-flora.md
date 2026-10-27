@@ -3,6 +3,7 @@ title: "ДНК-генотипирование дикой флоры Казахс
 description: "ДНК-банк и ДНК-баркодирование эндемичных, редких и исчезающих видов растений Казахстана."
 weight: 20
 bg: "images/banners/herbarium-alignment.webp"
+hero: "images/banners/mountains.jpg"
 topics: ["ДНК-банк", "ДНК-баркодинг", "Эндемики", "kazflora.kz"]
 ---
 
