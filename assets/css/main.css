@@ -867,3 +867,10 @@ h3 { font-size: 1.08rem; }
 }
 .has-side-bg { min-height: 760px; }
 @media (max-width: 860px) { .has-side-bg { min-height: 0; } }
+/* шапка с пейзажем: текст сверху, «Что мы делаем» начинается рядом с гербарием */
+.page-hero { align-items: flex-start; min-height: clamp(420px, 40vw, 560px); }
+.page-hero .page-head { padding-top: clamp(40px, 5vw, 72px); padding-bottom: 40px; }
+.page-intro { margin: 22px 0 0; font-size: 1.05rem; line-height: 1.6; max-width: 36rem; color: var(--ink); }
+.page-after-hero { padding-top: 0; margin-top: clamp(-120px, -8vw, -40px); }
+.page-after-hero .prose > h2:first-child { margin-top: 0; }
+@media (max-width: 760px) { .page-after-hero { margin-top: 0; } }

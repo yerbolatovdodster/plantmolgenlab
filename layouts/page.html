@@ -6,6 +6,7 @@
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
     {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    {{ with .Params.intro }}<p class="page-intro">{{ . }}</p>{{ end }}
   </header>
   {{ if .Params.hero }}</div></div>
 <article class="page page-after-hero wrap{{ with .Params.bg }} has-side-bg{{ end }}"{{ with .Params.bg }} style="--side-bg: url('{{ strings.TrimPrefix "/" . | relURL }}')"{{ end }}>{{ end }}
