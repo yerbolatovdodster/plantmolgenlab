@@ -235,7 +235,8 @@ p { margin: 0 0 1em; }
 .area-more { margin-top: auto; padding-top: 24px; font-weight: 600; color: var(--deep); }
 .area-list > li > a:hover .area-more { color: var(--leaf); }
 @media (prefers-color-scheme: dark) { .area-more { color: var(--leaf); } }
-.area-list-page { grid-template-columns: 1fr; }
+.area-list-page { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 860px) { .area-list-page { grid-template-columns: 1fr; } }
 @media (max-width: 860px) { .area-list { grid-template-columns: 1fr; } }
 
 .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
