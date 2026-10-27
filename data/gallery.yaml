@@ -61,3 +61,23 @@ items:
     caption_ru: "Работа в лаборатории"
     caption_kk: "Зертханадағы жұмыс"
     caption_en: "Work in the lab"
+  - image: images/gallery/16-lab-room.jpg
+    caption_ru: "Лаборатория молекулярной генетики"
+    caption_kk: "Молекулалық генетика зертханасы"
+    caption_en: "The Molecular Genetics Laboratory"
+  - image: images/gallery/17-team-evening.jpg
+    caption_ru: "Коллектив лаборатории"
+    caption_kk: "Зертхана ұжымы"
+    caption_en: "The lab team"
+  - image: images/gallery/18-biodiversity-conference.jpg
+    caption_ru: "Конференция «Проблемы и перспективы сохранения биоразнообразия в Центральной Азии», НАН РК и КазНУ им. аль-Фараби"
+    caption_kk: "«Орталық Азиядағы биоалуантүрлілікті сақтау мәселелері мен перспективалары» конференциясы, ҚР ҰҒА және әл-Фараби атындағы ҚазҰУ"
+    caption_en: "Conference on biodiversity conservation in Central Asia, National Academy of Sciences and Al-Farabi Kazakh National University"
+  - image: images/gallery/19-phd-genievskaya.jpg
+    caption_ru: "Юлия Гениевская защитила PhD"
+    caption_kk: "Юлия Гениевская PhD қорғады"
+    caption_en: "Yuliya Genievskaya defended her PhD"
+  - image: images/gallery/20-field-trip-mountains.jpg
+    caption_ru: "Экспедиция в горы"
+    caption_kk: "Тауға экспедиция"
+    caption_en: "Field trip to the mountains"
