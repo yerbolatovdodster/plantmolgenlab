@@ -820,3 +820,22 @@ h3 { font-size: 1.08rem; }
 /* Знак логотипа: столбцы популяционной структуры */
 .lm-k1 { fill: #1F5A3A; } .lm-k2 { fill: #4E9A35; } .lm-k3 { fill: #D9A62E; } .lm-k4 { fill: #5F86C0; }
 @media (prefers-color-scheme: dark) { .lm-k1 { fill: #2E7D52; } .lm-k2 { fill: #7BC25E; } .lm-k3 { fill: #E2B44A; } .lm-k4 { fill: #7EA3DA; } }
+
+/* Фоновая иллюстрация страницы (параметр bg): справа, растворяется влево и вниз */
+.has-side-bg { position: relative; isolation: isolate; }
+.has-side-bg::before {
+  content: ""; position: absolute; z-index: -1;
+  top: 0; right: calc(var(--gutter) * -1); width: min(56%, 640px); height: min(100%, 860px);
+  background: var(--side-bg) right top / contain no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 22%, #000 55%), linear-gradient(0deg, transparent 0%, #000 30%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 22%, #000 55%), linear-gradient(0deg, transparent 0%, #000 30%);
+  mask-composite: intersect;
+  pointer-events: none;
+}
+.has-side-bg .page-head, .has-side-bg .prose { max-width: min(46rem, 58%); }
+@media (prefers-color-scheme: dark) { .has-side-bg::before { opacity: .35; } }
+@media (max-width: 860px) {
+  .has-side-bg::before { width: 70%; opacity: .22; }
+  .has-side-bg .page-head, .has-side-bg .prose { max-width: none; }
+}
