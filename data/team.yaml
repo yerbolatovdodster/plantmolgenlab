@@ -1,272 +1,199 @@
-# Сотрудники лаборатории. Удобнее всего редактировать через Pages CMS.
-# group: lead (руководитель), staff (научные сотрудники), phd (PhD-докторанты),
-#        masters (магистранты), students (студенты), alumni (выпускники)
-# Порядок людей на сайте совпадает с порядком в этом списке.
-# photo: путь к фото, например /images/team/turuspekov.jpg (пусто — покажутся инициалы)
-# orcid: нужен для автоматического импорта публикаций из OpenAlex
 members:
-  - name: "Туруспеков Ерлан Кенесбекович"
-    name_en: "Yerlan Turuspekov"
+  - name: Туруспеков Ерлан Кенесбекович
+    name_en: Yerlan Turuspekov
     group: lead
-    role_ru: "Заведующий лабораторией молекулярной генетики. Академик НАН РК при Президенте РК, к.б.н., профессор"
-    role_kk: "Молекулалық генетика зертханасының меңгерушісі. ҚР Президенті жанындағы ҰҒА академигі, б.ғ.к., профессор"
-    role_en: "Head of the Molecular Genetics Laboratory. Academician of the National Academy of Sciences of Kazakhstan, PhD, Professor"
-    bio_ru: "Окончил биологический факультет КазГУ им. С.М. Кирова (1986), кандидат наук (1992), профессор (2018). Работал в Baylor University (стипендия Фулбрайта), John Innes Centre, NIAS (Цукуба) и Montana State University. В 2008–2016 годах — заместитель генерального директора ИББР по науке. Автор более 200 работ, соавтор сортов пшеницы, ячменя и сои."
-    bio_kk: "С.М. Киров атындағы ҚазМУ биология факультетін бітірген (1986), ғылым кандидаты (1992), профессор (2018). Baylor University (Фулбрайт стипендиясы), John Innes Centre, NIAS (Цукуба) және Montana State University-де жұмыс істеген. 2008–2016 жылдары ӨББИ бас директорының ғылым жөніндегі орынбасары. 200-ден астам еңбектің авторы, бидай, арпа және соя сорттарының бірлескен авторы."
-    bio_en: "Graduated from the Biology Faculty of Kazakh State University (1986); PhD (1992), Professor (2018). Held research positions at Baylor University (Fulbright), the John Innes Centre, NIAS Tsukuba and Montana State University. Deputy Director General for Science at IPBB in 2008–2016. Author of more than 200 works and co-breeder of wheat, barley and soybean cultivars."
-    email: ""
-    orcid: "0000-0001-8590-1745"
-    photo: "images/team/turuspekov.jpg"
-
-  # ───── Научные сотрудники ─────
-  - name: "Абугалиева Сауле Изтелеуовна"
-    name_en: "Saule Abugalieva"
+    role_ru: Заведующий лабораторией молекулярной генетики. Академик НАН РК при
+      Президенте РК, к.б.н., профессор
+    role_kk: Молекулалық генетика зертханасының меңгерушісі. ҚР Президенті жанындағы
+      ҰҒА академигі, б.ғ.к., профессор
+    role_en: Head of the Molecular Genetics Laboratory. Academician of the National
+      Academy of Sciences of Kazakhstan, PhD, Professor
+    bio_ru: Окончил биологический факультет КазГУ им. С.М. Кирова (1986), кандидат
+      наук (1992), профессор (2018). Работал в Baylor University (стипендия
+      Фулбрайта), John Innes Centre, NIAS (Цукуба) и Montana State University. В
+      2008–2016 годах — заместитель генерального директора ИББР по науке. Автор
+      более 200 работ, соавтор сортов пшеницы, ячменя и сои.
+    bio_kk: С.М. Киров атындағы ҚазМУ биология факультетін бітірген (1986), ғылым
+      кандидаты (1992), профессор (2018). Baylor University (Фулбрайт
+      стипендиясы), John Innes Centre, NIAS (Цукуба) және Montana State
+      University-де жұмыс істеген. 2008–2016 жылдары ӨББИ бас директорының ғылым
+      жөніндегі орынбасары. 200-ден астам еңбектің авторы, бидай, арпа және соя
+      сорттарының бірлескен авторы.
+    bio_en: Graduated from the Biology Faculty of Kazakh State University (1986);
+      PhD (1992), Professor (2018). Held research positions at Baylor University
+      (Fulbright), the John Innes Centre, NIAS Tsukuba and Montana State
+      University. Deputy Director General for Science at IPBB in 2008–2016.
+      Author of more than 200 works and co-breeder of wheat, barley and soybean
+      cultivars.
+    orcid: 0000-0001-8590-1745
+    photo: images/team/turuspekov.jpg
+  - name: Абугалиева Сауле Изтелеуовна
+    name_en: Saule Abugalieva
     group: staff
-    role_ru: "Главный научный сотрудник, д.б.н., профессор"
-    role_kk: "Бас ғылыми қызметкер, б.ғ.д., профессор"
-    role_en: "Chief researcher, DSc, Professor"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Альмерекова Шырын Семизбайкызы"
-    name_en: "Shyryn Almerekova"
+    role_ru: Главный научный сотрудник, д.б.н., профессор
+    role_kk: Бас ғылыми қызметкер, б.ғ.д., профессор
+    role_en: Chief researcher, DSc, Professor
+  - name: Альмерекова Шырын Семизбайкызы
+    name_en: Shyryn Almerekova
     group: staff
-    role_ru: "Ведущий научный сотрудник, PhD, ассоциированный профессор"
-    role_kk: "Жетекші ғылыми қызметкер, PhD, қауымдастырылған профессор"
-    role_en: "Leading researcher, PhD, Associate Professor"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Затыбеков Алибек Камзабекович"
-    name_en: "Alibek Zatybekov"
+    role_ru: Ведущий научный сотрудник, PhD, ассоциированный профессор
+    role_kk: Жетекші ғылыми қызметкер, PhD, қауымдастырылған профессор
+    role_en: Leading researcher, PhD, Associate Professor
+  - name: Затыбеков Алибек Камзабекович
+    name_en: Alibek Zatybekov
     group: staff
-    role_ru: "Ведущий научный сотрудник, PhD, ассоциированный профессор"
-    role_kk: "Жетекші ғылыми қызметкер, PhD, қауымдастырылған профессор"
-    role_en: "Leading researcher, PhD, Associate Professor"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Ануарбек Шынар Нурланкызы"
-    name_en: "Shynar Anuarbek"
+    role_ru: Ведущий научный сотрудник, PhD, ассоциированный профессор
+    role_kk: Жетекші ғылыми қызметкер, PhD, қауымдастырылған профессор
+    role_en: Leading researcher, PhD, Associate Professor
+  - name: Ануарбек Шынар Нурланкызы
+    name_en: Shynar Anuarbek
     group: staff
-    role_ru: "Научный сотрудник, PhD"
-    role_kk: "Ғылыми қызметкер, PhD"
-    role_en: "Researcher, PhD"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Амалова Акерке Ыкласкызы"
-    name_en: "Akerke Amalova"
+    role_ru: Научный сотрудник, PhD
+    role_kk: Ғылыми қызметкер, PhD
+    role_en: Researcher, PhD
+  - name: Амалова Акерке Ыкласкызы
+    name_en: Akerke Amalova
     group: staff
-    role_ru: "Научный сотрудник, PhD"
-    role_kk: "Ғылыми қызметкер, PhD"
-    role_en: "Researcher, PhD"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Гениевская Юлия Анатольевна"
-    name_en: "Yuliya Genievskaya"
+    role_ru: Научный сотрудник, PhD
+    role_kk: Ғылыми қызметкер, PhD
+    role_en: Researcher, PhD
+  - name: Гениевская Юлия Анатольевна
+    name_en: Yuliya Genievskaya
     group: staff
-    role_ru: "Научный сотрудник, PhD"
-    role_kk: "Ғылыми қызметкер, PhD"
-    role_en: "Researcher, PhD"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Ермагамбетова Молдир Макаткызы"
-    name_en: "Moldir Yermagambetova"
+    role_ru: Научный сотрудник, PhD
+    role_kk: Ғылыми қызметкер, PhD
+    role_en: Researcher, PhD
+  - name: Ермагамбетова Молдир Макаткызы
+    name_en: Moldir Yermagambetova
     group: staff
-    role_ru: "Научный сотрудник, PhD"
-    role_kk: "Ғылыми қызметкер, PhD"
-    role_en: "Researcher, PhD"
-    email: ""
-    orcid: ""
-    photo: ""
-
-  # ───── PhD-докторанты ─────
-  - name: "Аружан"
-    name_en: "Aruzhan"
+    role_ru: Научный сотрудник, PhD
+    role_kk: Ғылыми қызметкер, PhD
+    role_en: Researcher, PhD
+  - name: Аружан
+    name_en: Aruzhan
     group: phd
-    role_ru: "Младший научный сотрудник, PhD-докторант, магистр"
-    role_kk: "Кіші ғылыми қызметкер, PhD докторанты, магистр"
-    role_en: "Junior researcher, PhD student, MSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Саягуль"
-    name_en: "Sayagul"
+    role_ru: Младший научный сотрудник, PhD-докторант, магистр
+    role_kk: Кіші ғылыми қызметкер, PhD докторанты, магистр
+    role_en: Junior researcher, PhD student, MSc
+  - name: Саягуль
+    name_en: Sayagul
     group: phd
-    role_ru: "Младший научный сотрудник, PhD-докторант, магистр"
-    role_kk: "Кіші ғылыми қызметкер, PhD докторанты, магистр"
-    role_en: "Junior researcher, PhD student, MSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Ая"
-    name_en: "Aya"
+    role_ru: Младший научный сотрудник, PhD-докторант, магистр
+    role_kk: Кіші ғылыми қызметкер, PhD докторанты, магистр
+    role_en: Junior researcher, PhD student, MSc
+  - name: Ая
+    name_en: Aya
     group: phd
-    role_ru: "Лаборант, PhD-докторант, магистр"
-    role_kk: "Зертханашы, PhD докторанты, магистр"
-    role_en: "Laboratory assistant, PhD student, MSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Дана"
-    name_en: "Dana"
+    role_ru: Лаборант, PhD-докторант, магистр
+    role_kk: Зертханашы, PhD докторанты, магистр
+    role_en: Laboratory assistant, PhD student, MSc
+  - name: Дана
+    name_en: Dana
     group: phd
-    role_ru: "Лаборант, PhD-докторант, магистр"
-    role_kk: "Зертханашы, PhD докторанты, магистр"
-    role_en: "Laboratory assistant, PhD student, MSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Улдана"
-    name_en: "Uldana"
+    role_ru: Лаборант, PhD-докторант, магистр
+    role_kk: Зертханашы, PhD докторанты, магистр
+    role_en: Laboratory assistant, PhD student, MSc
+  - name: Улдана
+    name_en: Uldana
     group: phd
-    role_ru: "Лаборант, PhD-докторант, магистр"
-    role_kk: "Зертханашы, PhD докторанты, магистр"
-    role_en: "Laboratory assistant, PhD student, MSc"
-    email: ""
-    orcid: ""
-    photo: ""
-
-  # ───── Магистранты ─────
-  - name: "Ибраимов Алан Мадиярович"
-    name_en: "Alan Ibraimov"
+    role_ru: Лаборант, PhD-докторант, магистр
+    role_kk: Зертханашы, PhD докторанты, магистр
+    role_en: Laboratory assistant, PhD student, MSc
+  - name: Ибраимов Алан Мадиярович
+    name_en: Alan Ibraimov
     group: masters
-    role_ru: "Лаборант, магистрант, бакалавр"
-    role_kk: "Зертханашы, магистрант, бакалавр"
-    role_en: "Laboratory assistant, Master's student, BSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Гулин Александр"
-    name_en: "Alexander Gulin"
+    role_ru: Лаборант, магистрант, бакалавр
+    role_kk: Зертханашы, магистрант, бакалавр
+    role_en: Laboratory assistant, Master's student, BSc
+  - name: Гулин Александр
+    name_en: Alexander Gulin
     group: masters
-    role_ru: "Лаборант, магистрант, бакалавр"
-    role_kk: "Зертханашы, магистрант, бакалавр"
-    role_en: "Laboratory assistant, Master's student, BSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Ерболатов Данияр Ерболатулы"
-    name_en: "Daniyar Yerbolatov"
+    role_ru: Лаборант, магистрант, бакалавр
+    role_kk: Зертханашы, магистрант, бакалавр
+    role_en: Laboratory assistant, Master's student, BSc
+  - name: Ерболатов Данияр Ерболатулы
+    name_en: Daniyar Yerbolatov
     group: masters
-    role_ru: "Лаборант, магистрант, бакалавр"
-    role_kk: "Зертханашы, магистрант, бакалавр"
-    role_en: "Laboratory assistant, Master's student, BSc"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Гожамбердиева Наргиз"
-    name_en: "Nargiz Gozhamberdieva"
+    role_ru: Лаборант, магистрант, бакалавр
+    role_kk: Зертханашы, магистрант, бакалавр
+    role_en: Laboratory assistant, Master's student, BSc
+    photo: /images/me_lake_cropped.png
+  - name: Гожамбердиева Наргиз
+    name_en: Nargiz Gozhamberdieva
     group: masters
-    role_ru: "Лаборант, магистрант, бакалавр"
-    role_kk: "Зертханашы, магистрант, бакалавр"
-    role_en: "Laboratory assistant, Master's student, BSc"
-    email: ""
-    orcid: ""
-    photo: ""
-
-  # ───── Студенты ─────
-  - name: "Адема"
-    name_en: "Adema"
+    role_ru: Лаборант, магистрант, бакалавр
+    role_kk: Зертханашы, магистрант, бакалавр
+    role_en: Laboratory assistant, Master's student, BSc
+  - name: Адема
+    name_en: Adema
     group: students
-    role_ru: "Лаборант, студент"
-    role_kk: "Зертханашы, студент"
-    role_en: "Laboratory assistant, undergraduate student"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Вова"
-    name_en: "Vova"
+    role_ru: Лаборант, студент
+    role_kk: Зертханашы, студент
+    role_en: Laboratory assistant, undergraduate student
+  - name: Вова
+    name_en: Vova
     group: students
-    role_ru: "Лаборант, студент"
-    role_kk: "Зертханашы, студент"
-    role_en: "Laboratory assistant, undergraduate student"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Анна"
-    name_en: "Anna"
+    role_ru: Лаборант, студент
+    role_kk: Зертханашы, студент
+    role_en: Laboratory assistant, undergraduate student
+  - name: Анна
+    name_en: Anna
     group: students
-    role_ru: "Лаборант, студент"
-    role_kk: "Зертханашы, студент"
-    role_en: "Laboratory assistant, undergraduate student"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Аяжан"
-    name_en: "Ayazhan"
+    role_ru: Лаборант, студент
+    role_kk: Зертханашы, студент
+    role_en: Laboratory assistant, undergraduate student
+  - name: Аяжан
+    name_en: Ayazhan
     group: students
-    role_ru: "Лаборант, студент"
-    role_kk: "Зертханашы, студент"
-    role_en: "Laboratory assistant, undergraduate student"
-    email: ""
-    orcid: ""
-    photo: ""
-
-  # ───── Выпускники ─────
-  # years: годы работы в лаборатории (например "2016–2021"); now_*: где человек сейчас
-  - name: "Ермекбаев Канат Абайевич"
-    name_en: "Kanat Yermekbayev"
+    role_ru: Лаборант, студент
+    role_kk: Зертханашы, студент
+    role_en: Laboratory assistant, undergraduate student
+  - name: Ермекбаев Канат Абайевич
+    name_en: Kanat Yermekbayev
     group: alumni
-    role_ru: "PhD"
-    role_kk: "PhD"
-    role_en: "PhD"
-    years: ""
-    now_ru: "Директор Института биологии и биотехнологии растений; заведующий лабораторией молекулярной генетики и геномики, Zhetysu University"
-    now_kk: "Өсімдіктер биологиясы және биотехнологиясы институтының директоры; Zhetysu University молекулалық генетика және геномика зертханасының меңгерушісі"
-    now_en: "Director of the Institute of Plant Biology and Biotechnology; Head of the Laboratory of Molecular Genetics and Genomics, Zhetysu University"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Оразов Айдын Ергалиевич"
-    name_en: "Aydyn Orazov"
+    role_ru: PhD
+    role_kk: PhD
+    role_en: PhD
+    now_ru: Директор Института биологии и биотехнологии растений; заведующий
+      лабораторией молекулярной генетики и геномики, Zhetysu University
+    now_kk: Өсімдіктер биологиясы және биотехнологиясы институтының директоры;
+      Zhetysu University молекулалық генетика және геномика зертханасының
+      меңгерушісі
+    now_en: Director of the Institute of Plant Biology and Biotechnology; Head of
+      the Laboratory of Molecular Genetics and Genomics, Zhetysu University
+  - name: Оразов Айдын Ергалиевич
+    name_en: Aydyn Orazov
     group: alumni
-    role_ru: "PhD"
-    role_kk: "PhD"
-    role_en: "PhD"
-    years: ""
-    now_ru: "Заведующий лабораторией NatureLab, Astana International University"
-    now_kk: "Astana International University, NatureLab зертханасының меңгерушісі"
-    now_en: "Head of NatureLab, Astana International University"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Сумбембаев Айдар Айтказыевич"
-    name_en: "Aidar Sumbembayev"
+    role_ru: PhD
+    role_kk: PhD
+    role_en: PhD
+    now_ru: Заведующий лабораторией NatureLab, Astana International University
+    now_kk: Astana International University, NatureLab зертханасының меңгерушісі
+    now_en: Head of NatureLab, Astana International University
+  - name: Сумбембаев Айдар Айтказыевич
+    name_en: Aidar Sumbembayev
     group: alumni
-    role_ru: "PhD"
-    role_kk: "PhD"
-    role_en: "PhD"
-    years: ""
-    now_ru: "Генеральный директор РГП на ПХВ «Алтайский ботанический сад»"
-    now_kk: "«Алтай ботаникалық бағы» ШЖҚ РМК бас директоры"
-    now_en: "Director General, Altai Botanical Garden"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Кусмангазинов Адиль Болатович"
-    name_en: "Adil Kusmangazinov"
+    role_ru: PhD
+    role_kk: PhD
+    role_en: PhD
+    now_ru: Генеральный директор РГП на ПХВ «Алтайский ботанический сад»
+    now_kk: «Алтай ботаникалық бағы» ШЖҚ РМК бас директоры
+    now_en: Director General, Altai Botanical Garden
+  - name: Кусмангазинов Адиль Болатович
+    name_en: Adil Kusmangazinov
     group: alumni
-    role_ru: "PhD"
-    role_kk: "PhD"
-    role_en: "PhD"
-    years: ""
-    now_ru: "Заместитель декана биологического факультета, КазНУ им. аль-Фараби"
-    now_kk: "Әл-Фараби атындағы ҚазҰУ биология факультеті деканының орынбасары"
-    now_en: "Vice Dean, Faculty of Biology, Al-Farabi Kazakh National University"
-    email: ""
-    orcid: ""
-    photo: ""
-  - name: "Орманбекова Данара"
-    name_en: "Danara Ormanbekova"
+    role_ru: PhD
+    role_kk: PhD
+    role_en: PhD
+    now_ru: Заместитель декана биологического факультета, КазНУ им. аль-Фараби
+    now_kk: Әл-Фараби атындағы ҚазҰУ биология факультеті деканының орынбасары
+    now_en: Vice Dean, Faculty of Biology, Al-Farabi Kazakh National University
+  - name: Орманбекова Данара
+    name_en: Danara Ormanbekova
     group: alumni
-    years: ""
-    now_ru: "Биоинформатик, Istituto delle Scienze Neurologiche (Ospedale Bellaria), Болонья, Италия"
-    now_kk: "Биоинформатик, Istituto delle Scienze Neurologiche (Ospedale Bellaria), Болонья, Италия"
-    now_en: "Bioinformatician, Istituto delle Scienze Neurologiche (Bellaria Hospital), Bologna, Italy"
-    email: ""
-    orcid: ""
-    photo: ""
+    now_ru: Биоинформатик, Istituto delle Scienze Neurologiche (Ospedale Bellaria),
+      Болонья, Италия
+    now_kk: Биоинформатик, Istituto delle Scienze Neurologiche (Ospedale Bellaria),
+      Болонья, Италия
+    now_en: Bioinformatician, Istituto delle Scienze Neurologiche (Bellaria
+      Hospital), Bologna, Italy
