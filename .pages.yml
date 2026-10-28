@@ -248,6 +248,7 @@ content:
   fields:
   - {name: kokson_journals, label: Журналы КОКСНВО (часть названия), type: string, list: true}
   - {name: exclude_journals, label: Не показывать источники, type: string, list: true}
+  - {name: articles_years, label: Сколько последних лет статей показывать (Scopus и КОКСНВО), type: number}
 - name: research-ru
   label: Исследования (рус)
   type: collection

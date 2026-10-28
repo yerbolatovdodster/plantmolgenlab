@@ -15,6 +15,9 @@
   {{ $rules := hugo.Data.pub_rules | default dict }}
   {{ $kok := $rules.kokson_journals | default slice }}
   {{ $excl := $rules.exclude_journals | default slice }}
+  {{/* Статьи (Scopus и КОКСНВО) — только за последние N лет; монографии и патенты — все */}}
+  {{ $nyears := int ($rules.articles_years | default 5) }}
+  {{ $minYear := sub now.Year (sub $nyears 1) }}
   {{ $manual := hugo.Data.publications.items | default slice }}
   {{ $auto := hugo.Data.publications_auto.items | default slice }}
   {{ $known := slice }}
@@ -40,7 +43,10 @@
         {{ end }}
       {{ end }}
       {{ if not (isset $cats $c) }}{{ $c = "scopus" }}{{ end }}
-      {{ $cats = merge $cats (dict $c ((index $cats $c) | append .)) }}
+      {{ $recent := ge (int (.year | default 0)) $minYear }}
+      {{ if or $recent (in (slice "books" "patents") $c) }}
+        {{ $cats = merge $cats (dict $c ((index $cats $c) | append .)) }}
+      {{ end }}
     {{ end }}
   {{ end }}
 
@@ -58,7 +64,7 @@
   {{ $items := index $cats $k }}
   <section class="pub-panel{{ if eq $i 0 }} is-on{{ end }}" id="{{ $k }}" role="tabpanel" aria-labelledby="{{ $k }}">
     <h2 class="pub-panel-h">{{ i18n (printf "pubcat_%s" $k) }}</h2>
-    {{ with i18n (printf "pubcat_%s_note" $k) }}<p class="pub-note">{{ . }}</p>{{ end }}
+    {{ with i18n (printf "pubcat_%s_note" $k) (dict "From" $minYear "To" now.Year) }}<p class="pub-note">{{ . }}</p>{{ end }}
     {{ if $items }}
       {{ $years := slice }}
       {{ range $items }}{{ $years = $years | append (int (.year | default 0)) }}{{ end }}

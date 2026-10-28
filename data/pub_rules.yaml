@@ -21,3 +21,5 @@ exclude_journals:
   - Figshare
   - Zenodo
   - Dryad
+# Сколько последних лет статей показывать в блоках Scopus и КОКСНВО (монографии и патенты — все)
+articles_years: 5
