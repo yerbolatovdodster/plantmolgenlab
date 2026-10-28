@@ -1,10 +1,18 @@
 items:
   - direction: genomic-breeding
-    doi: 10.1371/journal.pone.0221064
-    summary_ru: Ассоциативное картирование агрономических признаков у коллекции
-      шестирядного ярового ячменя из США, выращенной в Казахстане.
-    summary_kk: Қазақстанда өсірілген АҚШ-тың алты қатарлы жаздық арпа
-      коллекциясында агрономиялық белгілерді ассоциативтік картирлеу.
+    doi: 10.3389/fpls.2025.1681398
+    image: /images/fps_dissecting_barley.png
+    summary_ru: Изучение генетической архитектуры устойчивости взрослых растений
+      (APR) к сетчатой ​ пятнистости (SR) у группы образцов ярового двурядного
+      ячменя различного происхождения с использованием полногеномного поиска
+      ассоциаций (GWAS).
+    summary_kk: Геномдық деңгейдегі ассоциативті талдау (GWAS) әдісін қолдана
+      отырып, әртүрлі текті, екі қатарлы жаздық арпа үлгілерінің коллекциясында
+      торлы дақтылыққа (net blotch) қатысты ересек өсімдіктердің төзімділігінің
+      (adult plant resistance — APR) генетикалық құрылымын зерттеу
+    summary_en: This study aimed to dissect the genetic architecture of APR to SR in
+      a panel of diverse origins of two-row spring barley using a genome-wide
+      association study (GWAS).
   - direction: genomic-breeding
     doi: 10.1186/s12870-017-1131-2
     summary_ru: Полногеномный поиск ассоциаций для фаз развития и элементов
