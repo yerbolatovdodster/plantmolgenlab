@@ -986,3 +986,9 @@ h3 { font-size: 1.08rem; }
 .team-group > h2 { margin-bottom: 18px; }
 .team-group .cards { justify-content: center; grid-template-columns: repeat(auto-fit, minmax(155px, 175px)); }
 @media (max-width: 520px) { .team-group .cards { grid-template-columns: 1fr 1fr; } }
+/* по четыре карточки в ряд */
+.team-group .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; justify-content: stretch; }
+.team-group .card-body { padding: 14px 16px 16px; }
+.team-group .card-body h3 { font-size: 1rem; }
+.team-group .card-role, .team-group .card-now { font-size: 0.85rem; }
+@media (max-width: 900px) { .team-group .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

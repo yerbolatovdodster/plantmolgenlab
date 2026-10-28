@@ -23,7 +23,7 @@
     <section class="team-group">
       <h2>{{ i18n (printf "group_%s" $group) }}</h2>
       {{ if eq $group "lead" }}
-      <ul class="cards">{{ range . }}{{ partial "person-card.html" . }}{{ end }}</ul>
+      <div class="profiles">{{ range . }}{{ partial "profile.html" . }}{{ end }}</div>
       {{ else }}
       <ul class="cards">{{ range . }}{{ partial "person-card.html" . }}{{ end }}</ul>
       {{ end }}
