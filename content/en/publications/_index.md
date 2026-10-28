@@ -1,4 +1,5 @@
 ---
+heading: "Publications from the last 5 years"
 banner: "images/banners/books.jpg"
 title: "Publications"
 description: "Papers in international peer-reviewed journals, monographs and catalogues."

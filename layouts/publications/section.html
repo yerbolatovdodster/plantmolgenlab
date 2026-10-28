@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="page-banner"{{ with .Params.banner }} style="--banner: url('{{ strings.TrimPrefix "/" . | relURL }}')"{{ end }}>
   <header class="page-head wrap">
-    <h1>{{ .Title }}</h1>
+    <h1>{{ .Params.heading | default .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
     {{ with .Content }}<div class="prose page-note">{{ . }}</div>{{ end }}
   </header>
@@ -71,7 +71,8 @@
       {{ range sort ($years | uniq) "value" "desc" }}
         {{ $y := . }}
         <section class="pub-year">
-          <h3>{{ if $y }}{{ $y }}{{ else }}—{{ end }}</h3>
+          {{ $n := 0 }}{{ range $items }}{{ if eq (int (.year | default 0)) $y }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+          <h3>{{ if $y }}{{ $y }}{{ else }}—{{ end }}<span class="year-n">({{ $n }})</span></h3>
           <ol class="pubs">
             {{ range $items }}{{ if eq (int (.year | default 0)) $y }}{{ partial "pub.html" . }}{{ end }}{{ end }}
           </ol>

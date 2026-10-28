@@ -586,7 +586,7 @@ p { margin: 0 0 1em; }
   padding-top: clamp(64px, 10vw, 150px); padding-bottom: clamp(56px, 8vw, 120px);
 }
 .page-banner .page-head > * { max-width: 34rem; }
-.page-banner .page-head h1 { max-width: none; }
+.page-banner .page-head h1 { max-width: 15ch; }
 .page-after-banner { padding-top: 8px; }
 @media (prefers-color-scheme: dark) {
   .page-banner::before { mix-blend-mode: normal; opacity: .35; }
@@ -957,3 +957,7 @@ h3 { font-size: 1.08rem; }
 .pub-year h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: var(--deep); margin: 0; }
 @media (prefers-color-scheme: dark) { .pub-year h3 { color: var(--leaf); } }
 @media (max-width: 700px) { .pub-tabs { grid-template-columns: 1fr 1fr; } }
+
+.pub-year h3 { display: flex; flex-direction: column; }
+.year-n { font-size: 0.9rem; font-weight: 500; letter-spacing: 0; color: var(--muted); margin-top: 2px; }
+@media (max-width: 640px) { .pub-year h3 { flex-direction: row; align-items: baseline; gap: 8px; } }
