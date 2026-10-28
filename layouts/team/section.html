@@ -22,7 +22,11 @@
     {{ with where $members "group" $group }}
     <section class="team-group">
       <h2>{{ i18n (printf "group_%s" $group) }}</h2>
-      <div class="profiles">{{ range . }}{{ partial "profile.html" . }}{{ end }}</div>
+      {{ if eq $group "lead" }}
+      <ul class="cards">{{ range . }}{{ partial "person-card.html" . }}{{ end }}</ul>
+      {{ else }}
+      <ul class="cards">{{ range . }}{{ partial "person-card.html" . }}{{ end }}</ul>
+      {{ end }}
     </section>
     {{ end }}
   {{ end }}
@@ -66,7 +70,7 @@
   {{ with where $members "group" "alumni" }}
   <section class="team-group team-alumni">
     <h2>{{ i18n "group_alumni" }}</h2>
-    <div class="profiles">{{ range . }}{{ partial "profile.html" . }}{{ end }}</div>
+    <ul class="cards">{{ range . }}{{ partial "person-card.html" . }}{{ end }}</ul>
   </section>
   {{ end }}
 </article>

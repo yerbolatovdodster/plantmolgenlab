@@ -1,0 +1,24 @@
+{{- $lang := site.Language.Lang -}}
+{{- $name := .name -}}{{- if and (eq $lang "en") .name_en }}{{ $name = .name_en }}{{ end -}}
+{{- $role := or (index . (printf "role_%s" $lang)) .role_ru -}}
+{{- $now := or (index . (printf "now_%s" $lang)) .now_ru -}}
+<li class="card">
+  <div class="card-photo">
+    {{- with .photo }}
+    <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $name }}" loading="lazy">
+    {{- else }}
+    {{- $init := "" }}{{ range first 2 (split $name " ") }}{{ $init = printf "%s%s" $init (substr . 0 1) }}{{ end }}
+    <div class="profile-blank" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="blank-icon"><circle cx="60" cy="44" r="22"/><path d="M18 112c4-24 22-38 42-38s38 14 42 38z"/></svg>
+      <span class="blank-initials">{{ $init }}</span>
+    </div>
+    {{- end }}
+  </div>
+  <div class="card-body">
+    <h3>{{ $name }}</h3>
+    {{ with $role }}<p class="card-role">{{ . }}</p>{{ end }}
+    {{ with .years }}<p class="card-role">{{ i18n "years_in_lab" }}: {{ . }}</p>{{ end }}
+    {{ with $now }}<p class="card-now"><span>{{ i18n "now" }}</span>{{ . }}</p>{{ end }}
+    {{ if or .email .orcid }}<p class="card-links">{{ with .email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}{{ with .orcid }}<a href="https://orcid.org/{{ . }}">ORCID</a>{{ end }}</p>{{ end }}
+  </div>
+</li>

@@ -961,3 +961,28 @@ h3 { font-size: 1.08rem; }
 .pub-year h3 { display: flex; flex-direction: column; }
 .year-n { font-size: 0.9rem; font-weight: 500; letter-spacing: 0; color: var(--muted); margin-top: 2px; }
 @media (max-width: 640px) { .pub-year h3 { flex-direction: row; align-items: baseline; gap: 8px; } }
+
+/* ───────── Команда: сотрудники карточками в ряд ───────── */
+.cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.card { display: flex; flex-direction: column; background: var(--deep-2); color: #E7F0E9; border-radius: 0; overflow: hidden; }
+.card-photo { position: relative; aspect-ratio: 4 / 5; background: var(--surface-2); overflow: hidden; }
+.card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
+.card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.card-body h3 { color: #fff; font-size: 1rem; line-height: 1.3; letter-spacing: -0.01em; margin: 0 0 6px; }
+.card-role { color: #BFD3C5; font-size: 0.84rem; line-height: 1.45; margin: 0 0 6px; }
+.card-now { color: #E7F0E9; font-size: 0.84rem; line-height: 1.45; margin: 4px 0 6px; }
+.card-now span { display: block; font-size: 0.74rem; font-weight: 600; color: #9FCB8C; margin-bottom: 2px; }
+.card-links { margin: auto 0 0; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.84rem; }
+.card-links a { color: #fff; }
+.team-group .cards { margin-top: 4px; }
+@media (max-width: 520px) { .cards { grid-template-columns: 1fr 1fr; gap: 10px; } .card-body { padding: 12px; } }
+.cards { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 12px; }
+.card-photo { aspect-ratio: 1 / 1; }
+.card-body { padding: 12px 13px 14px; }
+.card-body h3 { font-size: 0.92rem; }
+.card-role, .card-now { font-size: 0.78rem; }
+.card .blank-initials { left: 10px; bottom: 6px; font-size: 0.95rem; }
+.team-group { margin-top: 36px; }
+.team-group > h2 { margin-bottom: 18px; }
+.team-group .cards { justify-content: center; grid-template-columns: repeat(auto-fit, minmax(155px, 175px)); }
+@media (max-width: 520px) { .team-group .cards { grid-template-columns: 1fr 1fr; } }
