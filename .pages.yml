@@ -239,8 +239,12 @@ content:
   - _index.md
   fields:
   - {name: title, label: Название, type: string, required: true}
-  - {name: description, label: Короткое описание (для главной), type: text}
+  - {name: description, label: Короткое описание (для главной и под заголовком), type: text}
   - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: intro, label: Вступительный абзац (в шапке страницы), type: text}
+  - {name: topics, label: Метки, type: string, list: true}
+  - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
+  - {name: bg, label: Иллюстрация справа от текста, type: image}
   - {name: body, label: Текст, type: rich-text}
 - name: research-kk
   label: Зерттеулер (қаз)
@@ -250,8 +254,12 @@ content:
   - _index.md
   fields:
   - {name: title, label: Название, type: string, required: true}
-  - {name: description, label: Короткое описание (для главной), type: text}
+  - {name: description, label: Короткое описание (для главной и под заголовком), type: text}
   - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: intro, label: Вступительный абзац (в шапке страницы), type: text}
+  - {name: topics, label: Метки, type: string, list: true}
+  - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
+  - {name: bg, label: Иллюстрация справа от текста, type: image}
   - {name: body, label: Текст, type: rich-text}
 - name: research-en
   label: Research (eng)
@@ -261,8 +269,12 @@ content:
   - _index.md
   fields:
   - {name: title, label: Название, type: string, required: true}
-  - {name: description, label: Короткое описание (для главной), type: text}
+  - {name: description, label: Короткое описание (для главной и под заголовком), type: text}
   - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: intro, label: Вступительный абзац (в шапке страницы), type: text}
+  - {name: topics, label: Метки, type: string, list: true}
+  - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
+  - {name: bg, label: Иллюстрация справа от текста, type: image}
   - {name: body, label: Текст, type: rich-text}
 - name: featured
   label: Избранные публикации (на страницах направлений)
