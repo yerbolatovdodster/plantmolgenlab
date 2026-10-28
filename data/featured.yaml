@@ -31,11 +31,23 @@ items:
       soybean accessions of diverse origin under the conditions of southeastern
       Kazakhstan, using multi-season genome-wide association studies (GWAS)
   - direction: genomic-breeding
-    doi: 10.1186/s12870-015-0686-z
-    summary_ru: Полногеномный поиск ассоциаций устойчивости к стеблевой ржавчине у
-      казахстанских линий ярового ячменя.
-    summary_kk: Қазақстандық жаздық арпа желілерінің сабақ татына төзімділігін толық
-      геномдық ассоциациялар арқылы іздеу.
+    doi: 10.3390/agriculture16192095
+    image: /images/agriculte_PHS.jpg
+    summary_ru: Изучение генетической архитектуры устойчивости к предуборочному
+      прорастанию зерна (PHS) и агрономических признаков у коллекции образцов
+      яровой мягкой пшеницы различного происхождения в контрастных регионах
+      Казахстана с использованием мультисредового полногеномного поиска
+      ассоциаций (GWAS).
+    summary_kk: Қазақстанның әртүрлі табиғи-климаттық аймақтарынан жинақталған, шығу
+      тегі әр алуан жаздық жұмсақ бидай үлгілеріндегі егін жинау алдындағы
+      дәннің масақта өніп кетуіне (PHS) төзімділік пен агрономиялық белгілердің
+      генетикалық құрылымын көп орталы геномдық деңгейдегі ассоциативті талдау
+      (GWAS) әдісі арқылы зерттеу.
+    summary_en: Investigating the genetic architecture of pre-harvest sprouting
+      (PHS) resistance and agronomic traits in a collection of spring bread
+      wheat accessions of diverse origin across contrasting regions of
+      Kazakhstan, using multi-environment genome-wide association studies
+      (GWAS).
   - direction: wild-flora
     doi: 10.3389/fpls.2026.1860819
     image: /images/fps_iris.png
