@@ -276,6 +276,111 @@ content:
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
   - {name: body, label: Текст, type: rich-text}
+- name: gb-ru
+  label: Геномная селекция (рус)
+  type: file
+  path: content/ru/research/genomic-breeding/_index.md
+  fields:
+  - {name: title, label: Название, type: string, required: true}
+  - {name: description, label: Короткое описание, type: text}
+  - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: groups_title, label: Заголовок над блоками культур, type: string}
+  - {name: intro, label: Вступительный абзац, type: text}
+  - {name: topics, label: Метки, type: string, list: true}
+  - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
+  - {name: bg, label: Иллюстрация справа от текста, type: image}
+  - {name: body, label: Текст, type: rich-text}
+- name: gbg-ru
+  label: 'Культуры: группы (рус)'
+  type: collection
+  path: content/ru/research/genomic-breeding
+  exclude:
+  - _index.md
+  fields:
+  - {name: title, label: Название группы, type: string, required: true}
+  - {name: weight, label: Порядок (меньше = левее), type: number}
+  - {name: image, label: Фото для блока, type: image}
+  - name: tint
+    label: Цвет блока без фото
+    type: select
+    options:
+      values:
+      - {value: wheat, label: Пшеничный}
+      - {value: green, label: Зелёный}
+      - {value: tomato, label: Томатный}
+      - {value: plum, label: Сливовый}
+  - {name: crops, label: Культуры, type: string, list: true}
+  - {name: body, label: Текст, type: rich-text}
+- name: gb-kk
+  label: Геномдық селекция (қаз)
+  type: file
+  path: content/kk/research/genomic-breeding/_index.md
+  fields:
+  - {name: title, label: Название, type: string, required: true}
+  - {name: description, label: Короткое описание, type: text}
+  - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: groups_title, label: Заголовок над блоками культур, type: string}
+  - {name: intro, label: Вступительный абзац, type: text}
+  - {name: topics, label: Метки, type: string, list: true}
+  - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
+  - {name: bg, label: Иллюстрация справа от текста, type: image}
+  - {name: body, label: Текст, type: rich-text}
+- name: gbg-kk
+  label: 'Дақылдар: топтар (қаз)'
+  type: collection
+  path: content/kk/research/genomic-breeding
+  exclude:
+  - _index.md
+  fields:
+  - {name: title, label: Название группы, type: string, required: true}
+  - {name: weight, label: Порядок (меньше = левее), type: number}
+  - {name: image, label: Фото для блока, type: image}
+  - name: tint
+    label: Цвет блока без фото
+    type: select
+    options:
+      values:
+      - {value: wheat, label: Пшеничный}
+      - {value: green, label: Зелёный}
+      - {value: tomato, label: Томатный}
+      - {value: plum, label: Сливовый}
+  - {name: crops, label: Культуры, type: string, list: true}
+  - {name: body, label: Текст, type: rich-text}
+- name: gb-en
+  label: Genomic breeding (eng)
+  type: file
+  path: content/en/research/genomic-breeding/_index.md
+  fields:
+  - {name: title, label: Название, type: string, required: true}
+  - {name: description, label: Короткое описание, type: text}
+  - {name: weight, label: Порядок (меньше = выше), type: number}
+  - {name: groups_title, label: Заголовок над блоками культур, type: string}
+  - {name: intro, label: Вступительный абзац, type: text}
+  - {name: topics, label: Метки, type: string, list: true}
+  - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
+  - {name: bg, label: Иллюстрация справа от текста, type: image}
+  - {name: body, label: Текст, type: rich-text}
+- name: gbg-en
+  label: Crop groups (eng)
+  type: collection
+  path: content/en/research/genomic-breeding
+  exclude:
+  - _index.md
+  fields:
+  - {name: title, label: Название группы, type: string, required: true}
+  - {name: weight, label: Порядок (меньше = левее), type: number}
+  - {name: image, label: Фото для блока, type: image}
+  - name: tint
+    label: Цвет блока без фото
+    type: select
+    options:
+      values:
+      - {value: wheat, label: Пшеничный}
+      - {value: green, label: Зелёный}
+      - {value: tomato, label: Томатный}
+      - {value: plum, label: Сливовый}
+  - {name: crops, label: Культуры, type: string, list: true}
+  - {name: body, label: Текст, type: rich-text}
 - name: featured
   label: Избранные публикации (на страницах направлений)
   type: file

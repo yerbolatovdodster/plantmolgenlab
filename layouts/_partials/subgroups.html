@@ -1,0 +1,21 @@
+{{- with .Pages.ByWeight -}}
+<section class="groups" aria-labelledby="groups-h">
+  <h2 id="groups-h">{{ $.Params.groups_title | default (i18n "crop_groups") }}</h2>
+  <ul class="group-list">
+    {{- range . }}
+    <li>
+      <a class="group-card tint-{{ .Params.tint | default "green" }}" href="{{ .RelPermalink }}">
+        <div class="group-media">
+          {{- with .Params.image }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" loading="lazy">{{ end }}
+        </div>
+        <div class="group-body">
+          <h3>{{ .Title }}</h3>
+          {{ with .Params.crops }}<p class="group-crops">{{ delimit . ", " }}</p>{{ end }}
+          <span class="area-more">{{ i18n "learn_more" }}</span>
+        </div>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end -}}

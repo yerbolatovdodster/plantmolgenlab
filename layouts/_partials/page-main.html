@@ -1,0 +1,26 @@
+{{ with .Params.hero }}<div class="page-hero" style="--hero: url('{{ strings.TrimPrefix "/" . | relURL }}')"><div class="wrap">{{ end }}
+  {{ if .Params.hero }}<header class="page-head">{{ else }}<article class="page wrap">
+  <header class="page-head">{{ end }}
+    {{ if and (eq .Section "research") (eq .Kind "page") (eq .Parent.Kind "section") (ne .Parent.Parent.Kind "home") }}<a class="crumb" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>{{ end }}
+    {{ if eq .Section "news" }}<time class="page-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    {{ with .Params.crops }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    {{ with .Params.topics }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    {{ with .Params.intro }}<p class="page-intro">{{ . }}</p>{{ end }}
+  </header>
+  {{ if .Params.hero }}</div></div>
+<article class="page page-after-hero wrap">{{ end }}
+  {{ with .Params.image }}<img class="page-image" src="{{ strings.TrimPrefix "/" . | relURL }}" alt="">{{ end }}
+  <div class="side-zone{{ with .Params.bg }} has-side-bg{{ end }}"{{ with .Params.bg }} style="--side-bg: url('{{ strings.TrimPrefix "/" . | relURL }}')"{{ end }}>
+  <div class="prose">{{ .Content }}</div>
+  </div>
+  {{ if eq .Kind "section" }}{{ partial "subgroups.html" . }}{{ end }}
+  {{ if eq .Section "research" }}{{ partial "featured-pubs.html" . }}{{ end }}
+  {{ if .Params.app_button }}
+  <p class="page-actions">
+    <a class="btn" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
+    <a class="btn btn-ghost" href="mailto:{{ site.Params.email }}?subject=CropPopStructure">{{ i18n "request_access" }}</a>
+  </p>
+  {{ end }}
+</article>

@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ if and (eq .Section "research") (ne .Parent.Kind "home") }}{{ partial "page-main.html" . }}{{ else }}
 <article class="page wrap">
   <header class="page-head">
     <h1>{{ .Title }}</h1>
@@ -23,4 +24,5 @@
   </ul>
   {{ end }}
 </article>
+{{ end }}
 {{ end }}
