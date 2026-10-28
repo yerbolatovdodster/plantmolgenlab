@@ -139,7 +139,10 @@ def convert(works_by_orcid, lab_orcids):
             if wtype not in KEEP_TYPES:
                 continue
             title = strip_tags(w.get("title") or w.get("display_name"))
-            if not title:
+            if not title or title.lower().startswith(("additional file", "supplementary")):
+                continue
+            src = (((w.get("primary_location") or {}).get("source") or {}).get("display_name") or "").lower()
+            if any(k in src for k in ("figshare", "zenodo", "dryad")):
                 continue
             doi = (w.get("doi") or "").lower().replace("https://doi.org/", "")
             key = doi or norm_title(title)

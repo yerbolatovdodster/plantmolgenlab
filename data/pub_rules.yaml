@@ -1,0 +1,23 @@
+# Правила для страницы «Публикации». Удобнее всего редактировать через Pages CMS.
+# Статьи из автоматического списка (OpenAlex) по умолчанию попадают в «Scopus».
+# Если название журнала содержит одну из строк ниже, статья попадает в «КОКСНВО».
+# Чтобы вручную перенести конкретную статью: добавьте её с тем же DOI в «Публикации (вручную)»
+# и выберите категорию.
+kokson_journals:
+  - Eurasian journal of applied biotechnology
+  - Fundamental and Experimental Biology
+  - Experimental biology
+  - International Journal of Biology and Chemistry
+  - Eurasian Journal of Ecology
+  - Bulletin of Korkyt Ata
+  - Vestnik of M Kozybayev
+  - Izvestiâ Nacionalʹnoj akademii nauk Respubliki Kazahstan
+  - Biotechnology Theory and practice
+  - Вестник
+  - Хабаршы
+  - Известия НАН РК
+# Источники, которые не показываем вовсе (приложения к статьям, репозитории данных)
+exclude_journals:
+  - Figshare
+  - Zenodo
+  - Dryad

@@ -9,38 +9,88 @@
 <article class="page page-after-banner wrap">
 
   {{/* Ручной список (Pages CMS) + автоматический из OpenAlex.
-       При совпадении DOI показывается ручная запись; hide: true скрывает статью. */}}
+       При совпадении DOI показывается ручная запись; hide: true скрывает статью.
+       Категория: поле category, иначе по типу (book → монографии, patent → патенты),
+       иначе по журналу (список kokson_journals), иначе Scopus. */}}
+  {{ $rules := hugo.Data.pub_rules | default dict }}
+  {{ $kok := $rules.kokson_journals | default slice }}
+  {{ $excl := $rules.exclude_journals | default slice }}
   {{ $manual := hugo.Data.publications.items | default slice }}
   {{ $auto := hugo.Data.publications_auto.items | default slice }}
   {{ $known := slice }}
   {{ range $manual }}{{ with .doi }}{{ $known = $known | append (lower .) }}{{ end }}{{ end }}
 
-  {{ $all := slice }}
-  {{ range $manual }}{{ if not .hide }}{{ $all = $all | append . }}{{ end }}{{ end }}
-  {{ range $auto }}{{ if not (and .doi (in $known (lower .doi))) }}{{ $all = $all | append . }}{{ end }}{{ end }}
+  {{ $raw := slice }}
+  {{ range $manual }}{{ if not .hide }}{{ $raw = $raw | append . }}{{ end }}{{ end }}
+  {{ range $auto }}{{ if not (and .doi (in $known (lower .doi))) }}{{ $raw = $raw | append . }}{{ end }}{{ end }}
 
-  {{ $articles := where $all "type" "!=" "book" }}
-  {{ $books := where $all "type" "book" }}
-
-  <p class="pub-count">{{ i18n "articles" }}: {{ len $articles }}{{ with $books }} · {{ i18n "books" }}: {{ len . }}{{ end }}</p>
-
-  {{ $years := slice }}
-  {{ range $articles }}{{ $years = $years | append (int .year) }}{{ end }}
-  {{ range sort ($years | uniq) "value" "desc" }}
-    {{ $y := . }}
-    <section class="pub-year">
-      <h2>{{ $y }}</h2>
-      <ol class="pubs">
-        {{ range $articles }}{{ if eq (int .year) $y }}{{ partial "pub.html" . }}{{ end }}{{ end }}
-      </ol>
-    </section>
+  {{ $cats := dict "scopus" slice "kokson" slice "books" slice "patents" slice }}
+  {{ range $raw }}
+    {{ $j := lower (.journal | default "") }}
+    {{ $skip := false }}
+    {{ range $excl }}{{ if strings.Contains $j (lower .) }}{{ $skip = true }}{{ end }}{{ end }}
+    {{ if not $skip }}
+      {{ $c := .category | default "" }}
+      {{ if not $c }}
+        {{ if eq .type "book" }}{{ $c = "books" }}
+        {{ else if eq .type "patent" }}{{ $c = "patents" }}
+        {{ else }}
+          {{ $c = "scopus" }}
+          {{ range $kok }}{{ if strings.Contains $j (lower .) }}{{ $c = "kokson" }}{{ end }}{{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if not (isset $cats $c) }}{{ $c = "scopus" }}{{ end }}
+      {{ $cats = merge $cats (dict $c ((index $cats $c) | append .)) }}
+    {{ end }}
   {{ end }}
 
-  {{ with $books }}
-  <section class="pub-year">
-    <h2 class="pub-books-h">{{ i18n "books" }}</h2>
-    <ol class="pubs">{{ range sort . "year" "desc" }}{{ partial "pub.html" . }}{{ end }}</ol>
+  {{ $order := slice "scopus" "kokson" "books" "patents" }}
+  <div class="pub-tabs" role="tablist" aria-label="{{ .Title }}">
+    {{ range $i, $k := $order }}
+    <a class="pub-tab{{ if eq $i 0 }} is-on{{ end }}" href="#{{ $k }}" role="tab" data-tab="{{ $k }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
+      <span class="pub-tab-name">{{ i18n (printf "pubcat_%s" $k) }}</span>
+      <span class="pub-tab-n">{{ len (index $cats $k) }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+  {{ range $i, $k := $order }}
+  {{ $items := index $cats $k }}
+  <section class="pub-panel{{ if eq $i 0 }} is-on{{ end }}" id="{{ $k }}" role="tabpanel" aria-labelledby="{{ $k }}">
+    <h2 class="pub-panel-h">{{ i18n (printf "pubcat_%s" $k) }}</h2>
+    {{ with i18n (printf "pubcat_%s_note" $k) }}<p class="pub-note">{{ . }}</p>{{ end }}
+    {{ if $items }}
+      {{ $years := slice }}
+      {{ range $items }}{{ $years = $years | append (int (.year | default 0)) }}{{ end }}
+      {{ range sort ($years | uniq) "value" "desc" }}
+        {{ $y := . }}
+        <section class="pub-year">
+          <h3>{{ if $y }}{{ $y }}{{ else }}—{{ end }}</h3>
+          <ol class="pubs">
+            {{ range $items }}{{ if eq (int (.year | default 0)) $y }}{{ partial "pub.html" . }}{{ end }}{{ end }}
+          </ol>
+        </section>
+      {{ end }}
+    {{ else }}
+      <p class="pub-empty">{{ i18n "pub_empty" }}</p>
+    {{ end }}
   </section>
   {{ end }}
 </article>
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.pub-tab'), panels = document.querySelectorAll('.pub-panel');
+  if (!tabs.length) return;
+  document.documentElement.classList.add('pub-js');
+  function show(k, push) {
+    var ok = false;
+    tabs.forEach(function (t) { var on = t.dataset.tab === k; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on); ok = ok || on; });
+    if (!ok) return;
+    panels.forEach(function (p) { p.classList.toggle('is-on', p.id === k); });
+    if (push) history.replaceState(null, '', '#' + k);
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function (e) { e.preventDefault(); show(t.dataset.tab, true); }); });
+  if (location.hash) show(location.hash.slice(1), false);
+})();
+</script>
 {{ end }}

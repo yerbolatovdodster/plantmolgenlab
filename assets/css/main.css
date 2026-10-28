@@ -932,3 +932,28 @@ h3 { font-size: 1.08rem; }
 .crumb:hover { text-decoration: underline; }
 
 .page-head + .page-image, .page-image { max-height: 380px; }
+
+/* ───────── Публикации: четыре блока ───────── */
+.pub-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 8px 0 32px; }
+.pub-tab {
+  display: flex; flex-direction: column; gap: 4px; padding: 16px 18px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md);
+  color: var(--ink); text-decoration: none; transition: border-color .15s, background-color .15s;
+}
+.pub-tab:hover { border-color: color-mix(in srgb, var(--deep) 45%, transparent); color: var(--ink); }
+.pub-tab-name { font-weight: 600; font-size: 1.02rem; }
+.pub-tab-n { font-size: 1.7rem; font-weight: 650; letter-spacing: -0.03em; color: var(--deep); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.pub-tab.is-on { background: var(--deep); border-color: var(--deep); color: #fff; }
+.pub-tab.is-on .pub-tab-n { color: #CDEBBE; }
+@media (prefers-color-scheme: dark) { .pub-tab-n { color: var(--leaf); } }
+.pub-panel { margin-top: 8px; }
+.pub-js .pub-panel { display: none; }
+.pub-js .pub-panel.is-on { display: block; }
+.pub-js .pub-panel-h { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.pub-panel + .pub-panel { margin-top: 48px; }
+.pub-js .pub-panel + .pub-panel { margin-top: 8px; }
+.pub-note { color: var(--muted); margin: 0 0 4px; }
+.pub-empty { color: var(--muted); padding: 24px 0; }
+.pub-year h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: var(--deep); margin: 0; }
+@media (prefers-color-scheme: dark) { .pub-year h3 { color: var(--leaf); } }
+@media (max-width: 700px) { .pub-tabs { grid-template-columns: 1fr 1fr; } }
