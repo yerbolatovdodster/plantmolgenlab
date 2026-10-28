@@ -14,11 +14,22 @@ items:
       a panel of diverse origins of two-row spring barley using a genome-wide
       association study (GWAS).
   - direction: genomic-breeding
-    doi: 10.1186/s12870-017-1131-2
-    summary_ru: Полногеномный поиск ассоциаций для фаз развития и элементов
-      урожайности яровой мягкой пшеницы, выращенной в трёх регионах Казахстана.
-    summary_kk: Қазақстанның үш өңірінде өсірілген жаздық жұмсақ бидайдың даму
-      кезеңдері мен өнімділік элементтеріне арналған GWAS.
+    doi: 10.3390/plants15182800
+    image: /images/plants-15-02800-g007 (1).png
+    summary_ru: Изучение генетической архитектуры шести агрономических признаков
+      (сроки цветения и созревания, высота растения, элементы урожайности) у
+      коллекции образцов сои различного происхождения в условиях юго-востока
+      Казахстана с использованием многосезонного полногеномного поиска
+      ассоциаций (GWAS)
+    summary_kk: Қазақстанның оңтүстік-шығыс жағдайында, әртүрлі текті соя үлгілері
+      топтамасындағы алты агрономиялық белгінің (гүлдеу және пісу мерзімдері,
+      өсімдік биіктігі және өнімділік компоненттері) генетикалық құрылымын
+      бірнеше маусымды қамтитын геномдық деңгейдегі ассоциативті талдау (GWAS)
+      арқылы зерттеу
+    summary_en: Studying the genetic architecture of six agronomic traits (flowering
+      and maturity dates, plant height, and yield components) in a collection of
+      soybean accessions of diverse origin under the conditions of southeastern
+      Kazakhstan, using multi-season genome-wide association studies (GWAS)
   - direction: genomic-breeding
     doi: 10.1186/s12870-015-0686-z
     summary_ru: Полногеномный поиск ассоциаций устойчивости к стеблевой ржавчине у
