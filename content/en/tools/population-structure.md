@@ -2,6 +2,7 @@
 title: "What is population structure?"
 description: "Why plants from different places differ genetically, how to measure it, and why ignoring structure can make breeding and genetic conclusions wrong."
 layout: explainer
+draft: true   # временно скрыто; чтобы вернуть — удалить эту строку
 ---
 
 ## Populations and structure
