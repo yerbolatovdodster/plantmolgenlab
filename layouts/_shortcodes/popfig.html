@@ -1,0 +1,14 @@
+{{- /* Интерактивный рисунок для страницы о популяционной структуре.
+     Использование: {{< popfig id="wahlund" caption="..." >}} — id: wahlund, migration, gwas, detect */ -}}
+{{- $id := .Get "id" -}}
+{{- $labels := index hugo.Data.popgen site.Language.Lang | default hugo.Data.popgen.ru -}}
+<figure class="pf pf-{{ $id }}" data-fig="{{ $id }}" data-l="{{ $labels | jsonify }}">
+  <div class="pf-body" aria-live="polite"></div>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  <noscript><p class="pf-noscript">Для интерактивного рисунка нужен JavaScript.</p></noscript>
+</figure>
+{{- if not (.Page.Scratch.Get "popgen-js") -}}
+{{- .Page.Scratch.Set "popgen-js" true -}}
+{{- $js := resources.Get "js/popgen.js" | minify | fingerprint -}}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{- end -}}

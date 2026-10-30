@@ -8,6 +8,9 @@
       <a class="btn" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
       <a class="btn btn-ghost" href="mailto:{{ site.Params.email }}?subject=CropPopStructure">{{ i18n "request_access" }}</a>
     </p>
+    {{ with site.GetPage "/tools/population-structure" }}
+    <a class="explain-link" href="{{ .RelPermalink }}"><span class="explain-q" aria-hidden="true">?</span><span>{{ .Title }}</span><span aria-hidden="true">→</span></a>
+    {{ end }}
   </header>
 
   {{ partial "app-demo.html" . }}
