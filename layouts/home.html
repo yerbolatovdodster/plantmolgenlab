@@ -11,8 +11,12 @@
     </p>
   </div>
   <div class="hero-dna" aria-hidden="true">
-    <canvas data-dna></canvas>
-    <span class="dna-tag">5′ — ATGC — 3′</span>
+    {{- $names := dict
+      "ru" (slice "ДНК · 5′→3′" "Пшеница · Triticum aestivum" "Ячмень · Hordeum vulgare" "Соя · Glycine max")
+      "kk" (slice "ДНҚ · 5′→3′" "Бидай · Triticum aestivum" "Арпа · Hordeum vulgare" "Соя · Glycine max")
+      "en" (slice "DNA · 5′→3′" "Wheat · Triticum aestivum" "Barley · Hordeum vulgare" "Soybean · Glycine max") }}
+    <canvas data-dna data-names="{{ index $names site.Language.Lang | default (index $names "ru") | jsonify }}"></canvas>
+    <span class="dna-tag" data-dna-tag></span>
   </div>
   {{ $dna := resources.Get "js/dna.js" | minify | fingerprint }}
   <script src="{{ $dna.RelPermalink }}" defer></script>
