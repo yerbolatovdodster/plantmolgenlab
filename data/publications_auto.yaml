@@ -45,7 +45,7 @@ items:
   journal: 'Frontiers in Plant Science 17: 1876304'
   doi: 10.3389/fpls.2026.1876304
   url: ''
-  citations: 1
+  citations: 2
   openalex: W7169581936
 - type: article
   year: 2026
@@ -264,6 +264,15 @@ items:
   citations: 0
   openalex: W7221796291
 - type: article
+  year: 2026
+  title: КОНСПЕКТ ВИДОВ РОДА AEGILOPS L., ПРОИЗРАСТАЮЩИХ НА ТЕРРИТОРИИ КАЗАХСТАНА
+  authors: Turemuratova S., Anuarbek S., Amalova A., **Turuspekov Y.**
+  journal: Eurasian Journal of Ecology 87(2)
+  doi: 10.26577/eje872202610
+  url: ''
+  citations: 0
+  openalex: W7224243238
+- type: article
   year: 2025
   title: 'Complete plastome sequences of Lonicera L. species: implications for phylogeny and comparative analysis'
   authors: Almerekova S., Yermagambetova M., Yerbolatov D., Ishmuratova M., **Turuspekov Y.**
@@ -310,12 +319,30 @@ items:
   openalex: W4413359076
 - type: article
   year: 2025
+  title: GWAS for QTLs associated with agronomic traits in Chickpea (Cicer arietinum L.) harvested in South-East Kazakhstan
+  authors: Затыбеков А., Genievskaya Y., Anuarbek S., Varshney R.K., Barmukh R., Кудайбергенов М., **Turuspekov Y.**, Абугалиева С.
+  journal: 'BMC Plant Biology 26(1): 42'
+  doi: 10.1186/s12870-025-07749-3
+  url: ''
+  citations: 2
+  openalex: W4416932697
+- type: article
+  year: 2025
+  title: Identification of QTLs associated with grain yield-related traits of spring barley
+  authors: Genievskaya Y., Абугалиева С., **Turuspekov Y.**
+  journal: 'BMC Plant Biology 25(1): 554'
+  doi: 10.1186/s12870-025-06588-6
+  url: ''
+  citations: 11
+  openalex: W4409871087
+- type: article
+  year: 2025
   title: Identification of Quantitative Trait Loci for Grain Quality Traits in a Pamyati Azieva × Paragon Bread Wheat Mapping Population Grown in Kazakhstan
   authors: Amalova A., Griffiths S., Абугалиева А.И., Абугалиева С., **Turuspekov Y.**
   journal: 'Plants 14(11): 1728'
   doi: 10.3390/plants14111728
   url: ''
-  citations: 2
+  citations: 3
   openalex: W4411062840
 - type: article
   year: 2025
@@ -362,6 +389,15 @@ items:
   url: ''
   citations: 0
   openalex: W4406686617
+- type: article
+  year: 2025
+  title: Uncovering the genetic landscape of soybean accessions from Kazakhstan in comparison with global germplasm using whole genome resequencing
+  authors: Затыбеков А., Genievskaya Y., Fang C.Q., Абугалиева С., **Turuspekov Y.**
+  journal: 'BMC Genomics 26(1): 802'
+  doi: 10.1186/s12864-025-12024-8
+  url: ''
+  citations: 5
+  openalex: W4413936355
 - type: article
   year: 2025
   title: ОСОБЕННОСТИ РАСПРОСТРАНЕНИЯ РЕДКОГО ВИДА IRIS KUSCHAKEWICZII B. FEDTSCH. НА ТЕРРИТОРИИ КАЗАХСТАНА
@@ -468,7 +504,7 @@ items:
   journal: 'Agronomy 14(8): 1848'
   doi: 10.3390/agronomy14081848
   url: ''
-  citations: 4
+  citations: 5
   openalex: W4401768848
 - type: article
   year: 2024
@@ -625,6 +661,15 @@ items:
   openalex: W4287149240
 - type: article
   year: 2022
+  title: Identification of quantitative trait loci of agronomic traits in bread wheat using a Pamyati Azieva × Paragon mapping population harvested in three regions of Kazakhstan
+  authors: Amalova A., Yermekbayev K., Griffiths S., Абугалиева С., Babkenov A., Fedorenko E., Абугалиева А.И., **Turuspekov Y.**
+  journal: 'PeerJ 10: e14324'
+  doi: 10.7717/peerj.14324
+  url: ''
+  citations: 11
+  openalex: W4308603565
+- type: article
+  year: 2022
   title: Identification of SNP Markers Associated with Grain Quality Traits in a Barley Collection (Hordeum vulgare L.) Harvested in Kazakhstan
   authors: Genievskaya Y., Almerekova S., Абугалиева С., Chudinov V., Blake T.K., Абугалиева А.И., **Turuspekov Y.**
   journal: 'Agronomy 12(10): 2431'
@@ -632,6 +677,15 @@ items:
   url: ''
   citations: 15
   openalex: W4303579221
+- type: article
+  year: 2021
+  title: Agronomic performance of common wheat nested association mapping (NAM) population in Kazakhstan
+  authors: Amalova A., **Turuspekov Y.**
+  journal: 'Eurasian Journal of Ecology 67(2): 58–67'
+  doi: 10.26577/eje.2021.v67.i2.06
+  url: ''
+  citations: 0
+  openalex: W4206958843
 - type: article
   year: 2021
   title: Flora accompanying Prunus ledebouriana (Schltdl.) Y.Y.Yao in the Tarbagatai State National Park in Kazakhstan
@@ -648,7 +702,7 @@ items:
   journal: 'PeerJ 9: e11857'
   doi: 10.7717/peerj.11857
   url: ''
-  citations: 19
+  citations: 21
   openalex: W3183405503
 - type: article
   year: 2021
@@ -669,6 +723,15 @@ items:
   citations: 22
   openalex: W3203716752
 - type: article
+  year: 2021
+  title: QTL mapping of agronomic traits in wheat using the UK Avalon × Cadenza reference mapping population grown in Kazakhstan
+  authors: Amalova A., Абугалиева С., Chudinov V., Sereda G., Тохетова Л., Abdikhalyk A., **Turuspekov Y.**
+  journal: 'PeerJ 9: e10733'
+  doi: 10.7717/peerj.10733
+  url: ''
+  citations: 23
+  openalex: W3132071276
+- type: article
   year: 2020
   title: A study of the genetic diversity in the world soybean collection using microsatellite markers associated with fungal disease resistance
   authors: Затыбеков А., **Turuspekov Y.**, Doszhanova B.N., Абугалиева С.
@@ -679,6 +742,15 @@ items:
   openalex: W3111844260
 - type: article
   year: 2020
+  title: Construction of a Genetic Map of RILs Derived from Wheat (T. aestivum L.) Varieties Pamyati Azieva × Paragon Using High-Throughput SNP Genotyping Platform KASP—Kompetitive Allele Specific PCR
+  authors: Yermekbayev K., Griffiths S., Chhetry M., Leverington‐Waite M., Orford S., Amalova A., Абугалиева С., **Turuspekov Y.**
+  journal: 'Russian Journal of Genetics 56(9): 1090–1098'
+  doi: 10.1134/s102279542009015x
+  url: ''
+  citations: 5
+  openalex: W3088038279
+- type: article
+  year: 2020
   title: Cross-Genera Transferability of Microsatellite Markers and Phylogenetic Assessment of Three Salsola Species from Western Kazakhstan
   authors: Almerekova S., Favarisova N., **Turuspekov Y.**, Абугалиева С.
   journal: 'Proceedings of the Latvian Academy of Sciences Section B Natural Exact and Applied Sciences 74(5): 325–334'
@@ -686,6 +758,15 @@ items:
   url: ''
   citations: 1
   openalex: W3111420102
+- type: article
+  year: 2020
+  title: Effect of Population Size on Genome-Wide Association Study of Agronomic Traits in Soybean
+  authors: Затыбеков А., **Turuspekov Y.**, Doszhanova B.N., Didorenko S.V., Абугалиева С.
+  journal: 'Proceedings of the Latvian Academy of Sciences Section B Natural Exact and Applied Sciences 74(4): 244–251'
+  doi: 10.2478/prolas-2020-0039
+  url: ''
+  citations: 2
+  openalex: W3091494467
 - type: article
   year: 2020
   title: Genome-wide association mapping for resistance to leaf, stem, and yellow rusts of common wheat under field conditions of South Kazakhstan
@@ -711,7 +792,7 @@ items:
   journal: 'Agronomy 10(9): 1285'
   doi: 10.3390/agronomy10091285
   url: ''
-  citations: 21
+  citations: 22
   openalex: W3082589888
 - type: article
   year: 2020
@@ -815,7 +896,7 @@ items:
 - type: article
   year: 2018
   title: ANALYSIS OF RESISTANCE TO SEPTORIA GLYCINES IN SOYBEAN WORLD COLLECTION HARVESTED IN SOUTH-EASTERN KAZAKHSTAN
-  authors: Казахстан P.К.Н.А.У.Н.С.Л.М.Г.И.Б.И.Б.Р.А., Затыбеков А., alexbek89@mail.ru, 0000-0003-4310-5753. O.I., Агибаев А., 0000-0002-6855-9228 Д.Б.Н.П.К.З.Р.И.К.К.Н.А.У.A.O.I., Didorenko S.V., 0000-0002-2223-0718 К.Б.Н.В.Н.С.О.З.К.Н.И.З.И.Р.А.К.S.O.I., Абугалиева С., 0000-0002-9748-507X Д.Б.Н.А.П.Г.Н.С.Л.М.Г.И.Б.И.Б.Р.А.К.A.O.I., **Turuspekov Y.**, 0000-0001-8590-1745 К.Б.Н.П.З.Л.М.Г.И.Б.И.Б.Р.А.К.E.O.I.
+  authors: Казахстан P.К.Н.А.У.Н.С.Л.М.Г.И.Б.И.Б.Р.А., Затыбеков А., alexbek89@mail.ru, Агибаев А., ID Д.Б.Н.П.К.З.Р.И.К.К.Н.А.У.O., Didorenko S.V., ID К.Б.Н.В.Н.С.О.З.К.Н.И.З.И.Р.А.К.O., Абугалиева С., ID А.П.Д.Б.Н.O., **Turuspekov Y.**, ID П.К.Б.Н.O.
   journal: 'Izvestiâ Nacionalʹnoj akademii nauk Respubliki Kazahstan 47(5): 44–52'
   doi: 10.32014/2018.2224-526x.6
   url: ''
@@ -868,84 +949,12 @@ items:
   openalex: W2898924151
 - type: article
   year: 2017
-  title: 'Additional file 1: of GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan'
-  authors: Затыбеков А., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek S., **Turuspekov Y.**
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598199
-  url: ''
-  citations: 0
-  openalex: W7135383297
-- type: article
-  year: 2017
-  title: 'Additional file 2: of GWAS for plant growth stages and yield components in spring wheat (Triticum aestivum L.) harvested in three regions of Kazakhstan'
-  authors: '**Turuspekov Y.**, Baibulatova A., Yermekbayev K., Тохетова Л., Chudinov V., Sereda G., Ganal M.W., Griffiths S., Abugalieva S.'
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598166
-  url: ''
-  citations: 0
-  openalex: W7135401611
-- type: article
-  year: 2017
-  title: 'Additional file 2: of GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan'
-  authors: Затыбеков А., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek S., **Turuspekov Y.**
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598238
-  url: ''
-  citations: 0
-  openalex: W7135388678
-- type: article
-  year: 2017
-  title: 'Additional file 3: of GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan'
-  authors: Затыбеков А., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek S., **Turuspekov Y.**
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598259
-  url: ''
-  citations: 0
-  openalex: W7135415135
-- type: article
-  year: 2017
-  title: 'Additional file 4: of GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan'
-  authors: Затыбеков А., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek S., **Turuspekov Y.**
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598265
-  url: ''
-  citations: 0
-  openalex: W7135392600
-- type: article
-  year: 2017
-  title: 'Additional file 5: of GWAS for plant growth stages and yield components in spring wheat (Triticum aestivum L.) harvested in three regions of Kazakhstan'
-  authors: '**Turuspekov Y.**, Baibulatova A., Yermekbayev K., Тохетова Л., Chudinov V., Sereda G., Ganal M.W., Griffiths S., Abugalieva S.'
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598217
-  url: ''
-  citations: 0
-  openalex: W7135407083
-- type: article
-  year: 2017
-  title: 'Additional file 5: of GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan'
-  authors: Затыбеков А., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek S., **Turuspekov Y.**
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598268
-  url: ''
-  citations: 0
-  openalex: W7135410211
-- type: article
-  year: 2017
-  title: 'Additional file 6: of GWAS of agronomic traits in soybean collection included in breeding pool in Kazakhstan'
-  authors: Затыбеков А., Abugalieva S., Didorenko S., Gerasimova Y., Sidorik I., Anuarbek S., **Turuspekov Y.**
-  journal: Figshare
-  doi: 10.6084/m9.figshare.5598271
-  url: ''
-  citations: 0
-  openalex: W7135383355
-- type: article
-  year: 2017
   title: GWAS for plant growth stages and yield components in spring wheat (Triticum aestivum L.) harvested in three regions of Kazakhstan
   authors: '**Turuspekov Y.**, Baibulatova A., Yermekbayev K., Тохетова Л., Chudinov V., Sereda G., Ganal M.W., Griffiths S., Абугалиева С.'
   journal: 'BMC Plant Biology 17(S1): 190'
   doi: 10.1186/s12870-017-1131-2
   url: ''
-  citations: 62
+  citations: 63
   openalex: W2770985158
 - type: article
   year: 2017
@@ -976,15 +985,6 @@ items:
   openalex: W2778852247
 - type: article
   year: 2016
-  title: 'Additional file 1: of Genome-wide association study on stem rust resistance in Kazakh spring barley lines'
-  authors: '**Turuspekov Y.**, Ormanbekova D., Rsaliev A.S., Abugalieva S.'
-  journal: Figshare
-  doi: 10.6084/m9.figshare.4430315
-  url: ''
-  citations: 0
-  openalex: W7137217058
-- type: article
-  year: 2016
   title: Assessment of Soybean Flowering and Seed Maturation Time in Different Latitude Regions of Kazakhstan
   authors: Абугалиева С., Didorenko S.V., Anuarbek S., Volkova L., Gerasimova Y., Сидорик И., **Turuspekov Y.**
   journal: 'PLoS ONE 11(12): e0166894'
@@ -999,7 +999,7 @@ items:
   journal: 'Heredity 116(6): 485–490'
   doi: 10.1038/hdy.2016.2
   url: ''
-  citations: 5
+  citations: 6
   openalex: W2259816340
 - type: article
   year: 2016
