@@ -19,7 +19,7 @@ spotlights:
 
     For more information, follow [Dr. Akerke Amalova''s ResearchGate page](https://www.researchgate.net/profile/Akerke-Amalova).'
 - title: Kazakhstan's soybeans in the global germplasm
-  image: images/research/soybean-collection-en.svg
+  image: images/research/soybean-collection.svg
   text: 'Soybean is one of the fastest-growing crops in Kazakhstan: its area expanded from about 71,000 ha in 2011 to over 200,000 ha by 2021, mostly in the Almaty region. To understand where local cultivars come from and how much diversity they carry, we resequenced the genomes of Kazakhstan''s cultivars and breeding lines and compared them with a global collection of 694 accessions: modern cultivars from Europe, East Asia and the Americas, Chinese landraces and wild soybean (*Glycine soja*).
 
 
