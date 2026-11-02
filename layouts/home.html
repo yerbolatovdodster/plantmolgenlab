@@ -1,25 +1,13 @@
 {{ define "main" }}
 {{ $lang := site.Language.Lang }}
-<section class="hero hero-split wrap">
-  <div class="hero-text">
-    <p class="hero-institute">{{ site.Params.institute }}</p>
-    <h1 class="hero-title">{{ site.Title }}</h1>
-    {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
-    <p class="hero-actions">
-      {{ with site.GetPage "/research" }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "explore_research" }}</a>{{ end }}
-      {{ with site.GetPage "/tools" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">CropPopStructure</a>{{ end }}
-    </p>
-  </div>
-  <div class="hero-dna" aria-hidden="true">
-    {{- $names := dict
-      "ru" (slice "ДНК · 5′→3′" "Пшеница · Triticum aestivum" "Ячмень · Hordeum vulgare" "Соя · Glycine max")
-      "kk" (slice "ДНҚ · 5′→3′" "Бидай · Triticum aestivum" "Арпа · Hordeum vulgare" "Соя · Glycine max")
-      "en" (slice "DNA · 5′→3′" "Wheat · Triticum aestivum" "Barley · Hordeum vulgare" "Soybean · Glycine max") }}
-    <canvas data-dna data-names="{{ index $names site.Language.Lang | default (index $names "ru") | jsonify }}"></canvas>
-    <span class="dna-tag" data-dna-tag></span>
-  </div>
-  {{ $dna := resources.Get "js/dna.js" | minify | fingerprint }}
-  <script src="{{ $dna.RelPermalink }}" defer></script>
+<section class="hero wrap">
+  <p class="hero-institute">{{ site.Params.institute }}</p>
+  <h1 class="hero-title">{{ site.Title }}</h1>
+  {{ with .Params.lede }}<p class="lede">{{ . }}</p>{{ end }}
+  <p class="hero-actions">
+    {{ with site.GetPage "/research" }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "explore_research" }}</a>{{ end }}
+    {{ with site.GetPage "/tools" }}<a class="btn btn-ghost" href="{{ .RelPermalink }}">CropPopStructure</a>{{ end }}
+  </p>
 </section>
 
 
