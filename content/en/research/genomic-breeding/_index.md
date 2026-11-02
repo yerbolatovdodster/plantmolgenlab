@@ -9,7 +9,7 @@ topics:
 - QTL mapping
 - KASP markers
 spotlight_title: 'Wheat NAM population: adaptation and yield'
-spotlight_image: images/research/wheat-nam.svg
+spotlight_image: images/research/wheat-nam-en.svg
 spotlight_text: 'To find genes that help wheat adapt to Kazakhstan''s conditions, we work with the UK nested association mapping (NAM) population from the John Innes Centre. Its common parent, the UK spring cultivar Paragon, was crossed with 24 donors of diverse origin. The genome of each recombinant inbred line (RIL) is a mosaic of Paragon and donor segments, so NAM combines the resolution of GWAS with the power of classical QTL mapping.
 
 
