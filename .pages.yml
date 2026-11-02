@@ -193,6 +193,28 @@ content:
   - {name: description, label: Подзаголовок, type: text}
   - {name: photo, label: Общее фото команды, type: image}
   - {name: photo_caption, label: Подпись к общему фото, type: string}
+- name: action
+  label: Наука в действии (фото на главной)
+  type: file
+  path: data/action.yaml
+  fields:
+  - name: items
+    label: Фотографии
+    type: object
+    list: true
+    fields:
+    - {name: image, label: Фото, type: image, required: true}
+    - name: type
+      label: Раздел
+      type: select
+      options:
+        values:
+        - {value: lab, label: Лаборатория}
+        - {value: field, label: Поле и теплица}
+        - {value: expedition, label: Экспедиции}
+    - {name: caption_ru, label: Подпись (рус), type: string}
+    - {name: caption_kk, label: Қолтаңба (қаз), type: string}
+    - {name: caption_en, label: Caption (eng), type: string}
 - name: gallery
   label: Фотографии (карусель на странице «Команда»)
   type: file

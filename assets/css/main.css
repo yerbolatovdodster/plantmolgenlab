@@ -1071,3 +1071,34 @@ h3 { font-size: 1.08rem; }
   .hero-dna { height: 260px; border-left: 0; border-top: 1px solid var(--line); }
   .hero-dna::before { left: 50%; top: -1px; width: 2px; height: 14px; }
 }
+
+/* ── «Наука в действии» на главной ── */
+.action { margin-bottom: var(--space); }
+.action-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; }
+.action-sub { margin: 6px 0 0; color: var(--muted); }
+.action-filter { display: flex; flex-wrap: wrap; gap: 6px; }
+.action-filter button { padding: 8px 14px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--surface); color: var(--ink); font: inherit; font-size: 0.9rem; cursor: pointer; transition: background .2s, border-color .2s; }
+.action-filter button:hover { border-color: var(--leaf); }
+.action-filter button.is-on { background: var(--deep); border-color: var(--deep); color: #fff; }
+.action-grid { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px; gap: 10px; }
+.action-item { position: relative; overflow: hidden; border-radius: var(--r-sm); background: var(--surface-2); }
+.action-item[hidden] { display: none; }
+.action-item.big { grid-column: span 2; grid-row: span 2; }
+.action.is-filtered .action-item.big { grid-column: auto; grid-row: auto; }
+.action-open { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; position: relative; }
+.action-open:focus-visible { outline: 3px solid var(--leaf); outline-offset: -3px; }
+.action-open img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.action-open:hover img { transform: scale(1.045); }
+.action-cap { position: absolute; inset: auto 0 0 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 40px 14px 12px; background: linear-gradient(to top, rgba(8,14,10,.78), rgba(8,14,10,0)); color: #fff; }
+.action-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; background: rgba(255,255,255,.18); backdrop-filter: blur(4px); }
+.action-item[data-type="field"] .action-tag { background: color-mix(in srgb, var(--k2) 75%, transparent); }
+.action-item[data-type="expedition"] .action-tag { background: color-mix(in srgb, var(--k3) 80%, transparent); }
+.action-item[data-type="lab"] .action-tag { background: color-mix(in srgb, var(--k4) 80%, transparent); }
+.action-text { font-size: 0.92rem; font-weight: 500; line-height: 1.35; opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s; }
+.action-open:hover .action-text, .action-open:focus-visible .action-text, .action-item.big .action-text { opacity: 1; transform: none; }
+@media (max-width: 900px) { .action-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 170px; } }
+@media (max-width: 600px) {
+  .action-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 6px; }
+  .action-text { opacity: 1; transform: none; font-size: 0.82rem; }
+  .action-cap { padding: 28px 10px 8px; }
+}

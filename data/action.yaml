@@ -1,0 +1,54 @@
+# Блок «Наука в действии» на главной странице. Удобнее всего редактировать через Pages CMS.
+# type: lab — лаборатория, field — поле и теплица, expedition — экспедиции.
+# Порядок на сайте = порядок в списке. Первое фото показывается крупно.
+items:
+  - image: images/gallery/04-expedition.jpg
+    type: expedition
+    caption_ru: "Экспедиция за образцами дикой флоры"
+    caption_kk: "Жабайы флора үлгілерін жинау экспедициясы"
+    caption_en: "Collecting wild flora samples"
+  - image: images/gallery/14-lab-work-2.jpg
+    type: lab
+    caption_ru: "Выделение ДНК и подготовка ПЦР"
+    caption_kk: "ДНҚ бөліп алу және ПТР-ге дайындық"
+    caption_en: "DNA extraction and PCR setup"
+  - image: images/gallery/11-field-2.jpg
+    type: field
+    caption_ru: "Фенотипирование пшеницы в поле"
+    caption_kk: "Бидайды далада фенотиптеу"
+    caption_en: "Wheat phenotyping in the field"
+  - image: images/gallery/15-lab-work-3.jpg
+    type: lab
+    caption_ru: "Работа с амплификатором"
+    caption_kk: "Амплификатормен жұмыс"
+    caption_en: "Running the thermal cycler"
+  - image: images/gallery/20-field-trip-mountains.jpg
+    type: expedition
+    caption_ru: "В горах Заилийского Алатау"
+    caption_kk: "Іле Алатауы тауларында"
+    caption_en: "In the Trans-Ili Alatau mountains"
+  - image: images/gallery/07-greenhouse.jpg
+    type: field
+    caption_ru: "Линии пшеницы в теплице"
+    caption_kk: "Жылыжайдағы бидай линиялары"
+    caption_en: "Wheat lines in the greenhouse"
+  - image: images/gallery/13-lab-work-1.jpg
+    type: lab
+    caption_ru: "Подготовка семян к анализу"
+    caption_kk: "Тұқымды талдауға дайындау"
+    caption_en: "Preparing seeds for analysis"
+  - image: images/gallery/10-field-1.jpg
+    type: field
+    caption_ru: "Оценка всходов на опытном поле"
+    caption_kk: "Тәжірибе алқабында өскіндерді бағалау"
+    caption_en: "Scoring seedlings in the trial field"
+  - image: images/gallery/16-lab-room.jpg
+    type: lab
+    caption_ru: "Лаборатория молекулярной генетики"
+    caption_kk: "Молекулалық генетика зертханасы"
+    caption_en: "The Molecular Genetics Laboratory"
+  - image: images/gallery/12-field-3.jpg
+    type: field
+    caption_ru: "Учёт признаков на делянках"
+    caption_kk: "Мөлдектердегі белгілерді есепке алу"
+    caption_en: "Recording traits on field plots"

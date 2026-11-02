@@ -1,0 +1,44 @@
+{{- /* Блок «Наука в действии» на главной: мозаика фото с фильтром и просмотром во весь экран.
+     Данные — data/action.yaml (редактируется в Pages CMS). */ -}}
+{{ with hugo.Data.action.items }}
+{{ $lang := site.Language.Lang }}
+<section class="action wrap" aria-labelledby="action-h" data-action>
+  <div class="section-head action-head">
+    <div>
+      <h2 id="action-h">{{ i18n "action_title" }}</h2>
+      <p class="action-sub">{{ i18n "action_sub" }}</p>
+    </div>
+    <div class="action-filter" role="group" aria-label="{{ i18n "action_title" }}">
+      <button type="button" class="is-on" data-f="all" aria-pressed="true">{{ i18n "action_all" }}</button>
+      {{ range slice "lab" "field" "expedition" }}
+      <button type="button" data-f="{{ . }}" aria-pressed="false">{{ i18n (printf "action_%s" .) }}</button>
+      {{ end }}
+    </div>
+  </div>
+  <ul class="action-grid">
+    {{ range $i, $it := . }}
+    {{ $src := strings.TrimPrefix "/" $it.image }}
+    {{ $cap := index $it (printf "caption_%s" $lang) | default $it.caption_ru }}
+    {{ $shape := "" }}
+    {{ if eq $i 0 }}{{ $shape = "big" }}{{ end }}
+    <li class="action-item {{ $shape }}" data-type="{{ $it.type | default "lab" }}">
+      <button type="button" class="action-open" aria-label="{{ i18n "view_photo" }}{{ with $cap }}: {{ . }}{{ end }}">
+        <img src="{{ $src | relURL }}" alt="{{ $cap }}" loading="lazy" decoding="async">
+        <span class="action-cap">
+          <span class="action-tag">{{ i18n (printf "action_%s" ($it.type | default "lab")) }}</span>
+          {{ with $cap }}<span class="action-text">{{ . }}</span>{{ end }}
+        </span>
+      </button>
+    </li>
+    {{ end }}
+  </ul>
+  <dialog class="lightbox" aria-label="{{ i18n "action_title" }}">
+    <figure><img alt=""><figcaption></figcaption></figure>
+    <button class="lb-btn lb-close" type="button" aria-label="{{ i18n "close" }}">×</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="{{ i18n "prev" }}">‹</button>
+    <button class="lb-btn lb-next" type="button" aria-label="{{ i18n "next" }}">›</button>
+  </dialog>
+  {{ $js := resources.Get "js/action.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</section>
+{{ end }}
