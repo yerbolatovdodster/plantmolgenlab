@@ -1112,3 +1112,40 @@ h3 { font-size: 1.08rem; }
 .sw-cap { margin: 10px 0 0; font-size: 0.88rem; font-style: italic; color: var(--muted); }
 .sw-app .page-actions { margin-top: 24px; }
 .tool-crumb { margin-top: clamp(24px, 4vw, 40px); }
+
+/* ── Блок исследования «схема + текст» (NAM-популяция) ── */
+.spot { margin-top: clamp(48px, 7vw, 88px); }
+.spot > h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; letter-spacing: -0.02em; margin: 0 0 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.spot-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 48px); align-items: start; }
+.spot-fig { margin: 0; }
+.spot-fig img { width: 100%; height: auto; display: block; }
+.spot-text { max-width: none; font-size: 1rem; line-height: 1.7; }
+.spot-text p { margin: 0 0 1em; }
+@media (max-width: 900px) { .spot-grid { grid-template-columns: 1fr; } }
+
+.nam-fig { display: block; width: 100%; height: auto; font-family: inherit; }
+.nam-fig text { fill: var(--ink); }
+.nf-box { fill: var(--surface); stroke: color-mix(in srgb, var(--ink) 35%, transparent); stroke-width: 1; }
+.nf-dash { stroke-dasharray: 4 3; }
+.nf-num-bg { fill: var(--deep); }
+.nam-fig .nf-num { fill: #fff; font-size: 12px; font-weight: 700; }
+.nf-title { font-size: 17px; font-weight: 600; }
+.nf-lbl { font-size: 15px; font-weight: 600; }
+.nam-fig .nf-lbl-w { fill: #fff; font-size: 12px; font-weight: 700; }
+.nam-fig .nf-small { font-size: 14px; fill: var(--muted); }
+.nam-fig .nf-tiny { font-size: 12.5px; fill: var(--muted); }
+.nf-big { font-size: 24px; font-weight: 700; }
+.nf-huge { font-size: 26px; font-weight: 700; }
+.nam-fig .nf-x { font-size: 16px; fill: var(--muted); }
+.nf-paragon { fill: var(--k1); }
+.nf-donor { stroke: var(--surface); stroke-width: 1.5; }
+.nf-cross { stroke: color-mix(in srgb, var(--ink) 18%, transparent); stroke-width: 0.8; }
+.nf-chr { fill: none; stroke: color-mix(in srgb, var(--ink) 45%, transparent); stroke-width: 1; }
+.nf-line { fill: none; stroke: color-mix(in srgb, var(--ink) 55%, transparent); stroke-width: 1.4; }
+.nf-arrowhead { fill: color-mix(in srgb, var(--ink) 55%, transparent); }
+.nf-pin { fill: #C0564B; }
+.nf-pin-dot { fill: #fff; }
+.nf-chip { fill: none; stroke: color-mix(in srgb, var(--ink) 40%, transparent); stroke-width: 1.2; }
+.nf-axis { stroke: color-mix(in srgb, var(--ink) 45%, transparent); stroke-width: 1; }
+.nf-thr { stroke: #C0564B; stroke-width: 1; stroke-dasharray: 4 3; }
+.nf-res { fill: var(--bg); stroke: var(--line); }

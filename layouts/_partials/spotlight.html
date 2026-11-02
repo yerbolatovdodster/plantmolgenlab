@@ -1,0 +1,12 @@
+{{- /* Блок исследования «рисунок + текст» (в стиле popgen.dk/research). Поля spotlight_* в _index.md раздела. */ -}}
+{{ with .Params.spotlight_title }}
+<section class="spot" aria-labelledby="spot-h">
+  <h2 id="spot-h">{{ . }}</h2>
+  <div class="spot-grid">
+    <figure class="spot-fig">
+      {{ if eq $.Params.spotlight_figure "nam" }}{{ partial "nam-figure.html" $ }}{{ else }}{{ with $.Params.spotlight_image }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" loading="lazy">{{ end }}{{ end }}
+    </figure>
+    <div class="spot-text prose">{{ $.Params.spotlight_text | markdownify }}</div>
+  </div>
+</section>
+{{ end }}
