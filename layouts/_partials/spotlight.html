@@ -3,9 +3,12 @@
 <section class="spot" aria-labelledby="spot-h">
   <h2 id="spot-h">{{ . }}</h2>
   <div class="spot-grid">
+    {{ with $.Params.spotlight_image }}
+    {{ $src := strings.TrimPrefix "/" . | relURL }}
     <figure class="spot-fig">
-      {{ if eq $.Params.spotlight_figure "nam" }}{{ partial "nam-figure.html" $ }}{{ else }}{{ with $.Params.spotlight_image }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" loading="lazy">{{ end }}{{ end }}
+      <a href="{{ $src }}" target="_blank" rel="noopener"><img src="{{ $src }}" alt="{{ $.Params.spotlight_title }}" loading="lazy" decoding="async"></a>
     </figure>
+    {{ end }}
     <div class="spot-text prose">{{ $.Params.spotlight_text | markdownify }}</div>
   </div>
 </section>
