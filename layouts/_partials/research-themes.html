@@ -1,0 +1,21 @@
+{{- /* Блоки «картинка + текст» под группами культур (как на popgen.dk/research). Данные — themes в _index.md раздела. */ -}}
+{{ with .Params.themes }}
+<section class="rthemes" aria-labelledby="rt-h">
+  <h2 id="rt-h">{{ $.Params.themes_title | default (i18n "research") }}</h2>
+  {{ range $i, $t := . }}
+  <article class="rtheme{{ if modBool $i 2 }}{{ else }} rtheme-rev{{ end }}">
+    {{ with $t.image }}
+    <figure class="rtheme-fig{{ if strings.Contains . "gallery/" }} is-photo{{ end }}">
+      <a href="{{ strings.TrimPrefix "/" . | relURL }}" target="_blank" rel="noopener"><img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $t.caption | default $t.title }}" loading="lazy" decoding="async"></a>
+      {{ with $t.caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+    </figure>
+    {{ end }}
+    <div class="rtheme-text">
+      <span class="rtheme-n">{{ printf "%02d" (add $i 1) }}</span>
+      <h3>{{ $t.title }}</h3>
+      <div class="prose">{{ $t.text | markdownify }}</div>
+    </div>
+  </article>
+  {{ end }}
+</section>
+{{ end }}

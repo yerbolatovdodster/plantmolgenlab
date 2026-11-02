@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ with .Pages.ByDate.Reverse }}
+  <ul class="news-cards">
+    {{ range . }}
+    {{ $img := .Params.image }}
+    {{ if not $img }}{{ with .Params.photos }}{{ $img = (index . 0).image }}{{ end }}{{ end }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="news-card{{ if not $img }} no-img{{ end }}">
+        {{ with $img }}<span class="news-thumb"><img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" loading="lazy" decoding="async"></span>{{ end }}
+        <span class="news-card-body">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+          <span class="news-card-title">{{ .Title }}</span>
+          {{ with .Description }}<span class="news-card-text">{{ . }}</span>{{ else }}<span class="news-card-text">{{ .Summary | plainify | truncate 160 }}</span>{{ end }}
+        </span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <p class="muted">{{ i18n "no_news" }}</p>
+  {{ end }}
+</article>
+{{ end }}

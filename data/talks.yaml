@@ -1,0 +1,16 @@
+# Видеозаписи лекций и докладов сотрудников (страница «Лекции»). Удобнее редактировать через Pages CMS.
+# video — обычная ссылка на YouTube (https://www.youtube.com/watch?v=… или https://youtu.be/…).
+# Новые записи добавляйте в начало списка.
+items: []
+# Пример:
+#  - date: 2025-11-20
+#    video: https://www.youtube.com/watch?v=XXXXXXXXXXX
+#    speaker_ru: "Е. К. Туруспеков"
+#    speaker_kk: "Е. Қ. Тұрыспеков"
+#    speaker_en: "Yerlan Turuspekov"
+#    title_ru: "Геномная селекция пшеницы в Казахстане"
+#    title_kk: "Қазақстандағы бидайдың геномдық селекциясы"
+#    title_en: "Genomic breeding of wheat in Kazakhstan"
+#    event_ru: "Открытая лекция, КазНУ им. аль-Фараби"
+#    event_kk: "Ашық дәріс, әл-Фараби атындағы ҚазҰУ"
+#    event_en: "Public lecture, Al-Farabi Kazakh National University"

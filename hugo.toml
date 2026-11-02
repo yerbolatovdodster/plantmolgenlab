@@ -66,8 +66,16 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/contact"
     weight = 50
   [[languages.ru.menus.main]]
-    name = "CropPopStructure"
-    pageRef = "/tools"
+    name = "Новости"
+    pageRef = "/news"
+    weight = 45
+  [[languages.ru.menus.main]]
+    name = "Лекции"
+    pageRef = "/talks"
+    weight = 47
+  [[languages.ru.menus.main]]
+    name = "Software"
+    pageRef = "/software"
     weight = 60
     [languages.ru.menus.main.params]
       class = "nav-app"
@@ -104,8 +112,16 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/contact"
     weight = 50
   [[languages.kk.menus.main]]
-    name = "CropPopStructure"
-    pageRef = "/tools"
+    name = "Жаңалықтар"
+    pageRef = "/news"
+    weight = 45
+  [[languages.kk.menus.main]]
+    name = "Дәрістер"
+    pageRef = "/talks"
+    weight = 47
+  [[languages.kk.menus.main]]
+    name = "Software"
+    pageRef = "/software"
     weight = 60
     [languages.kk.menus.main.params]
       class = "nav-app"
@@ -142,8 +158,16 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/contact"
     weight = 50
   [[languages.en.menus.main]]
-    name = "CropPopStructure"
-    pageRef = "/tools"
+    name = "News"
+    pageRef = "/news"
+    weight = 45
+  [[languages.en.menus.main]]
+    name = "Talks"
+    pageRef = "/talks"
+    weight = 47
+  [[languages.en.menus.main]]
+    name = "Software"
+    pageRef = "/software"
     weight = 60
     [languages.en.menus.main.params]
       class = "nav-app"

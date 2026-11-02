@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="page wrap software">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  {{ range .Params.apps }}
+  <section class="sw-app">
+    <h2>{{ .name }}</h2>
+    <div class="prose">{{ .text | markdownify }}</div>
+    {{ with .image }}
+    <figure class="sw-fig">
+      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async">
+    </figure>
+    {{ end }}
+    {{ with .caption }}<p class="sw-cap">{{ . }}</p>{{ end }}
+    <p class="page-actions">
+      {{ with .page }}{{ with site.GetPage . }}<a class="btn" href="{{ .RelPermalink }}">{{ i18n "sw_demo" }} →</a>{{ end }}{{ end }}
+      <a class="btn btn-ghost" href="{{ site.Params.appURL }}">{{ i18n "open_app" }}</a>
+    </p>
+  </section>
+  {{ end }}
+</article>
+{{ end }}
