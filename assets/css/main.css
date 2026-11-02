@@ -1119,7 +1119,7 @@ h3 { font-size: 1.08rem; }
 .spot-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 48px); align-items: start; }
 .spot-fig { margin: 0; }
 .spot-fig img { width: 100%; height: auto; display: block; background: #fff; padding: 14px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 18px 40px -24px rgba(0,0,0,.35); cursor: zoom-in; }
-.spot-text { max-width: none; font-size: 1rem; line-height: 1.7; }
+.spot-text { max-width: none; font-family: 'Lucida Sans', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans Regular', sans-serif; font-size: 1rem; line-height: 1.7; }
 .spot-text p { margin: 0 0 1em; }
 @media (max-width: 900px) { .spot-grid { grid-template-columns: 1fr; } }
 
