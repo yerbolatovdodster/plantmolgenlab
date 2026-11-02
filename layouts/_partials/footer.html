@@ -10,6 +10,7 @@
         <p class="footer-title">{{ i18n "menu" }}</p>
         <ul class="footer-links">
           {{ range site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+          {{ with site.GetPage "/news" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
         </ul>
       </div>
       <div>

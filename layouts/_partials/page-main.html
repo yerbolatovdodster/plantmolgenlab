@@ -16,7 +16,6 @@
   <div class="prose">{{ .Content }}</div>
   </div>
   {{ if eq .Kind "section" }}{{ partial "subgroups.html" . }}{{ end }}
-  {{ partial "research-themes.html" . }}
   {{ if eq .Section "research" }}{{ partial "featured-pubs.html" . }}{{ end }}
   {{ if .Params.app_button }}
   <p class="page-actions">

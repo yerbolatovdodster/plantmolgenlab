@@ -90,17 +90,8 @@ content:
   - {name: title, label: Заголовок, type: string, required: true}
   - {name: date, label: Дата, type: date, required: true}
   - {name: description, label: Краткое описание, type: text}
-  - {name: place, label: Место (город, страна), type: string}
-  - {name: tags, label: Метки, type: string, list: true}
-  - {name: image, label: Обложка (большое фото над текстом), type: image}
+  - {name: image, label: Картинка, type: image}
   - {name: body, label: Текст, type: rich-text}
-  - name: photos
-    label: Фотографии (сетка под текстом)
-    type: object
-    list: true
-    fields:
-    - {name: image, label: Фото, type: image, required: true}
-    - {name: caption, label: Подпись, type: string}
 - name: news-kk
   label: Жаңалықтар (қаз)
   type: collection
@@ -118,17 +109,8 @@ content:
   - {name: title, label: Заголовок, type: string, required: true}
   - {name: date, label: Дата, type: date, required: true}
   - {name: description, label: Краткое описание, type: text}
-  - {name: place, label: Место (город, страна), type: string}
-  - {name: tags, label: Метки, type: string, list: true}
-  - {name: image, label: Обложка (большое фото над текстом), type: image}
+  - {name: image, label: Картинка, type: image}
   - {name: body, label: Текст, type: rich-text}
-  - name: photos
-    label: Фотографии (сетка под текстом)
-    type: object
-    list: true
-    fields:
-    - {name: image, label: Фото, type: image, required: true}
-    - {name: caption, label: Подпись, type: string}
 - name: news-en
   label: News (eng)
   type: collection
@@ -146,17 +128,8 @@ content:
   - {name: title, label: Заголовок, type: string, required: true}
   - {name: date, label: Дата, type: date, required: true}
   - {name: description, label: Краткое описание, type: text}
-  - {name: place, label: Место (город, страна), type: string}
-  - {name: tags, label: Метки, type: string, list: true}
-  - {name: image, label: Обложка (большое фото над текстом), type: image}
+  - {name: image, label: Картинка, type: image}
   - {name: body, label: Текст, type: rich-text}
-  - name: photos
-    label: Фотографии (сетка под текстом)
-    type: object
-    list: true
-    fields:
-    - {name: image, label: Фото, type: image, required: true}
-    - {name: caption, label: Подпись, type: string}
 - name: team
   label: Команда
   type: file
@@ -220,27 +193,6 @@ content:
   - {name: description, label: Подзаголовок, type: text}
   - {name: photo, label: Общее фото команды, type: image}
   - {name: photo_caption, label: Подпись к общему фото, type: string}
-- name: talks
-  label: Лекции (видео)
-  type: file
-  path: data/talks.yaml
-  fields:
-  - name: items
-    label: Записи (новые — сверху)
-    type: object
-    list: true
-    fields:
-    - {name: date, label: Дата, type: date}
-    - {name: video, label: Ссылка на YouTube, type: string, required: true}
-    - {name: speaker_ru, label: Лектор (рус), type: string}
-    - {name: speaker_kk, label: Лектор (қаз), type: string}
-    - {name: speaker_en, label: Speaker (eng), type: string}
-    - {name: title_ru, label: Название (рус), type: string}
-    - {name: title_kk, label: Атауы (қаз), type: string}
-    - {name: title_en, label: Title (eng), type: string}
-    - {name: event_ru, label: Где (мероприятие, рус), type: string}
-    - {name: event_kk, label: Қайда (іс-шара, қаз), type: string}
-    - {name: event_en, label: Event (eng), type: string}
 - name: action
   label: Наука в действии (фото на главной)
   type: file
@@ -377,16 +329,6 @@ content:
   - {name: topics, label: Метки, type: string, list: true}
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
-  - {name: themes_title, label: Заголовок над блоками исследований, type: string}
-  - name: themes
-    label: Блоки исследований (картинка + текст)
-    type: object
-    list: true
-    fields:
-    - {name: title, label: Заголовок, type: string, required: true}
-    - {name: image, label: Картинка, type: image}
-    - {name: caption, label: Подпись к картинке, type: string}
-    - {name: text, label: Текст, type: text}
   - {name: body, label: Текст, type: rich-text}
 - name: gbg-ru
   label: 'Культуры: группы (рус)'
@@ -422,16 +364,6 @@ content:
   - {name: topics, label: Метки, type: string, list: true}
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
-  - {name: themes_title, label: Заголовок над блоками исследований, type: string}
-  - name: themes
-    label: Блоки исследований (картинка + текст)
-    type: object
-    list: true
-    fields:
-    - {name: title, label: Заголовок, type: string, required: true}
-    - {name: image, label: Картинка, type: image}
-    - {name: caption, label: Подпись к картинке, type: string}
-    - {name: text, label: Текст, type: text}
   - {name: body, label: Текст, type: rich-text}
 - name: gbg-kk
   label: 'Дақылдар: топтар (қаз)'
@@ -467,16 +399,6 @@ content:
   - {name: topics, label: Метки, type: string, list: true}
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
-  - {name: themes_title, label: Заголовок над блоками исследований, type: string}
-  - name: themes
-    label: Блоки исследований (картинка + текст)
-    type: object
-    list: true
-    fields:
-    - {name: title, label: Заголовок, type: string, required: true}
-    - {name: image, label: Картинка, type: image}
-    - {name: caption, label: Подпись к картинке, type: string}
-    - {name: text, label: Текст, type: text}
   - {name: body, label: Текст, type: rich-text}
 - name: gbg-en
   label: Crop groups (eng)
