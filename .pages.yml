@@ -329,9 +329,14 @@ content:
   - {name: topics, label: Метки, type: string, list: true}
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
-  - {name: spotlight_title, label: 'Блок исследования: заголовок', type: string}
-  - {name: spotlight_image, label: 'Блок исследования: картинка', type: image}
-  - {name: spotlight_text, label: 'Блок исследования: текст', type: text}
+  - name: spotlights
+    label: Блоки исследований (картинка слева, текст справа)
+    type: object
+    list: true
+    fields:
+    - {name: title, label: Заголовок, type: string, required: true}
+    - {name: image, label: Картинка, type: image}
+    - {name: text, label: Текст, type: text}
   - {name: body, label: Текст, type: rich-text}
 - name: gbg-ru
   label: 'Культуры: группы (рус)'
@@ -367,9 +372,14 @@ content:
   - {name: topics, label: Метки, type: string, list: true}
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
-  - {name: spotlight_title, label: 'Блок исследования: заголовок', type: string}
-  - {name: spotlight_image, label: 'Блок исследования: картинка', type: image}
-  - {name: spotlight_text, label: 'Блок исследования: текст', type: text}
+  - name: spotlights
+    label: Блоки исследований (картинка слева, текст справа)
+    type: object
+    list: true
+    fields:
+    - {name: title, label: Заголовок, type: string, required: true}
+    - {name: image, label: Картинка, type: image}
+    - {name: text, label: Текст, type: text}
   - {name: body, label: Текст, type: rich-text}
 - name: gbg-kk
   label: 'Дақылдар: топтар (қаз)'
@@ -405,9 +415,14 @@ content:
   - {name: topics, label: Метки, type: string, list: true}
   - {name: hero, label: Фото в шапке (широкий пейзаж), type: image}
   - {name: bg, label: Иллюстрация справа от текста, type: image}
-  - {name: spotlight_title, label: 'Блок исследования: заголовок', type: string}
-  - {name: spotlight_image, label: 'Блок исследования: картинка', type: image}
-  - {name: spotlight_text, label: 'Блок исследования: текст', type: text}
+  - name: spotlights
+    label: Блоки исследований (картинка слева, текст справа)
+    type: object
+    list: true
+    fields:
+    - {name: title, label: Заголовок, type: string, required: true}
+    - {name: image, label: Картинка, type: image}
+    - {name: text, label: Текст, type: text}
   - {name: body, label: Текст, type: rich-text}
 - name: gbg-en
   label: Crop groups (eng)

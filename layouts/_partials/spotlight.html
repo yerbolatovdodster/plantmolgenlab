@@ -1,15 +1,15 @@
-{{- /* Блок исследования «рисунок + текст» (в стиле popgen.dk/research). Поля spotlight_* в _index.md раздела. */ -}}
-{{ with .Params.spotlight_title }}
-<section class="spot" aria-labelledby="spot-h">
-  <h2 id="spot-h">{{ . }}</h2>
+{{- /* Блоки исследования «рисунок + текст» (в стиле popgen.dk/research). Список spotlights в _index.md раздела. */ -}}
+{{ range $i, $b := .Params.spotlights }}
+<section class="spot" aria-labelledby="spot-h-{{ $i }}">
+  <h2 id="spot-h-{{ $i }}">{{ $b.title }}</h2>
   <div class="spot-grid">
-    {{ with $.Params.spotlight_image }}
+    {{ with $b.image }}
     {{ $src := strings.TrimPrefix "/" . | relURL }}
     <figure class="spot-fig">
-      <a href="{{ $src }}" target="_blank" rel="noopener"><img src="{{ $src }}" alt="{{ $.Params.spotlight_title }}" loading="lazy" decoding="async"></a>
+      <a href="{{ $src }}" target="_blank" rel="noopener"><img src="{{ $src }}" alt="{{ $b.title }}" loading="lazy" decoding="async"></a>
     </figure>
     {{ end }}
-    <div class="spot-text prose">{{ $.Params.spotlight_text | markdownify }}</div>
+    <div class="spot-text prose">{{ $b.text | markdownify }}</div>
   </div>
 </section>
 {{ end }}
