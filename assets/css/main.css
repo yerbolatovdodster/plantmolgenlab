@@ -1123,3 +1123,10 @@ h3 { font-size: 1.08rem; }
 .spot-text p { margin: 0 0 1em; }
 @media (max-width: 900px) { .spot-grid { grid-template-columns: 1fr; } }
 
+
+/* ── CropPopStructure: анимированная шапка-фон (blackhole → логотип из A/G/T/C → рекомбинация) ── */
+.cps-bg { position: relative; width: 100%; height: clamp(190px, 23vw, 330px); pointer-events: none; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--leaf) 7%, transparent), transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 80%, transparent); mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 80%, transparent); }
+.cps-bg canvas { display: block; width: 100%; height: 100%; }
+.cps-page .tool-crumb { margin-top: 0; }
