@@ -17,11 +17,14 @@
   {{ end }}
 
   {{/* ── Профили: руководитель, затем группы ── */}}
-  {{ range slice "lead" "staff" "phd" "masters" "students" }}
+  {{/* магистранты и студенты показываются одним блоком */}}
+  {{ range slice "lead" "staff" "phd" "masters" }}
     {{ $group := . }}
-    {{ with where $members "group" $group }}
+    {{ $list := where $members "group" $group }}
+    {{ if eq $group "masters" }}{{ $list = where $members "group" "in" (slice "masters" "students") }}{{ end }}
+    {{ with $list }}
     <section class="team-group">
-      <h2>{{ i18n (printf "group_%s" $group) }}</h2>
+      <h2>{{ i18n (cond (eq $group "masters") "group_young" (printf "group_%s" $group)) }}</h2>
       {{ if eq $group "lead" }}
       <div class="profiles">{{ range . }}{{ partial "profile.html" . }}{{ end }}</div>
       {{ else }}
