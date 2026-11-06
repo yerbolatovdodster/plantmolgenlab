@@ -66,6 +66,10 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/contact"
     weight = 50
   [[languages.ru.menus.main]]
+    name = "Новости"
+    pageRef = "/news"
+    weight = 45
+  [[languages.ru.menus.main]]
     name = "Software"
     pageRef = "/software"
     weight = 60
@@ -104,6 +108,10 @@ disableKinds = ["taxonomy", "term"]
     pageRef = "/contact"
     weight = 50
   [[languages.kk.menus.main]]
+    name = "Жаңалықтар"
+    pageRef = "/news"
+    weight = 45
+  [[languages.kk.menus.main]]
     name = "Software"
     pageRef = "/software"
     weight = 60
@@ -141,6 +149,10 @@ disableKinds = ["taxonomy", "term"]
     name = "Contact"
     pageRef = "/contact"
     weight = 50
+  [[languages.en.menus.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 45
   [[languages.en.menus.main]]
     name = "Software"
     pageRef = "/software"

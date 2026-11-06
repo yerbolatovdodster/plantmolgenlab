@@ -135,7 +135,7 @@ p { margin: 0 0 1em; }
   padding: 9px 18px; color: var(--ink); cursor: pointer;
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1260px) {
   .nav-toggle { display: inline-block; }
   .site-nav {
     display: none; position: absolute; left: 0; right: 0; top: 74px;
@@ -611,7 +611,7 @@ h3 { font-size: 1.08rem; }
 .logo { height: 38px; }
 @media (max-width: 480px) { .logo { height: 32px; } }
 .menu a { font-size: 0.9rem; padding: 7px 11px; }
-@media (max-width: 1120px) { .site-nav { top: 64px; } }
+@media (max-width: 1260px) { .site-nav { top: 64px; } }
 
 .hero { padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(32px, 4vw, 48px); }
 .hero-institute { margin-bottom: 14px; font-size: 0.95rem; }
@@ -1130,3 +1130,29 @@ h3 { font-size: 1.08rem; }
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 80%, transparent); mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 80%, transparent); }
 .cps-bg canvas { display: block; width: 100%; height: 100%; }
 .cps-page .tool-crumb { margin-top: 0; }
+
+/* ── Новости: список (как eaton-lab.org/posts) и страница новости ── */
+.post-list { list-style: none; margin: 0; padding: 0; max-width: 760px; border-top: 1px solid var(--line); }
+.post-list li { border-bottom: 1px solid var(--line); }
+.post-list a { display: grid; gap: 4px; padding: 20px 0; color: var(--ink); text-decoration: none; }
+.post-list a:hover .post-title { color: var(--leaf); }
+.post-title { font-size: 1.22rem; font-weight: 600; line-height: 1.3; transition: color .15s; }
+.post-list time { font-size: 0.88rem; color: var(--muted); }
+.post-excerpt { color: var(--muted); font-size: 0.98rem; line-height: 1.5; }
+
+.post { max-width: 800px; }
+.post-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; padding: 0; }
+.post-tags li { font-size: 0.78rem; padding: 3px 9px; border-radius: var(--r-sm); background: var(--surface-2); color: var(--muted); }
+.post-head h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.1; margin: 0 0 12px; }
+.post-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 0; color: var(--muted); font-size: 0.95rem; }
+.post-meta span::after { content: " ·"; }
+.post-rule { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
+.post-body { max-width: 68ch; }
+.post-photo { margin: 24px 0 0; }
+.post-photo img { display: block; width: 100%; height: auto; border-radius: var(--r-sm); }
+.post-photo figcaption { margin-top: 8px; font-size: 0.88rem; color: var(--muted); }
+.post-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: clamp(40px, 6vw, 64px); padding-top: 20px; border-top: 1px solid var(--line); }
+.post-nav a { display: flex; flex-direction: column; gap: 4px; max-width: 46%; color: var(--ink); text-decoration: none; font-weight: 550; }
+.post-nav a span { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+.post-nav a:hover { color: var(--leaf); }
+.post-nav-next { text-align: right; margin-left: auto; }

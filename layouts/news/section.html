@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="page wrap posts">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ with .Pages.ByDate.Reverse }}
+  <ul class="post-list">
+    {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <span class="post-title">{{ .Title }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+        {{ with .Description }}<span class="post-excerpt">{{ . }}</span>{{ else }}<span class="post-excerpt">{{ .Summary | plainify | truncate 140 }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <p class="muted">{{ i18n "no_news" }}</p>
+  {{ end }}
+</article>
+{{ end }}

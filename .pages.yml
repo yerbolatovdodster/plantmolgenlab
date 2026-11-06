@@ -90,8 +90,17 @@ content:
   - {name: title, label: Заголовок, type: string, required: true}
   - {name: date, label: Дата, type: date, required: true}
   - {name: description, label: Краткое описание, type: text}
-  - {name: image, label: Картинка, type: image}
+  - {name: author, label: Автор, type: string}
+  - {name: tags, label: Метки, type: string, list: true}
+  - {name: image, label: Главное фото, type: image}
   - {name: body, label: Текст, type: rich-text}
+  - name: photos
+    label: Ещё фотографии
+    type: object
+    list: true
+    fields:
+    - {name: image, label: Фото, type: image, required: true}
+    - {name: caption, label: Подпись, type: string}
 - name: news-kk
   label: Жаңалықтар (қаз)
   type: collection
@@ -109,8 +118,17 @@ content:
   - {name: title, label: Заголовок, type: string, required: true}
   - {name: date, label: Дата, type: date, required: true}
   - {name: description, label: Краткое описание, type: text}
-  - {name: image, label: Картинка, type: image}
+  - {name: author, label: Автор, type: string}
+  - {name: tags, label: Метки, type: string, list: true}
+  - {name: image, label: Главное фото, type: image}
   - {name: body, label: Текст, type: rich-text}
+  - name: photos
+    label: Ещё фотографии
+    type: object
+    list: true
+    fields:
+    - {name: image, label: Фото, type: image, required: true}
+    - {name: caption, label: Подпись, type: string}
 - name: news-en
   label: News (eng)
   type: collection
@@ -128,8 +146,17 @@ content:
   - {name: title, label: Заголовок, type: string, required: true}
   - {name: date, label: Дата, type: date, required: true}
   - {name: description, label: Краткое описание, type: text}
-  - {name: image, label: Картинка, type: image}
+  - {name: author, label: Автор, type: string}
+  - {name: tags, label: Метки, type: string, list: true}
+  - {name: image, label: Главное фото, type: image}
   - {name: body, label: Текст, type: rich-text}
+  - name: photos
+    label: Ещё фотографии
+    type: object
+    list: true
+    fields:
+    - {name: image, label: Фото, type: image, required: true}
+    - {name: caption, label: Подпись, type: string}
 - name: team
   label: Команда
   type: file

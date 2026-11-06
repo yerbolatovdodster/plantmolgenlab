@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="page wrap post">
+  <header class="post-head">
+    {{ with .Parent }}<a class="crumb" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+    {{ with .Params.tags }}<ul class="post-tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta">
+      {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+    </p>
+  </header>
+  <hr class="post-rule">
+  <div class="prose post-body">{{ .Content }}</div>
+  {{ with .Params.image }}<figure class="post-photo"><a href="{{ strings.TrimPrefix "/" . | relURL }}" target="_blank" rel="noopener"><img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" loading="lazy"></a></figure>{{ end }}
+  {{ range .Params.photos }}
+  <figure class="post-photo">
+    <a href="{{ strings.TrimPrefix "/" .image | relURL }}" target="_blank" rel="noopener"><img src="{{ strings.TrimPrefix "/" .image | relURL }}" alt="{{ .caption }}" loading="lazy"></a>
+    {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{ end }}
+  <nav class="post-nav" aria-label="{{ i18n "news" }}">
+    {{ with .PrevInSection }}<a class="post-nav-prev" href="{{ .RelPermalink }}"><span>← {{ i18n "older" }}</span>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    {{ with .NextInSection }}<a class="post-nav-next" href="{{ .RelPermalink }}"><span>{{ i18n "newer" }} →</span>{{ .Title }}</a>{{ end }}
+  </nav>
+</article>
+{{ end }}
