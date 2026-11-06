@@ -1195,41 +1195,41 @@ h3 { font-size: 1.08rem; }
 .pj-foot a { font-weight: 600; }
 @media (max-width: 760px) { .pj-tiles { grid-template-columns: 1fr; } .pj-tile { min-height: 0; } }
 
-/* ── Карты партнёров: «старинная» бумажная карта, прозрачные логотипы, дуги от ИББР (свой стиль, не зависит от темы сайта) ── */
+/* ── Карты партнёров: плоская карта в цветах сайта, прозрачные логотипы, линии от ИББР. Панель светлая и в тёмной теме, чтобы логотипы читались ── */
 .rmap { margin-top: clamp(48px, 7vw, 80px); }
 .rmap > h2 { margin-bottom: 18px; }
-.rmap-fig { margin: 0 0 28px; padding: 18px 18px 20px; background: #F4ECDC; color: #3B2A1A; border: 1px solid #D8C7A6; border-radius: 4px; box-shadow: inset 0 0 0 6px #F4ECDC, inset 0 0 0 7px #CDB68D; font-family: Georgia, "Times New Roman", serif; }
-.rmap-fig figcaption { font-size: 1.15rem; font-style: italic; letter-spacing: .02em; margin: 6px 8px 12px; color: #5A3E22; }
-.rmap-svg { display: block; width: 100%; height: auto; border: 1px solid #CDB68D; }
-.vm-sea { fill: #D7E2DE; }
-.vm-land { --land: #EFE3C8; --land-s: #B79F78; --kz: #F6DFA6; }
-.rmap-intl .vm-land { --hl: #EBCFA0; }
-#vmap-world path { fill: var(--land, #EFE3C8); stroke: var(--land-s, #B79F78); stroke-width: .5; vector-effect: non-scaling-stroke; }
-#vmap-world path.c-kz { fill: var(--kz, #F6DFA6); stroke: #8B5E34; stroke-width: 1.4; }
-#vmap-world path.c-gb, #vmap-world path.c-cn, #vmap-world path.c-mn, #vmap-world path.c-il { fill: var(--hl, var(--land, #EFE3C8)); }
-.vm-city { font-size: 3.4px; font-style: italic; fill: #7A5A3A; text-anchor: middle; opacity: .85; }
-.vm-country { font-size: 9px; letter-spacing: 4px; fill: #8B5E34; opacity: .28; text-anchor: middle; font-weight: 700; }
-.vm-compass circle { fill: none; stroke: #8B5E34; stroke-width: .4; }
-.vm-compass path { fill: #8B5E34; opacity: .8; }
-.vm-compass text { font-size: 4px; text-anchor: middle; fill: #8B5E34; font-weight: 700; }
-.rm-arc { fill: none; stroke: #8B2E1F; opacity: .6; stroke-dasharray: 2.4 1.6; transition: opacity .2s; }
-.rmap-intl .rm-arc { stroke-dasharray: 6 4; }
-.rm-loc { fill: #8B2E1F; stroke: #F4ECDC; stroke-width: .4; }
-.rm-tick { stroke: #8B2E1F; opacity: .45; }
-.rm-home { fill: #8B2E1F; stroke: #F4ECDC; }
-.rm-chip { fill: #FBF5E8; stroke: #8B5E34; }
-.rm-short { text-anchor: middle; font-weight: 700; fill: #5A3E22; font-family: Georgia, serif; }
+.rmap-fig { margin: 0 0 24px; padding: 18px 18px 20px; background: #FFFFFF; color: #18201B; border: 1px solid var(--line); border-radius: var(--r-md); }
+.rmap-fig figcaption { font-weight: 600; font-size: 1.05rem; margin: 2px 4px 12px; }
+.rmap-svg { display: block; width: 100%; height: auto; border-radius: var(--r-sm); }
+.vm-sea { fill: #F2F5F0; }
+.vm-land { --land: #E3E9E0; --land-s: #FFFFFF; --kz: #CFE5C3; }
+.rmap-intl .vm-land { --hl: #D2DEEE; }
+#vmap-world path { fill: var(--land, #E3E9E0); stroke: var(--land-s, #fff); stroke-width: .8; vector-effect: non-scaling-stroke; }
+#vmap-world path.c-kz { fill: var(--kz, #CFE5C3); stroke: #fff; stroke-width: 1; }
+#vmap-world path.c-gb, #vmap-world path.c-cn, #vmap-world path.c-mn, #vmap-world path.c-il { fill: var(--hl, var(--land, #E3E9E0)); }
+.vm-city { font-size: 3.2px; fill: #6E7F74; text-anchor: middle; }
+.vm-country { font-size: 8px; letter-spacing: 3px; fill: #1F5A3A; opacity: .14; text-anchor: middle; font-weight: 700; }
+.rm-arc { fill: none; stroke: #2E7D52; opacity: .55; transition: opacity .2s, stroke .2s; }
+.rmap-intl .rm-arc { stroke: #5F86C0; }
+.rm-loc { fill: #1F5A3A; stroke: #fff; stroke-width: .5; }
+.rm-tick { stroke: #1F5A3A; opacity: .35; }
+.rm-home { fill: #D9A62E; stroke: #fff; }
+.rm-chip { fill: #fff; stroke: #1F5A3A; }
+.rmap-intl .rm-chip { stroke: #5F86C0; }
+.rm-short { text-anchor: middle; font-weight: 700; fill: #1F5A3A; }
+.rmap-intl .rm-short { fill: #3D63A0; }
 .rm-card { cursor: pointer; }
 .rm-card .rm-s { transition: transform .18s ease; transform-box: fill-box; transform-origin: center; }
-.rm-card:hover .rm-s, .rm-card.is-hl .rm-s { transform: scale(1.3); }
+.rm-card:hover .rm-s, .rm-card.is-hl .rm-s { transform: scale(1.25); }
 .rmap-fig.has-hl .rm-arc { opacity: .12; }
-.rmap-fig.has-hl .rm-arc.is-hl { opacity: 1; stroke-dasharray: none; }
-.rmap-list { margin: 16px 8px 0; padding-left: 1.6em; columns: 3; column-gap: 28px; font-size: 0.95rem; line-height: 1.4; }
+.rmap-fig.has-hl .rm-arc.is-hl { opacity: 1; stroke: #D9A62E; }
+.rmap-list { margin: 16px 6px 0; padding-left: 1.5em; columns: 3; column-gap: 28px; font-size: 0.9rem; line-height: 1.4; }
 .rmap-intl .rmap-list { columns: 1; }
 .rmap-list li { break-inside: avoid; margin-bottom: 7px; }
-.rmap-list li::marker { color: #8B2E1F; font-weight: 700; }
-.rmap-list a { color: #3B2A1A; text-decoration: none; }
-.rmap-list a:hover, .rmap-list li.is-hl a { color: #8B2E1F; text-decoration: underline; }
-.rmap-list span { display: block; color: #7A6650; font-size: 0.86rem; font-style: italic; }
+.rmap-list li::marker { color: #2E7D52; font-weight: 700; }
+.rmap-intl .rmap-list li::marker { color: #5F86C0; }
+.rmap-list a { color: #18201B; text-decoration: none; font-weight: 550; }
+.rmap-list a:hover, .rmap-list li.is-hl a { color: #2E7D52; text-decoration: underline; }
+.rmap-list span { display: block; color: #5B665F; font-size: 0.84rem; }
 @media (max-width: 900px) { .rmap-list { columns: 2; } }
 @media (max-width: 560px) { .rmap-list { columns: 1; } }

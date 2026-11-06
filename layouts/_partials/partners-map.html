@@ -26,7 +26,6 @@
         <text class="vm-city" x="{{ $cx }}" y="{{ add $cy 4.2 }}">{{ index $c 0 }}</text>
       {{ end }}
       <text class="vm-country" x="1640" y="282">{{ i18n "kz_name" }}</text>
-      <g class="vm-compass" transform="translate(1530 330)"><circle r="9"/><path d="M0 -12 L2.2 0 L0 12 L-2.2 0Z M-12 0 L0 -2.2 L12 0 L0 2.2Z"/><text y="-14">N</text></g>
       {{ end }}
       {{ range $i, $p := $items }}
         {{ $x := add 1212.6 (mul $p.lon 6.65) }}{{ $y := sub 675.7 (mul $p.lat 8.43) }}
