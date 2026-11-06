@@ -37,12 +37,7 @@
     {{ range $done }}{{ partial "project-card.html" (dict "p" . "lang" $lang "active" false) }}{{ end }}
   </ul>
 
-  {{ range .Pages.ByWeight }}
-  <section class="block">
-    <h2>{{ .Title }}</h2>
-    <div class="prose">{{ .Content }}</div>
-  </section>
-  {{ end }}
+  {{ partial "partners-map.html" . }}
 </article>
 <script>
 (function(){

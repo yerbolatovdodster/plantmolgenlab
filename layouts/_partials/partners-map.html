@@ -1,0 +1,47 @@
+{{- /* Карты партнёров: зарубежные (Евразия) и казахстанские (соисполнители программ). Данные — data/partners.yaml */ -}}
+{{ $lang := site.Language.Lang }}
+{{ with hugo.Data.partners }}
+{{ $home := .home }}
+{{ $intl := where .items "scope" "intl" }}{{ $kz := where .items "scope" "kz" }}
+{{ $hx := add 1212.6 (mul $home.lon 6.65) }}{{ $hy := sub 675.7 (mul $home.lat 8.43) }}
+{{ partial "map-world-symbol.html" . }}
+<section class="pmap" aria-labelledby="pmap-h">
+  <h2 id="pmap-h">{{ i18n "partners_title" }}</h2>
+  <div class="pmap-grid">
+    <figure class="pmap-fig">
+      <figcaption class="pmap-cap">{{ i18n "partners_intl" }}</figcaption>
+      <svg class="pmap-svg" viewBox="1150 150 1080 400" role="img" aria-label="{{ i18n "partners_intl" }}">
+        <use href="#pmap-world" width="2475" height="1388" class="pmap-land"/>
+        {{ range $i, $p := $intl }}
+        {{ $x := add 1212.6 (mul $p.lon 6.65) }}{{ $y := sub 675.7 (mul $p.lat 8.43) }}
+        <path class="pmap-arc" d="M{{ $hx }} {{ $hy }} Q {{ div (add $hx $x) 2 }} {{ sub (math.Min $hy $y) 70 }} {{ $x }} {{ $y }}"/>
+        <g class="pmap-pt"><title>{{ index $p (printf "name_%s" $lang) }}</title><circle cx="{{ $x }}" cy="{{ $y }}" r="11"/><text x="{{ $x }}" y="{{ add $y 4.5 }}">{{ add $i 1 }}</text></g>
+        {{ end }}
+        <g class="pmap-home"><title>{{ index $home (printf "name_%s" $lang) }}</title><circle cx="{{ $hx }}" cy="{{ $hy }}" r="12"/><circle cx="{{ $hx }}" cy="{{ $hy }}" r="4.5" class="dot"/></g>
+      </svg>
+      <ol class="pmap-list">
+        {{ range $intl }}<li><b>{{ index . (printf "name_%s" $lang) }}</b>{{ with index . (printf "note_%s" $lang) }}<span>{{ . }}</span>{{ end }}</li>{{ end }}
+      </ol>
+    </figure>
+    <figure class="pmap-fig">
+      <figcaption class="pmap-cap">{{ i18n "partners_kz" }}</figcaption>
+      <svg class="pmap-svg" viewBox="1510 200 295 145" role="img" aria-label="{{ i18n "partners_kz" }}">
+        <use href="#pmap-world" width="2475" height="1388" class="pmap-land pmap-kz"/>
+        {{ range $kz }}
+        {{ $x := add 1212.6 (mul .lon 6.65) }}{{ $y := sub 675.7 (mul .lat 8.43) }}
+        <line class="pmap-link" x1="{{ $hx }}" y1="{{ $hy }}" x2="{{ $x }}" y2="{{ $y }}"/>
+        {{ end }}
+        {{ range $i, $p := $kz }}
+        {{ $x := add 1212.6 (mul $p.lon 6.65) }}{{ $y := sub 675.7 (mul $p.lat 8.43) }}
+        <g class="pmap-pt pmap-pt-kz"><title>{{ index $p (printf "name_%s" $lang) }}</title><circle cx="{{ $x }}" cy="{{ $y }}" r="4.6"/><text x="{{ $x }}" y="{{ add $y 1.9 }}">{{ add $i 1 }}</text></g>
+        {{ end }}
+        <g class="pmap-home pmap-home-kz"><title>{{ index $home (printf "name_%s" $lang) }}</title><circle cx="{{ $hx }}" cy="{{ $hy }}" r="5.2"/><circle cx="{{ $hx }}" cy="{{ $hy }}" r="2" class="dot"/></g>
+      </svg>
+      <ol class="pmap-list pmap-list-kz">
+        {{ range $kz }}<li>{{ index . (printf "name_%s" $lang) }}</li>{{ end }}
+      </ol>
+    </figure>
+  </div>
+  <p class="pmap-legend"><span class="pmap-home-ico"></span>{{ index $home (printf "name_%s" $lang) }}</p>
+</section>
+{{ end }}

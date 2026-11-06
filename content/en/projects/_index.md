@@ -1,4 +1,4 @@
 ---
 title: "Projects"
-description: "Research grants, international collaboration and training."
+description: "Research programmes, grants and international collaboration."
 ---

@@ -1194,3 +1194,36 @@ h3 { font-size: 1.08rem; }
 .pj-foot { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.9rem; color: var(--muted); }
 .pj-foot a { font-weight: 600; }
 @media (max-width: 760px) { .pj-tiles { grid-template-columns: 1fr; } .pj-tile { min-height: 0; } }
+
+/* ── Карта партнёров (страница «Проекты») ── */
+#pmap-world path { fill: var(--surface-2); stroke: var(--bg); stroke-width: .8; vector-effect: non-scaling-stroke; }
+#pmap-world path[data-c="kz"] { fill: color-mix(in srgb, var(--leaf) 30%, var(--surface-2)); }
+#pmap-world path[data-c="gb"], #pmap-world path[data-c="cn"], #pmap-world path[data-c="mn"], #pmap-world path[data-c="il"] { fill: color-mix(in srgb, var(--k4) 26%, var(--surface-2)); }
+.pmap { margin-top: clamp(48px, 7vw, 80px); }
+.pmap > h2 { margin-bottom: 18px; }
+.pmap-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.pmap-fig { margin: 0; padding: 16px 18px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
+.pmap-cap { font-weight: 600; margin-bottom: 10px; }
+.pmap-svg { display: block; width: 100%; height: auto; background: color-mix(in srgb, var(--k4) 6%, var(--bg)); border-radius: var(--r-sm); }
+.pmap-arc { fill: none; stroke: var(--k4); stroke-width: 2; stroke-dasharray: 6 5; opacity: .8; vector-effect: non-scaling-stroke; }
+.pmap-link { stroke: var(--leaf); stroke-width: 1; opacity: .45; vector-effect: non-scaling-stroke; }
+.pmap-pt circle { fill: var(--k4); stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.pmap-pt text { fill: #fff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+.pmap-pt-kz circle { fill: var(--k1); }
+.pmap-pt-kz text { font-size: 5px; }
+.pmap-pt { cursor: default; }
+.pmap-pt:hover circle { fill: var(--k3); }
+.pmap-home circle { fill: var(--k3); stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.pmap-home .dot { fill: #fff; stroke: none; }
+.pmap-list { margin: 14px 0 0; padding-left: 1.4em; font-size: 0.92rem; line-height: 1.45; }
+.pmap-list li { margin-bottom: 6px; }
+.pmap-list li::marker { font-weight: 700; color: var(--k4); }
+.pmap-list b { font-weight: 600; display: block; }
+.pmap-list span { color: var(--muted); font-size: 0.88rem; }
+.pmap-list-kz { columns: 2; column-gap: 22px; font-size: 0.86rem; }
+.pmap-list-kz li { break-inside: avoid; margin-bottom: 4px; }
+.pmap-list-kz li::marker { color: var(--k1); }
+.pmap-legend { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 0.9rem; color: var(--muted); }
+.pmap-home-ico { width: 14px; height: 14px; border-radius: 50%; background: var(--k3); box-shadow: inset 0 0 0 4px var(--k3), inset 0 0 0 7px #fff; }
+@media (max-width: 900px) { .pmap-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .pmap-list-kz { columns: 1; } }
