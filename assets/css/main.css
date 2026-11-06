@@ -1195,35 +1195,39 @@ h3 { font-size: 1.08rem; }
 .pj-foot a { font-weight: 600; }
 @media (max-width: 760px) { .pj-tiles { grid-template-columns: 1fr; } .pj-tile { min-height: 0; } }
 
-/* ── Карта партнёров (страница «Проекты») ── */
-#pmap-world path { fill: var(--surface-2); stroke: var(--bg); stroke-width: .8; vector-effect: non-scaling-stroke; }
-#pmap-world path[data-c="kz"] { fill: color-mix(in srgb, var(--leaf) 30%, var(--surface-2)); }
-#pmap-world path[data-c="gb"], #pmap-world path[data-c="cn"], #pmap-world path[data-c="mn"], #pmap-world path[data-c="il"] { fill: color-mix(in srgb, var(--k4) 26%, var(--surface-2)); }
-.pmap { margin-top: clamp(48px, 7vw, 80px); }
-.pmap > h2 { margin-bottom: 18px; }
-.pmap-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 22px; align-items: start; }
-.pmap-fig { margin: 0; padding: 16px 18px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
-.pmap-cap { font-weight: 600; margin-bottom: 10px; }
-.pmap-svg { display: block; width: 100%; height: auto; background: color-mix(in srgb, var(--k4) 6%, var(--bg)); border-radius: var(--r-sm); }
-.pmap-arc { fill: none; stroke: var(--k4); stroke-width: 2; stroke-dasharray: 6 5; opacity: .8; vector-effect: non-scaling-stroke; }
-.pmap-link { stroke: var(--leaf); stroke-width: 1; opacity: .45; vector-effect: non-scaling-stroke; }
-.pmap-pt circle { fill: var(--k4); stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.pmap-pt text { fill: #fff; font-size: 12px; font-weight: 700; text-anchor: middle; }
-.pmap-pt-kz circle { fill: var(--k1); }
-.pmap-pt-kz text { font-size: 5px; }
-.pmap-pt { cursor: default; }
-.pmap-pt:hover circle { fill: var(--k3); }
-.pmap-home circle { fill: var(--k3); stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.pmap-home .dot { fill: #fff; stroke: none; }
-.pmap-list { margin: 14px 0 0; padding-left: 1.4em; font-size: 0.92rem; line-height: 1.45; }
-.pmap-list li { margin-bottom: 6px; }
-.pmap-list li::marker { font-weight: 700; color: var(--k4); }
-.pmap-list b { font-weight: 600; display: block; }
-.pmap-list span { color: var(--muted); font-size: 0.88rem; }
-.pmap-list-kz { columns: 2; column-gap: 22px; font-size: 0.86rem; }
-.pmap-list-kz li { break-inside: avoid; margin-bottom: 4px; }
-.pmap-list-kz li::marker { color: var(--k1); }
-.pmap-legend { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 0.9rem; color: var(--muted); }
-.pmap-home-ico { width: 14px; height: 14px; border-radius: 50%; background: var(--k3); box-shadow: inset 0 0 0 4px var(--k3), inset 0 0 0 7px #fff; }
-@media (max-width: 900px) { .pmap-grid { grid-template-columns: 1fr; } }
-@media (max-width: 520px) { .pmap-list-kz { columns: 1; } }
+/* ── Карта партнёров «генная сеть» (страница «Проекты»); карта всегда светлая, чтобы логотипы читались ── */
+#pmap-world path { fill: #E3E8E2; stroke: #F7F9F5; stroke-width: .7; vector-effect: non-scaling-stroke; }
+#pmap-world path[data-c="kz"] { fill: #CFE3C4; }
+#pmap-world path[data-c="gb"], #pmap-world path[data-c="cn"], #pmap-world path[data-c="mn"], #pmap-world path[data-c="il"] { fill: #D6E1EF; }
+.pnet { margin-top: clamp(48px, 7vw, 80px); }
+.pnet > h2 { margin-bottom: 18px; }
+.pnet-map { background: #F7F9F5; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+.pnet-svg { display: block; width: 100%; height: auto; }
+.pnet-edge { fill: none; stroke: #4E9A35; stroke-width: 1.4; opacity: .55; stroke-dasharray: 3 3; animation: pnet-flow 2.4s linear infinite; animation-delay: calc(var(--d) * -1); vector-effect: non-scaling-stroke; transition: opacity .2s, stroke-width .2s; }
+.pnet-edge-intl { stroke: #5F86C0; stroke-width: 1.8; }
+@keyframes pnet-flow { to { stroke-dashoffset: -12; } }
+.pnet-weak { stroke: #9DB59A; stroke-width: .7; opacity: .35; vector-effect: non-scaling-stroke; }
+.pnet-lead { stroke: #6E7F74; stroke-width: .6; stroke-dasharray: 1.5 1.5; opacity: .55; vector-effect: non-scaling-stroke; }
+.pnet-loc { fill: #1F5A3A; }
+.pnet-node { cursor: pointer; }
+.pnet-node .pnet-scale { transition: transform .2s; transform-box: fill-box; transform-origin: center; }
+.pnet-node:hover .pnet-scale, .pnet-node.is-hl .pnet-scale, .pnet-node:focus-visible .pnet-scale { transform: scale(1.35); }
+.pnet-node:focus { outline: none; }
+.pnet-chip { fill: #fff; stroke: #1F5A3A; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.pnet-intl .pnet-chip { stroke: #5F86C0; stroke-width: 1.6; }
+.pnet-short { text-anchor: middle; font-weight: 700; fill: #1F5A3A; letter-spacing: -.02em; }
+.pnet-intl .pnet-short { fill: #3D63A0; }
+.pnet-hub-c { fill: #fff; stroke: #D9A62E; stroke-width: 2.2; vector-effect: non-scaling-stroke; }
+.pnet-hub-t { text-anchor: middle; font-size: 7.5px; font-weight: 700; fill: #1F5A3A; paint-order: stroke; stroke: #F7F9F5; stroke-width: 3px; }
+.pnet.has-hl .pnet-edge { opacity: .15; }
+.pnet.has-hl .pnet-edge.is-hl { opacity: 1; stroke-width: 2.6; }
+.pnet-list { margin: 16px 0 0; padding-left: 1.6em; columns: 3; column-gap: 28px; font-size: 0.9rem; line-height: 1.4; }
+.pnet-list li { break-inside: avoid; margin-bottom: 8px; }
+.pnet-list li.pnet-intl::marker { color: var(--k4); font-weight: 700; }
+.pnet-list li.pnet-kz::marker { color: var(--k1); font-weight: 700; }
+.pnet-list a { color: var(--ink); text-decoration: none; font-weight: 550; }
+.pnet-list a:hover, .pnet-list li.is-hl a { color: var(--leaf); text-decoration: underline; }
+.pnet-list span { display: block; color: var(--muted); font-size: 0.84rem; }
+@media (max-width: 900px) { .pnet-list { columns: 2; } }
+@media (max-width: 560px) { .pnet-list { columns: 1; } }
+@media (prefers-reduced-motion: reduce) { .pnet-edge { animation: none; } }
