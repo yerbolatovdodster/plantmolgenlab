@@ -1,76 +1,72 @@
-{{- /* Карта партнёров в виде «генной сети»: ИББР в центре, линии ко всем партнёрам (Казахстан и зарубежные).
-       Данные — data/partners.yaml. Проекция карты: x = 1212.6 + lon·6.65, y = 675.7 − lat·8.43 */ -}}
+{{- /* Карты партнёров в стиле «маршрутов»: точечная карта, дуги от ИББР, карточки-логотипы.
+       Данные — data/partners.yaml. Проекция: x = 1212.6 + lon·6.65, y = 675.7 − lat·8.43 */ -}}
 {{ $lang := site.Language.Lang }}
-{{ with hugo.Data.partners }}
+{{ with hugo.Data.partners }}{{ $all := .items }}
 {{ $home := .home }}
 {{ $hx := add 1212.6 (mul $home.lon 6.65) }}{{ $hy := sub 675.7 (mul $home.lat 8.43) }}
-{{ partial "map-world-symbol.html" . }}
-<section class="pnet" aria-labelledby="pnet-h">
-  <h2 id="pnet-h">{{ i18n "partners_title" }}</h2>
-  <div class="pnet-map">
-    <svg class="pnet-svg" viewBox="1170 112 840 368" role="img" aria-label="{{ i18n "partners_title" }}">
+{{ $homeName := index $home (printf "name_%s" $lang) | default $home.name_ru }}
+<section class="rmap" aria-labelledby="rmap-h">
+  <h2 id="rmap-h">{{ i18n "partners_title" }}</h2>
+  {{ range $scope := slice "kz" "intl" }}
+  {{ $items := where $all "scope" $scope }}
+  {{ $kz := eq $scope "kz" }}
+  {{ $vb := cond $kz "1500 188 320 172" "1170 112 840 380" }}
+  {{ $u := cond $kz 1.0 2.4 }}{{/* масштаб элементов */}}
+  <figure class="rmap-fig rmap-{{ $scope }}">
+    <figcaption>{{ i18n (cond $kz "partners_kz" "partners_intl") }}</figcaption>
+    <svg class="rmap-svg" viewBox="{{ $vb }}" role="img" aria-label="{{ i18n (cond $kz "partners_kz" "partners_intl") }}" style="--u:{{ $u }}">
       <defs>
-        <radialGradient id="pnet-glow"><stop offset="0" stop-color="#D9A62E" stop-opacity=".45"/><stop offset="1" stop-color="#D9A62E" stop-opacity="0"/></radialGradient>
-        <filter id="pnet-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1.2" stdDeviation="1.6" flood-color="#0b1a12" flood-opacity=".28"/></filter>
+        <filter id="rm-sh-{{ $scope }}" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="{{ mul 0.5 $u }}" stdDeviation="{{ mul 0.9 $u }}" flood-color="#10241A" flood-opacity=".22"/></filter>
       </defs>
-      <use href="#pmap-world" width="2475" height="1388"/>
-      {{/* слабые связи между соседними партнёрами — «сеть» */}}
-      {{ $all := .items }}
-      {{ range $i, $a := $all }}{{ range $j, $b := $all }}{{ if lt $i $j }}
-        {{ $dx := sub $a.nx $b.nx }}{{ $dy := sub $a.ny $b.ny }}{{ $d := math.Sqrt (add (mul $dx $dx) (mul $dy $dy)) }}
-        {{ if and (lt $d 90) (eq $a.scope $b.scope) }}<line class="pnet-weak" x1="{{ $a.nx }}" y1="{{ $a.ny }}" x2="{{ $b.nx }}" y2="{{ $b.ny }}"/>{{ end }}
-      {{ end }}{{ end }}{{ end }}
-      {{/* связи ИББР → партнёр */}}
-      {{ range $i, $p := $all }}
+      <g class="dm" style="stroke-width:{{ mul (cond $kz 1.35 3.2) 1 }}">{{ partial "map-dots.html" $scope }}</g>
+      {{ range $i, $p := $items }}
         {{ $x := add 1212.6 (mul $p.lon 6.65) }}{{ $y := sub 675.7 (mul $p.lat 8.43) }}
-        {{ $mx := div (add $hx $p.nx) 2 }}{{ $my := div (add $hy $p.ny) 2 }}
-        {{ $bend := cond (eq $p.scope "intl") 60 14 }}
-        <path class="pnet-edge pnet-edge-{{ $p.scope }}" data-i="{{ $i }}" style="--d:{{ mul $i 0.37 }}s" d="M{{ $hx }} {{ $hy }} Q {{ $mx }} {{ sub $my $bend }} {{ $p.nx }} {{ $p.ny }}"/>
-        <line class="pnet-lead" x1="{{ $x }}" y1="{{ $y }}" x2="{{ $p.nx }}" y2="{{ $p.ny }}"/>
-        <circle class="pnet-loc" cx="{{ $x }}" cy="{{ $y }}" r="1.8"/>
+        {{ $dx := sub $x $hx }}{{ $dy := sub $y $hy }}{{ $len := math.Sqrt (add (mul $dx $dx) (mul $dy $dy)) }}
+        {{ $k := mul 0.22 (cond (gt $dx 0) -1 1) }}
+        <path id="rm-{{ $scope }}-{{ $i }}" class="rm-arc" data-k="{{ $scope }}{{ $i }}" style="stroke-width:{{ mul 0.8 $u }}" d="M{{ $hx }} {{ $hy }} Q {{ add (div (add $hx $x) 2) (mul $dy $k) }} {{ sub (div (add $hy $y) 2) (add (mul $dx (mul $k -1)) (mul $len 0.12)) }} {{ $x }} {{ $y }}"/>
+        <circle class="rm-pulse" r="{{ mul 1.1 $u }}"><animateMotion dur="{{ add 2.6 (mul (mod $i 4) 0.45) }}s" begin="{{ mul $i 0.31 }}s" repeatCount="indefinite"><mpath href="#rm-{{ $scope }}-{{ $i }}"/></animateMotion></circle>
+        <circle class="rm-loc" cx="{{ $x }}" cy="{{ $y }}" r="{{ mul 1.5 $u }}"/>
+        {{ if gt (math.Abs (sub $p.cx $x)) 1 }}<line class="rm-tick" style="stroke-width:{{ mul 0.4 $u }}" x1="{{ $x }}" y1="{{ $y }}" x2="{{ $p.cx }}" y2="{{ $p.cy }}"/>{{ end }}
       {{ end }}
-      <circle cx="{{ $hx }}" cy="{{ $hy }}" r="34" fill="url(#pnet-glow)"/>
-      {{/* узлы-логотипы */}}
-      {{ range $i, $p := $all }}
+      {{ range $i, $p := $items }}
         {{ $name := index $p (printf "name_%s" $lang) | default $p.name_ru }}
         {{ $href := $p.url | default (printf "https://www.google.com/maps/search/%s" (urlquery $p.name_ru)) }}
         {{ $wide := and $p.logo (strings.Contains $p.logo "ncb") }}
-        {{ $w := cond $wide 84 40 }}{{ $h := cond $wide 18 40 }}
-        <a class="pnet-node pnet-{{ $p.scope }}" href="{{ $href }}" target="_blank" rel="noopener" data-i="{{ $i }}" aria-label="{{ $name }}">
+        {{ $w := mul (cond $wide 38 20) $u }}{{ $h := mul (cond $wide 11 20) $u }}
+        <a class="rm-card" href="{{ $href }}" target="_blank" rel="noopener" data-k="{{ $scope }}{{ $i }}" aria-label="{{ $name }}">
           <title>{{ $name }}</title>
-          <g transform="translate({{ $p.nx }} {{ $p.ny }})">
-            <g class="pnet-scale">
-            {{ with $p.logo }}
-              <image href="{{ strings.TrimPrefix "/" . | relURL }}" x="{{ div $w -2 }}" y="{{ div $h -2 }}" width="{{ $w }}" height="{{ $h }}" preserveAspectRatio="xMidYMid meet" filter="url(#pnet-sh)"/>
-            {{ else }}
-              <circle r="{{ cond (eq $p.scope "intl") 19 16 }}" class="pnet-chip" filter="url(#pnet-sh)"/>
-              <text class="pnet-short" y="{{ cond (eq $p.scope "intl") 2.8 2.4 }}" style="font-size:{{ cond (gt (len $p.short) 5) 6.4 8 }}px">{{ $p.short }}</text>
-            {{ end }}
-            </g>
-          </g>
+          <g transform="translate({{ $p.cx }} {{ $p.cy }})"><g class="rm-s">
+            <rect x="{{ div $w -2 }}" y="{{ div $h -2 }}" width="{{ $w }}" height="{{ $h }}" rx="{{ mul 3 $u }}" class="rm-bg" filter="url(#rm-sh-{{ $scope }})"/>
+            {{ with $p.logo }}<image href="{{ strings.TrimPrefix "/" . | relURL }}" x="{{ add (div $w -2) (mul 1.6 $u) }}" y="{{ add (div $h -2) (mul 1.6 $u) }}" width="{{ sub $w (mul 3.2 $u) }}" height="{{ sub $h (mul 3.2 $u) }}" preserveAspectRatio="xMidYMid meet"/>
+            {{ else }}<text class="rm-short" y="{{ mul 1.6 $u }}" style="font-size:{{ mul (cond (gt (len $p.short) 5) 3.6 4.6) $u }}px">{{ $p.short }}</text>{{ end }}
+          </g></g>
         </a>
       {{ end }}
-      <g class="pnet-hub" transform="translate({{ $hx }} {{ $hy }})">
-        <title>{{ index $home (printf "name_%s" $lang) }}</title>
-        <circle r="17" class="pnet-hub-c" filter="url(#pnet-sh)"/>
-        <g transform="translate(-8.5 -7)"><rect x="0" width="3" height="14" fill="#1F5A3A"/><rect x="0" width="3" height="3.3" fill="#D9A62E"/><rect x="3.5" width="3" height="14" fill="#1F5A3A"/><rect x="3.5" width="3" height="7" fill="#4E9A35"/><rect x="7" width="3" height="14" fill="#4E9A35"/><rect x="7" width="3" height="2" fill="#5F86C0"/><rect x="10.5" width="3" height="14" fill="#D9A62E"/><rect x="10.5" width="3" height="5.3" fill="#4E9A35"/><rect x="14" width="3" height="14" fill="#5F86C0"/><rect x="14" width="3" height="4.1" fill="#D9A62E"/></g>
-        <text class="pnet-hub-t" y="27">{{ i18n "ibbr_short" }}</text>
-      </g>
+      {{/* ИББР */}}
+      {{ $hw := mul 34 $u }}{{ $hh := mul 18 $u }}{{ $ccx := cond $kz $home.cx (add $hx (mul 22 $u)) }}{{ $ccy := cond $kz $home.cy (add $hy (mul 14 $u)) }}
+      <line class="rm-tick" style="stroke-width:{{ mul 0.4 $u }}" x1="{{ $hx }}" y1="{{ $hy }}" x2="{{ $ccx }}" y2="{{ $ccy }}"/>
+      <circle class="rm-home" cx="{{ $hx }}" cy="{{ $hy }}" r="{{ mul 2.6 $u }}" style="stroke-width:{{ mul 1.2 $u }}"/>
+      <a class="rm-card rm-card-home" href="https://ipbb.kz/" target="_blank" rel="noopener" aria-label="{{ $homeName }}"><title>{{ $homeName }}</title>
+        <g transform="translate({{ $ccx }} {{ $ccy }})"><g class="rm-s">
+          <rect x="{{ div $hw -2 }}" y="{{ div $hh -2 }}" width="{{ $hw }}" height="{{ $hh }}" rx="{{ mul 3 $u }}" class="rm-bg rm-bg-home" filter="url(#rm-sh-{{ $scope }})" style="stroke-width:{{ mul 0.7 $u }}"/>
+          <image href="{{ "images/partners/ipbb.png" | relURL }}" x="{{ add (div $hw -2) (mul 2 $u) }}" y="{{ add (div $hh -2) (mul 2 $u) }}" width="{{ sub $hw (mul 4 $u) }}" height="{{ sub $hh (mul 4 $u) }}" preserveAspectRatio="xMidYMid meet"/>
+        </g></g>
+      </a>
     </svg>
-  </div>
-  <ol class="pnet-list">
-    {{ range $i, $p := .items }}
-    {{ $href := $p.url | default (printf "https://www.google.com/maps/search/%s" (urlquery $p.name_ru)) }}
-    <li class="pnet-{{ $p.scope }}" data-i="{{ $i }}"><a href="{{ $href }}" target="_blank" rel="noopener">{{ index $p (printf "name_%s" $lang) | default $p.name_ru }}</a>{{ with index $p (printf "note_%s" $lang) }}<span>{{ . }}</span>{{ end }}</li>
-    {{ end }}
-  </ol>
+    <ol class="rmap-list">
+      {{ range $i, $p := $items }}
+      {{ $href := $p.url | default (printf "https://www.google.com/maps/search/%s" (urlquery $p.name_ru)) }}
+      <li data-k="{{ $scope }}{{ $i }}"><a href="{{ $href }}" target="_blank" rel="noopener">{{ index $p (printf "name_%s" $lang) | default $p.name_ru }}</a>{{ with index $p (printf "note_%s" $lang) }}<span>{{ . }}</span>{{ end }}</li>
+      {{ end }}
+    </ol>
+  </figure>
+  {{ end }}
 </section>
 <script>
-(function(){var r=document.querySelector('.pnet'); if(!r) return;
- function hl(i,on){ r.querySelectorAll('[data-i="'+i+'"]').forEach(function(e){e.classList.toggle('is-hl',on)}); r.classList.toggle('has-hl',on); }
- r.querySelectorAll('.pnet-node,.pnet-list li').forEach(function(n){ var i=n.getAttribute('data-i');
-   n.addEventListener('mouseenter',function(){hl(i,true)}); n.addEventListener('mouseleave',function(){hl(i,false)});
-   n.addEventListener('focus',function(){hl(i,true)}); n.addEventListener('blur',function(){hl(i,false)}); });
+(function(){var r=document.querySelector('.rmap'); if(!r) return;
+ r.querySelectorAll('.rm-card[data-k],.rmap-list li').forEach(function(n){ var k=n.getAttribute('data-k'), f=n.closest('.rmap-fig');
+   function on(v){ f.classList.toggle('has-hl',v); f.querySelectorAll('[data-k="'+k+'"]').forEach(function(e){e.classList.toggle('is-hl',v)}); }
+   n.addEventListener('mouseenter',function(){on(true)}); n.addEventListener('mouseleave',function(){on(false)}); });
 })();
 </script>
 {{ end }}

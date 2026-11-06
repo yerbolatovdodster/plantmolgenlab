@@ -1,13 +1,16 @@
-# Партнёры лаборатории для карты на странице «Проекты».
-# scope: kz — соисполнители программ в Казахстане, intl — зарубежные партнёры.
-# lat/lon — настоящее расположение; nx/ny — где на карте стоит логотип (координаты SVG-карты);
-# logo — картинка без фона (PNG), url — ссылка по клику (если нет — ищет организацию на Google Картах), short — подпись, если нет логотипа.
+# Партнёры лаборатории для карт на странице «Проекты».
+# scope: kz — соисполнители программ в Казахстане (карта Казахстана), intl — зарубежные партнёры (карта Евразии).
+# lat/lon — настоящее расположение (точка на карте); cx/cy — где стоит карточка с логотипом (координаты SVG-карты).
+# logo — PNG без фона; url — ссылка по клику (если нет — организация на Google Картах); short — подпись, если нет логотипа.
 home:
   name_ru: Институт биологии и биотехнологии растений, Алматы
   name_kk: Өсімдіктер биологиясы және биотехнологиясы институты, Алматы
   name_en: Institute of Plant Biology and Biotechnology, Almaty
   lat: 43.24
   lon: 76.95
+  logo: images/partners/ipbb.png
+  cx: 1764
+  cy: 314
 items:
 - scope: intl
   name_ru: Центр Джона Иннеса (John Innes Centre), Норидж, Великобритания
@@ -19,9 +22,9 @@ items:
   lat: 52.62
   lon: 1.22
   url: https://www.jic.ac.uk/
-  nx: 1222
-  ny: 172
   short: JIC
+  cx: 1222
+  cy: 172
 - scope: intl
   name_ru: Университет Гуанчжоу, Китай
   name_kk: Гуанчжоу университеті, Қытай
@@ -32,9 +35,9 @@ items:
   lat: 23.05
   lon: 113.37
   url: https://www.gzhu.edu.cn/
-  nx: 1955
-  ny: 450
   short: GZHU
+  cx: 1925
+  cy: 452
 - scope: intl
   name_ru: 'Партнёры проекта «Шёлковый путь»: Китай, Монголия, Израиль'
   name_kk: '«Жібек жолы» жобасының серіктестері: Қытай, Моңғолия, Израиль'
@@ -44,9 +47,9 @@ items:
   note_en: Sand dune stabilisation and vegetation recovery
   lat: 46.8
   lon: 103.0
-  nx: 1915
-  ny: 232
   short: CN·MN·IL
+  cx: 1915
+  cy: 232
 - scope: kz
   name_ru: Карабалыкская СХОС
   name_kk: Қарабалық АШТС
@@ -54,9 +57,9 @@ items:
   lat: 53.85
   lon: 62.08
   logo: images/partners/karabalyk.png
-  nx: 1555
-  ny: 148
   short: КСХОС
+  cx: 1612
+  cy: 210
 - scope: kz
   name_ru: НПЦ зернового хозяйства им. А. И. Бараева, Шортанды
   name_kk: А. И. Бараев атындағы астық шаруашылығы ҒӨО, Шортанды
@@ -64,9 +67,9 @@ items:
   lat: 51.7
   lon: 70.99
   logo: images/partners/barayev.png
-  nx: 1683
-  ny: 140
   short: НПЦЗХ
+  cx: 1703
+  cy: 212
 - scope: kz
   name_ru: Северо-Казахстанская СХОС
   name_kk: Солтүстік Қазақстан АШТС
@@ -74,9 +77,9 @@ items:
   lat: 54.77
   lon: 69.1
   logo: images/partners/sko.png
-  nx: 1618
-  ny: 140
   short: СКСХОС
+  cx: 1658
+  cy: 206
 - scope: kz
   name_ru: Карагандинская СХОС им. А. Ф. Христенко
   name_kk: А. Ф. Христенко атындағы Қарағанды АШТС
@@ -84,9 +87,9 @@ items:
   lat: 49.85
   lon: 73.1
   logo: images/partners/karaganda.png
-  nx: 1830
-  ny: 238
   short: КарСХОС
+  cx: 1716
+  cy: 266
 - scope: kz
   name_ru: Казахский НИИ рисоводства им. И. Жахаева, Кызылорда
   name_kk: Ы. Жақаев атындағы Қазақ күріш шаруашылығы ҒЗИ, Қызылорда
@@ -94,18 +97,18 @@ items:
   lat: 44.85
   lon: 65.5
   logo: images/partners/rice.png
-  nx: 1572
-  ny: 292
   short: КазНИИР
+  cx: 1628
+  cy: 296
 - scope: kz
   name_ru: Красноводопадская СХОС, Туркестанская обл.
   name_kk: Красноводопад АШТС, Түркістан обл.
   name_en: Krasnovodopad Agricultural Experimental Station, Turkistan region
   lat: 42.3
   lon: 69.85
-  nx: 1612
-  ny: 392
   short: КВСХОС
+  cx: 1677
+  cy: 340
 - scope: kz
   name_ru: КАТУ им. С. Сейфуллина, Астана
   name_kk: С. Сейфуллин атындағы ҚАТУ, Астана
@@ -114,9 +117,9 @@ items:
   lon: 71.3
   logo: images/partners/katu.png
   url: https://kazatu.edu.kz/
-  nx: 1748
-  ny: 148
   short: КАТУ
+  cx: 1727
+  cy: 238
 - scope: kz
   name_ru: Национальный центр биотехнологии, Астана
   name_kk: Ұлттық биотехнология орталығы, Астана
@@ -125,9 +128,9 @@ items:
   lon: 71.6
   logo: images/partners/ncb.png
   url: https://biocenter.kz/
-  nx: 1835
-  ny: 178
   short: НЦБ
+  cx: 1646
+  cy: 248
 - scope: kz
   name_ru: Жетысуский университет им. И. Жансугурова, Талдыкорган
   name_kk: І. Жансүгіров атындағы Жетісу университеті, Талдықорған
@@ -136,9 +139,9 @@ items:
   lon: 78.37
   logo: images/partners/zhetysu.png
   url: https://zhetysu.edu.kz/
-  nx: 1830
-  ny: 300
   short: ЖУ
+  cx: 1757
+  cy: 272
 - scope: kz
   name_ru: КазНУ им. аль-Фараби, Алматы
   name_kk: Әл-Фараби атындағы ҚазҰУ, Алматы
@@ -147,9 +150,9 @@ items:
   lon: 76.3
   logo: images/partners/kaznu.png
   url: https://www.kaznu.kz/
-  nx: 1790
-  ny: 392
   short: КазНУ
+  cx: 1730
+  cy: 340
 - scope: kz
   name_ru: НИИ проблем биологической безопасности, Жамбылская обл.
   name_kk: Биологиялық қауіпсіздік проблемалары ҒЗИ, Жамбыл обл.
@@ -158,15 +161,15 @@ items:
   lon: 74.9
   logo: images/partners/biosafety.png
   url: https://biosafety.kz/
-  nx: 1728
-  ny: 400
   short: НИИПББ
+  cx: 1703
+  cy: 336
 - scope: kz
   name_ru: КХ «Сабыр», Мактааральский р-н
   name_kk: «Сабыр» ШҚ, Мақтаарал ауданы
   name_en: Sabyr farm, Maktaaral district
   lat: 40.85
   lon: 68.35
-  nx: 1668
-  ny: 400
   short: Сабыр
+  cx: 1652
+  cy: 338
