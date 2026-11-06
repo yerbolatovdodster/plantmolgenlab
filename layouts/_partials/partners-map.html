@@ -1,6 +1,7 @@
 {{- /* Карты партнёров в стиле «маршрутов»: точечная карта, дуги от ИББР, карточки-логотипы.
        Данные — data/partners.yaml. Проекция: x = 1212.6 + lon·6.65, y = 675.7 − lat·8.43 */ -}}
 {{ $lang := site.Language.Lang }}
+{{ partial "map-world-symbol.html" . }}
 {{ with hugo.Data.partners }}{{ $all := .items }}
 {{ $home := .home }}
 {{ $hx := add 1212.6 (mul $home.lon 6.65) }}{{ $hy := sub 675.7 (mul $home.lat 8.43) }}
@@ -18,13 +19,20 @@
       <defs>
         <filter id="rm-sh-{{ $scope }}" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="{{ mul 0.5 $u }}" stdDeviation="{{ mul 0.9 $u }}" flood-color="#10241A" flood-opacity=".22"/></filter>
       </defs>
-      <g class="dm" style="stroke-width:{{ mul (cond $kz 1.35 3.2) 1 }}">{{ partial "map-dots.html" $scope }}</g>
+      <rect x="1100" y="80" width="1000" height="460" class="vm-sea"/>
+      <g class="vm-land"><use href="#vmap-world" width="2475" height="1388"/></g>
+      {{ if $kz }}{{ range $c := slice (slice "Астана" 71.43 51.13) (slice "Алматы" 76.89 43.24) (slice "Костанай" 63.62 53.21) (slice "Петропавловск" 69.15 54.87) (slice "Караганда" 73.10 49.80) (slice "Кызылорда" 65.51 44.85) (slice "Шымкент" 69.59 42.32) (slice "Талдыкорган" 78.37 45.02) (slice "Актобе" 57.21 50.28) (slice "Атырау" 51.92 47.10) (slice "Павлодар" 76.95 52.29) (slice "Усть-Каменогорск" 82.61 49.95) }}
+        {{ $cx := add 1212.6 (mul (index $c 1) 6.65) }}{{ $cy := sub 675.7 (mul (index $c 2) 8.43) }}
+        <text class="vm-city" x="{{ $cx }}" y="{{ add $cy 4.2 }}">{{ index $c 0 }}</text>
+      {{ end }}
+      <text class="vm-country" x="1640" y="282">{{ i18n "kz_name" }}</text>
+      <g class="vm-compass" transform="translate(1530 330)"><circle r="9"/><path d="M0 -12 L2.2 0 L0 12 L-2.2 0Z M-12 0 L0 -2.2 L12 0 L0 2.2Z"/><text y="-14">N</text></g>
+      {{ end }}
       {{ range $i, $p := $items }}
         {{ $x := add 1212.6 (mul $p.lon 6.65) }}{{ $y := sub 675.7 (mul $p.lat 8.43) }}
         {{ $dx := sub $x $hx }}{{ $dy := sub $y $hy }}{{ $len := math.Sqrt (add (mul $dx $dx) (mul $dy $dy)) }}
         {{ $k := mul 0.22 (cond (gt $dx 0) -1 1) }}
         <path id="rm-{{ $scope }}-{{ $i }}" class="rm-arc" data-k="{{ $scope }}{{ $i }}" style="stroke-width:{{ mul 0.8 $u }}" d="M{{ $hx }} {{ $hy }} Q {{ add (div (add $hx $x) 2) (mul $dy $k) }} {{ sub (div (add $hy $y) 2) (add (mul $dx (mul $k -1)) (mul $len 0.12)) }} {{ $x }} {{ $y }}"/>
-        <circle class="rm-pulse" r="{{ mul 1.1 $u }}"><animateMotion dur="{{ add 2.6 (mul (mod $i 4) 0.45) }}s" begin="{{ mul $i 0.31 }}s" repeatCount="indefinite"><mpath href="#rm-{{ $scope }}-{{ $i }}"/></animateMotion></circle>
         <circle class="rm-loc" cx="{{ $x }}" cy="{{ $y }}" r="{{ mul 1.5 $u }}"/>
         {{ if gt (math.Abs (sub $p.cx $x)) 1 }}<line class="rm-tick" style="stroke-width:{{ mul 0.4 $u }}" x1="{{ $x }}" y1="{{ $y }}" x2="{{ $p.cx }}" y2="{{ $p.cy }}"/>{{ end }}
       {{ end }}
@@ -32,24 +40,22 @@
         {{ $name := index $p (printf "name_%s" $lang) | default $p.name_ru }}
         {{ $href := $p.url | default (printf "https://www.google.com/maps/search/%s" (urlquery $p.name_ru)) }}
         {{ $wide := and $p.logo (strings.Contains $p.logo "ncb") }}
-        {{ $w := mul (cond $wide 38 20) $u }}{{ $h := mul (cond $wide 11 20) $u }}
+        {{ $w := mul (cond $wide 42 22) $u }}{{ $h := mul (cond $wide 10 22) $u }}
         <a class="rm-card" href="{{ $href }}" target="_blank" rel="noopener" data-k="{{ $scope }}{{ $i }}" aria-label="{{ $name }}">
           <title>{{ $name }}</title>
           <g transform="translate({{ $p.cx }} {{ $p.cy }})"><g class="rm-s">
-            <rect x="{{ div $w -2 }}" y="{{ div $h -2 }}" width="{{ $w }}" height="{{ $h }}" rx="{{ mul 3 $u }}" class="rm-bg" filter="url(#rm-sh-{{ $scope }})"/>
-            {{ with $p.logo }}<image href="{{ strings.TrimPrefix "/" . | relURL }}" x="{{ add (div $w -2) (mul 1.6 $u) }}" y="{{ add (div $h -2) (mul 1.6 $u) }}" width="{{ sub $w (mul 3.2 $u) }}" height="{{ sub $h (mul 3.2 $u) }}" preserveAspectRatio="xMidYMid meet"/>
-            {{ else }}<text class="rm-short" y="{{ mul 1.6 $u }}" style="font-size:{{ mul (cond (gt (len $p.short) 5) 3.6 4.6) $u }}px">{{ $p.short }}</text>{{ end }}
+            {{ with $p.logo }}<image href="{{ strings.TrimPrefix "/" . | relURL }}" x="{{ div $w -2 }}" y="{{ div $h -2 }}" width="{{ $w }}" height="{{ $h }}" preserveAspectRatio="xMidYMid meet" filter="url(#rm-sh-{{ $scope }})"/>
+            {{ else }}<circle r="{{ mul 9 $u }}" class="rm-chip" filter="url(#rm-sh-{{ $scope }})" style="stroke-width:{{ mul 0.6 $u }}"/><text class="rm-short" y="{{ mul 1.4 $u }}" style="font-size:{{ mul (cond (gt (len $p.short) 5) 3.2 4.2) $u }}px">{{ $p.short }}</text>{{ end }}
           </g></g>
         </a>
       {{ end }}
       {{/* ИББР */}}
-      {{ $hw := mul 34 $u }}{{ $hh := mul 18 $u }}{{ $ccx := cond $kz $home.cx (add $hx (mul 22 $u)) }}{{ $ccy := cond $kz $home.cy (add $hy (mul 14 $u)) }}
+      {{ $hw := mul 38 $u }}{{ $hh := mul 19 $u }}{{ $ccx := cond $kz $home.cx (add $hx (mul 22 $u)) }}{{ $ccy := cond $kz $home.cy (add $hy (mul 14 $u)) }}
       <line class="rm-tick" style="stroke-width:{{ mul 0.4 $u }}" x1="{{ $hx }}" y1="{{ $hy }}" x2="{{ $ccx }}" y2="{{ $ccy }}"/>
       <circle class="rm-home" cx="{{ $hx }}" cy="{{ $hy }}" r="{{ mul 2.6 $u }}" style="stroke-width:{{ mul 1.2 $u }}"/>
       <a class="rm-card rm-card-home" href="https://ipbb.kz/" target="_blank" rel="noopener" aria-label="{{ $homeName }}"><title>{{ $homeName }}</title>
         <g transform="translate({{ $ccx }} {{ $ccy }})"><g class="rm-s">
-          <rect x="{{ div $hw -2 }}" y="{{ div $hh -2 }}" width="{{ $hw }}" height="{{ $hh }}" rx="{{ mul 3 $u }}" class="rm-bg rm-bg-home" filter="url(#rm-sh-{{ $scope }})" style="stroke-width:{{ mul 0.7 $u }}"/>
-          <image href="{{ "images/partners/ipbb.png" | relURL }}" x="{{ add (div $hw -2) (mul 2 $u) }}" y="{{ add (div $hh -2) (mul 2 $u) }}" width="{{ sub $hw (mul 4 $u) }}" height="{{ sub $hh (mul 4 $u) }}" preserveAspectRatio="xMidYMid meet"/>
+          <image href="{{ "images/partners/ipbb.png" | relURL }}" x="{{ div $hw -2 }}" y="{{ div $hh -2 }}" width="{{ $hw }}" height="{{ $hh }}" preserveAspectRatio="xMidYMid meet" filter="url(#rm-sh-{{ $scope }})"/>
         </g></g>
       </a>
     </svg>
