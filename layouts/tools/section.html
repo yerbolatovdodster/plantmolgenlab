@@ -1,8 +1,5 @@
 {{ define "main" }}
-<div class="cps-bg" aria-hidden="true"><canvas data-cps-bg></canvas></div>
-{{ $bg := resources.Get "js/cps-bg.js" | minify | fingerprint }}
-<script src="{{ $bg.RelPermalink }}" defer></script>
-<article class="wrap cps-page">
+<article class="wrap">
   {{ with site.GetPage "/software" }}<a class="crumb tool-crumb" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
   <div class="tool-top">
   <header class="tool-hero">

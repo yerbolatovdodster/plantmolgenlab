@@ -1,8 +1,8 @@
 {{ define "main" }}
-<div class="cps-bg" aria-hidden="true"><canvas data-cps-bg data-mask="{{ hugo.Data.anim_masks.lab | jsonify }}"></canvas></div>
+<div class="cps-bg cps-bg-fixed" aria-hidden="true"><canvas data-cps-bg data-mask="{{ hugo.Data.anim_masks.lab | jsonify }}"></canvas></div>
 {{ $bg := resources.Get "js/cps-bg.js" | minify | fingerprint }}
 <script src="{{ $bg.RelPermalink }}" defer></script>
-<article class="page wrap software sw-after-bg">
+<article class="page wrap software">
   <header class="page-head">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
