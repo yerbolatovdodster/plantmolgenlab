@@ -513,7 +513,8 @@ content:
       type: select
       options:
         values:
-        - {value: national, label: Грант / программа РК}
+        - {value: program, label: Программа (ПЦФ)}
+        - {value: grant, label: Грант}
         - {value: international, label: Международный проект}
     - {name: years, label: Годы (например 2024–2026), type: string}
     - {name: code, label: Номер гранта, type: string}
@@ -521,6 +522,10 @@ content:
     - {name: title_ru, label: Название (рус), type: text, required: true}
     - {name: title_kk, label: Атауы (қаз), type: text}
     - {name: title_en, label: Title (eng), type: text}
+    - {name: summary_ru, label: Кратко о проекте (рус), type: text}
+    - {name: summary_kk, label: Қысқаша (қаз), type: text}
+    - {name: summary_en, label: Summary (eng), type: text}
+    - {name: url, label: Ссылка на сайт проекта, type: string}
 - name: cultivars
   label: Сорта
   type: file

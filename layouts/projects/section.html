@@ -1,20 +1,42 @@
 {{ define "main" }}
 {{ $lang := site.Language.Lang }}
-<article class="page wrap">
+{{ $items := hugo.Data.projects.items }}
+{{ $year := now.Year }}
+<article class="page wrap projects" data-projects>
   <header class="page-head">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
   </header>
-  {{ $items := hugo.Data.projects.items }}
-  {{ range slice "national" "international" }}
-    {{ $k := . }}
-    {{ with where $items "kind" $k }}
-    <section class="block">
-      <h2>{{ i18n $k }}</h2>
-      {{ partial "project-list.html" (dict "items" . "lang" $lang) }}
-    </section>
+
+  {{/* три кликабельных окна: программы, гранты, международные проекты (работают как фильтр) */}}
+  <div class="pj-tiles" role="tablist" aria-label="{{ .Title }}">
+    {{ range slice "program" "grant" "international" }}
+    {{ $k := . }}{{ $list := where $items "kind" $k }}
+    {{ $min := 3000 }}{{ $max := 0 }}
+    {{ range $list }}{{ with .years }}{{ range findRE `\d{4}` . }}{{ $y := int . }}{{ if lt $y $min }}{{ $min = $y }}{{ end }}{{ if gt $y $max }}{{ $max = $y }}{{ end }}{{ end }}{{ end }}{{ end }}
+    <a class="pj-tile pj-{{ $k }}" href="#{{ $k }}" role="tab" aria-selected="false" data-f="{{ $k }}">
+      <span class="pj-ico" aria-hidden="true">
+        {{ if eq $k "program" }}<svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        {{ else if eq $k "grant" }}<svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        {{ else }}<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="2"/></svg>{{ end }}
+      </span>
+      <span class="pj-name">{{ i18n (printf "kind_%s" $k) }}</span>
+      <span class="pj-desc">{{ i18n (printf "kd_%s" $k) }}</span>
+      <span class="pj-num"><b>{{ len $list }}</b> {{ i18n "pr_count" }}{{ if gt $max 0 }} · {{ $min }}{{ if ne $min $max }}–{{ $max }}{{ end }}{{ end }}</span>
+    </a>
     {{ end }}
-  {{ end }}
+  </div>
+  <p class="pj-all-wrap"><a class="pj-all" href="#all" data-f="all">{{ i18n "kind_all" }} · {{ len $items }}</a></p>
+
+  {{/* список: сначала текущие, затем завершённые */}}
+  {{ $active := slice }}{{ $done := slice }}
+  {{ range $items }}{{ $ys := findRE `\d{4}` (.years | default "") }}{{ $end := 0 }}{{ with $ys }}{{ $end = int (index . (sub (len .) 1)) }}{{ end }}
+    {{ if ge $end $year }}{{ $active = $active | append . }}{{ else }}{{ $done = $done | append . }}{{ end }}{{ end }}
+  <ul class="pj-list">
+    {{ range $active }}{{ partial "project-card.html" (dict "p" . "lang" $lang "active" true) }}{{ end }}
+    {{ range $done }}{{ partial "project-card.html" (dict "p" . "lang" $lang "active" false) }}{{ end }}
+  </ul>
+
   {{ range .Pages.ByWeight }}
   <section class="block">
     <h2>{{ .Title }}</h2>
@@ -22,4 +44,18 @@
   </section>
   {{ end }}
 </article>
+<script>
+(function(){
+  var root=document.querySelector('[data-projects]'); if(!root) return;
+  var tiles=root.querySelectorAll('[data-f]'), cards=root.querySelectorAll('.pj-card');
+  function apply(f){
+    if(['program','grant','international'].indexOf(f)<0) f='all';
+    root.classList.toggle('is-filtered', f!=='all');
+    tiles.forEach(function(t){ var on=t.getAttribute('data-f')===f; t.classList.toggle('is-on',on); if(t.hasAttribute('aria-selected')) t.setAttribute('aria-selected',on); });
+    cards.forEach(function(c){ c.hidden = f!=='all' && c.getAttribute('data-kind')!==f; });
+  }
+  tiles.forEach(function(t){ t.addEventListener('click',function(e){ e.preventDefault(); var f=t.getAttribute('data-f'); var cur=root.querySelector('.pj-tile.is-on'); if(cur && cur===t) f='all'; history.replaceState(null,'',f==='all'?location.pathname:'#'+f); apply(f); }); });
+  apply(location.hash.slice(1));
+})();
+</script>
 {{ end }}

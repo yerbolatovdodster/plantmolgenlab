@@ -1,0 +1,15 @@
+{{ $p := .p }}{{ $lang := .lang }}
+<li class="pj-card pj-{{ $p.kind }}{{ if .active }} is-active{{ end }}" data-kind="{{ $p.kind }}">
+  <div class="pj-head">
+    <span class="pj-kind">{{ i18n (printf "one_%s" $p.kind) }}</span>
+    {{ with $p.code }}<span class="pj-code">{{ . }}</span>{{ end }}
+    {{ with $p.years }}<span class="pj-years">{{ . }}</span>{{ end }}
+    {{ if .active }}<span class="pj-status">● {{ i18n "pr_active" }}</span>{{ end }}
+  </div>
+  <h3 class="pj-title">{{ or (index $p (printf "title_%s" $lang)) $p.title_ru }}</h3>
+  {{ with or (index $p (printf "summary_%s" $lang)) $p.summary_ru }}<p class="pj-sum">{{ . }}</p>{{ end }}
+  <div class="pj-foot">
+    {{ with $p.lead }}<span>{{ i18n "project_lead" }}: {{ . }}</span>{{ end }}
+    {{ with $p.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ i18n "pr_site" }} ↗</a>{{ end }}
+  </div>
+</li>
