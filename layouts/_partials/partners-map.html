@@ -8,7 +8,8 @@
 {{ $homeName := index $home (printf "name_%s" $lang) | default $home.name_ru }}
 <section class="rmap" aria-labelledby="rmap-h">
   <h2 id="rmap-h">{{ i18n "partners_title" }}</h2>
-  {{ range $scope := slice "kz" "intl" }}
+  {{ partial "kz-partners-map.html" . }}
+  {{ range $scope := slice "intl" }}
   {{ $items := where $all "scope" $scope }}
   {{ $kz := eq $scope "kz" }}
   {{ $vb := cond $kz "1500 188 320 172" "1170 112 840 380" }}

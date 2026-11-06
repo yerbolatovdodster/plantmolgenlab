@@ -1,0 +1,51 @@
+{{- /* Карта соисполнителей в Казахстане: серая карта по областям с «объёмом», выноски к логотипам. Данные — data/partners.yaml */ -}}
+{{ $lang := site.Language.Lang }}
+{{ with hugo.Data.partners }}
+{{ $home := .home }}
+{{ $hx := add 90 (mul (sub $home.lon 46.5) 20.07) }}{{ $hy := add 90 (mul (sub 55.6 $home.lat) 30) }}
+{{ $items := where .items "scope" "kz" }}
+<figure class="kzm">
+  <figcaption>{{ i18n "partners_kz" }}</figcaption>
+  <svg class="kzm-svg" viewBox="0 0 1000 680" role="img" aria-label="{{ i18n "partners_kz" }}">
+    <defs><filter id="kzm-sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#000" flood-opacity=".18"/></filter></defs>
+    {{ partial "kz-map-base.html" . }}
+    {{ range $i, $p := $items }}
+      {{ $x := add 90 (mul (sub $p.lon 46.5) 20.07) }}{{ $y := add 90 (mul (sub 55.6 $p.lat) 30) }}
+      <line class="kzm-lead" data-k="{{ $i }}" x1="{{ $x }}" y1="{{ $y }}" x2="{{ $p.kx }}" y2="{{ $p.ky }}"/>
+      <circle class="kzm-dot" data-k="{{ $i }}" cx="{{ $x }}" cy="{{ $y }}" r="4"/>
+    {{ end }}
+    <line class="kzm-lead kzm-lead-home" x1="{{ $hx }}" y1="{{ $hy }}" x2="{{ $home.kx }}" y2="{{ $home.ky }}"/>
+    <circle class="kzm-home" cx="{{ $hx }}" cy="{{ $hy }}" r="6"/>
+    {{ range $i, $p := $items }}
+      {{ $name := index $p (printf "name_%s" $lang) | default $p.name_ru }}
+      {{ $href := $p.url | default (printf "https://www.google.com/maps/search/%s" (urlquery $p.name_ru)) }}
+      {{ $wide := and $p.logo (strings.Contains $p.logo "ncb") }}
+      {{ $w := cond $wide 116 58 }}{{ $h := cond $wide 26 58 }}
+      <a class="kzm-node" href="{{ $href }}" target="_blank" rel="noopener" data-k="{{ $i }}" aria-label="{{ $name }}"><title>{{ $name }}</title>
+        <g transform="translate({{ $p.kx }} {{ $p.ky }})">
+          <rect class="kzm-hit" x="-60" y="-34" width="120" height="84"/>
+          <g class="kzm-s">
+          {{ with $p.logo }}<image href="{{ strings.TrimPrefix "/" . | relURL }}" x="{{ div $w -2 }}" y="{{ div $h -2 }}" width="{{ $w }}" height="{{ $h }}" preserveAspectRatio="xMidYMid meet" filter="url(#kzm-sh)"/>
+          {{ else }}<circle r="24" class="kzm-chip"/><text class="kzm-short" y="4">{{ $p.short }}</text>{{ end }}
+          </g>
+          <text class="kzm-place" y="{{ add (div $h 2) 15 }}">{{ index $p (printf "place_%s" $lang) | default $p.place_ru }}</text>
+        </g>
+      </a>
+    {{ end }}
+    <a class="kzm-node kzm-node-home" href="https://ipbb.kz/" target="_blank" rel="noopener" aria-label="{{ index $home (printf "name_%s" $lang) }}"><title>{{ index $home (printf "name_%s" $lang) }}</title>
+      <g transform="translate({{ $home.kx }} {{ $home.ky }})"><g class="kzm-s"><image href="{{ "images/partners/ipbb.png" | relURL }}" x="-62" y="-30" width="124" height="60" preserveAspectRatio="xMidYMid meet"/></g>
+      <text class="kzm-place kzm-place-home" y="46">{{ i18n "ibbr_short" }} · {{ i18n "almaty" }}</text></g>
+    </a>
+  </svg>
+  <ol class="kzm-list">
+    {{ range $i, $p := $items }}{{ $href := $p.url | default (printf "https://www.google.com/maps/search/%s" (urlquery $p.name_ru)) }}
+    <li data-k="{{ $i }}"><a href="{{ $href }}" target="_blank" rel="noopener">{{ index $p (printf "name_%s" $lang) | default $p.name_ru }}</a></li>{{ end }}
+  </ol>
+</figure>
+<script>
+(function(){var f=document.querySelector('.kzm'); if(!f) return;
+ f.querySelectorAll('.kzm-node[data-k],.kzm-list li').forEach(function(n){var k=n.getAttribute('data-k');
+  function on(v){f.classList.toggle('has-hl',v); f.querySelectorAll('[data-k="'+k+'"]').forEach(function(e){e.classList.toggle('is-hl',v)});}
+  n.addEventListener('mouseenter',function(){on(true)}); n.addEventListener('mouseleave',function(){on(false)});});})();
+</script>
+{{ end }}
