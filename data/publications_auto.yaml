@@ -198,7 +198,7 @@ items:
   journal: 1(1)
   doi: 10.66273/3134-6359.2026.1.1.007
   url: ''
-  citations: 0
+  citations: 1
   openalex: W7134133327
 - type: article
   year: 2026
@@ -225,7 +225,7 @@ items:
   journal: 'Agronomy 16(8): 832'
   doi: 10.3390/agronomy16080832
   url: ''
-  citations: 0
+  citations: 1
   openalex: W7154977460
 - type: article
   year: 2026
@@ -243,7 +243,7 @@ items:
   journal: 'Genes 17(3): 261'
   doi: 10.3390/genes17030261
   url: ''
-  citations: 4
+  citations: 5
   openalex: W7131640354
 - type: article
   year: 2026
@@ -297,7 +297,7 @@ items:
   journal: 'Fundamental and Experimental Biology 11930(3): 48–58'
   doi: 10.31489/2025feb3/48-58
   url: ''
-  citations: 0
+  citations: 1
   openalex: W4414663112
 - type: article
   year: 2025
@@ -333,7 +333,7 @@ items:
   journal: 'BMC Plant Biology 25(1): 554'
   doi: 10.1186/s12870-025-06588-6
   url: ''
-  citations: 11
+  citations: 15
   openalex: W4409871087
 - type: article
   year: 2025
@@ -342,7 +342,7 @@ items:
   journal: 'Plants 14(11): 1728'
   doi: 10.3390/plants14111728
   url: ''
-  citations: 3
+  citations: 4
   openalex: W4411062840
 - type: article
   year: 2025
@@ -360,7 +360,7 @@ items:
   journal: 'Diversity 17(9): 664'
   doi: 10.3390/d17090664
   url: ''
-  citations: 2
+  citations: 3
   openalex: W4414408662
 - type: article
   year: 2025
@@ -369,7 +369,7 @@ items:
   journal: 'Crops 5(4): 41'
   doi: 10.3390/crops5040041
   url: ''
-  citations: 0
+  citations: 2
   openalex: W4412195985
 - type: article
   year: 2025
@@ -378,7 +378,7 @@ items:
   journal: 'Crops 5(5): 63'
   doi: 10.3390/crops5050063
   url: ''
-  citations: 5
+  citations: 13
   openalex: W4414287647
 - type: article
   year: 2025
@@ -396,7 +396,7 @@ items:
   journal: 'BMC Genomics 26(1): 802'
   doi: 10.1186/s12864-025-12024-8
   url: ''
-  citations: 5
+  citations: 6
   openalex: W4413936355
 - type: article
   year: 2025
@@ -414,7 +414,7 @@ items:
   journal: 'Genes 15(11): 1447'
   doi: 10.3390/genes15111447
   url: ''
-  citations: 7
+  citations: 8
   openalex: W4404248524
 - type: article
   year: 2024
@@ -432,7 +432,7 @@ items:
   journal: 'Plants 13(10): 1332'
   doi: 10.3390/plants13101332
   url: ''
-  citations: 8
+  citations: 9
   openalex: W4396858452
 - type: article
   year: 2024
@@ -441,7 +441,7 @@ items:
   journal: 'PLoS ONE 19(1): e0295550'
   doi: 10.1371/journal.pone.0295550
   url: ''
-  citations: 11
+  citations: 10
   openalex: W4391215523
 - type: article
   year: 2024
@@ -450,7 +450,7 @@ items:
   journal: 'International Journal of Molecular Sciences 25(14): 7874'
   doi: 10.3390/ijms25147874
   url: ''
-  citations: 12
+  citations: 15
   openalex: W4400774686
 - type: article
   year: 2024
@@ -459,7 +459,7 @@ items:
   journal: 'Biomolecules 14(8): 890'
   doi: 10.3390/biom14080890
   url: ''
-  citations: 7
+  citations: 8
   openalex: W4400939981
 - type: article
   year: 2024
@@ -486,7 +486,7 @@ items:
   journal: 'Plants 13(18): 2667'
   doi: 10.3390/plants13182667
   url: ''
-  citations: 5
+  citations: 8
   openalex: W4402747386
 - type: article
   year: 2024
@@ -495,7 +495,7 @@ items:
   journal: 'Agronomy 14(11): 2746'
   doi: 10.3390/agronomy14112746
   url: ''
-  citations: 6
+  citations: 8
   openalex: W4404568618
 - type: article
   year: 2024
@@ -504,7 +504,7 @@ items:
   journal: 'Agronomy 14(8): 1848'
   doi: 10.3390/agronomy14081848
   url: ''
-  citations: 5
+  citations: 6
   openalex: W4401768848
 - type: article
   year: 2024
@@ -513,7 +513,7 @@ items:
   journal: 'Plants 13(18): 2623'
   doi: 10.3390/plants13182623
   url: ''
-  citations: 4
+  citations: 7
   openalex: W4402686355
 - type: article
   year: 2024
@@ -531,7 +531,7 @@ items:
   journal: 'Agronomy 14(7): 1478'
   doi: 10.3390/agronomy14071478
   url: ''
-  citations: 7
+  citations: 9
   openalex: W4400409295
 - type: article
   year: 2024
@@ -576,7 +576,7 @@ items:
   journal: 'Experimental biology 100(3): 56–68'
   doi: 10.26577/bb.2024.v100.i3.05
   url: ''
-  citations: 0
+  citations: 1
   openalex: W4403498102
 - type: article
   year: 2023
@@ -585,7 +585,7 @@ items:
   journal: 'Agronomy 13(8): 2054'
   doi: 10.3390/agronomy13082054
   url: ''
-  citations: 7
+  citations: 9
   openalex: W4385490696
 - type: article
   year: 2023
@@ -612,7 +612,7 @@ items:
   journal: 'Plants 12(12): 2375'
   doi: 10.3390/plants12122375
   url: ''
-  citations: 14
+  citations: 34
   openalex: W4381433139
 - type: article
   year: 2023
@@ -621,7 +621,7 @@ items:
   journal: 'Agronomy 13(6): 1560'
   doi: 10.3390/agronomy13061560
   url: ''
-  citations: 18
+  citations: 21
   openalex: W4379648473
 - type: article
   year: 2023
@@ -630,7 +630,7 @@ items:
   journal: 'Plants 12(12): 2233'
   doi: 10.3390/plants12122233
   url: ''
-  citations: 5
+  citations: 6
   openalex: W4379795062
 - type: article
   year: 2022
@@ -639,7 +639,7 @@ items:
   journal: 'PROCEEDINGS ON APPLIED BOTANY GENETICS AND BREEDING 183(3): 161–170'
   doi: 10.30901/2227-8834-2022-3-161-170
   url: ''
-  citations: 6
+  citations: 7
   openalex: W4301430885
 - type: article
   year: 2022
@@ -657,7 +657,7 @@ items:
   journal: 'Plants 11(15): 1904'
   doi: 10.3390/plants11151904
   url: ''
-  citations: 13
+  citations: 12
   openalex: W4287149240
 - type: article
   year: 2022
@@ -666,7 +666,7 @@ items:
   journal: 'PeerJ 10: e14324'
   doi: 10.7717/peerj.14324
   url: ''
-  citations: 11
+  citations: 13
   openalex: W4308603565
 - type: article
   year: 2022
@@ -675,7 +675,7 @@ items:
   journal: 'Agronomy 12(10): 2431'
   doi: 10.3390/agronomy12102431
   url: ''
-  citations: 15
+  citations: 17
   openalex: W4303579221
 - type: article
   year: 2021
@@ -702,7 +702,7 @@ items:
   journal: 'PeerJ 9: e11857'
   doi: 10.7717/peerj.11857
   url: ''
-  citations: 21
+  citations: 24
   openalex: W3183405503
 - type: article
   year: 2021
@@ -720,7 +720,7 @@ items:
   journal: 'Plants 10(10): 2025'
   doi: 10.3390/plants10102025
   url: ''
-  citations: 22
+  citations: 25
   openalex: W3203716752
 - type: article
   year: 2021
@@ -729,7 +729,7 @@ items:
   journal: 'PeerJ 9: e10733'
   doi: 10.7717/peerj.10733
   url: ''
-  citations: 23
+  citations: 42
   openalex: W3132071276
 - type: article
   year: 2020
@@ -738,7 +738,7 @@ items:
   journal: 'PROCEEDINGS ON APPLIED BOTANY GENETICS AND BREEDING 181(3): 81–90'
   doi: 10.30901/2227-8834-2020-3-81-90
   url: ''
-  citations: 9
+  citations: 10
   openalex: W3111844260
 - type: article
   year: 2020
@@ -747,7 +747,7 @@ items:
   journal: 'Russian Journal of Genetics 56(9): 1090–1098'
   doi: 10.1134/s102279542009015x
   url: ''
-  citations: 5
+  citations: 6
   openalex: W3088038279
 - type: article
   year: 2020
@@ -756,7 +756,7 @@ items:
   journal: 'Proceedings of the Latvian Academy of Sciences Section B Natural Exact and Applied Sciences 74(5): 325–334'
   doi: 10.2478/prolas-2020-0049
   url: ''
-  citations: 1
+  citations: 2
   openalex: W3111420102
 - type: article
   year: 2020
@@ -765,7 +765,7 @@ items:
   journal: 'Proceedings of the Latvian Academy of Sciences Section B Natural Exact and Applied Sciences 74(4): 244–251'
   doi: 10.2478/prolas-2020-0039
   url: ''
-  citations: 2
+  citations: 28
   openalex: W3091494467
 - type: article
   year: 2020
@@ -774,7 +774,7 @@ items:
   journal: 'PeerJ 8: e9820'
   doi: 10.7717/peerj.9820
   url: ''
-  citations: 41
+  citations: 55
   openalex: W3081998106
 - type: article
   year: 2020
@@ -783,7 +783,7 @@ items:
   journal: 'Vavilov Journal of Genetics and Breeding 24(6): 605–612'
   doi: 10.18699/vj20.654
   url: ''
-  citations: 11
+  citations: 30
   openalex: W3096811185
 - type: article
   year: 2020
@@ -801,7 +801,7 @@ items:
   journal: 'PLoS ONE 15(6): e0234863'
   doi: 10.1371/journal.pone.0234863
   url: ''
-  citations: 37
+  citations: 72
   openalex: W3037354310
 - type: article
   year: 2020
@@ -819,7 +819,7 @@ items:
   journal: 'PLoS ONE 15(10): e0240121'
   doi: 10.1371/journal.pone.0240121
   url: ''
-  citations: 17
+  citations: 19
   openalex: W3090878890
 - type: article
   year: 2019
@@ -828,7 +828,7 @@ items:
   journal: 'International Journal of Biology and Chemistry 12(1): 33–40'
   doi: 10.26577/ijbch-2019-1-i5
   url: ''
-  citations: 3
+  citations: 4
   openalex: W2990020442
 - type: article
   year: 2019
@@ -837,7 +837,7 @@ items:
   journal: 'PLoS ONE 14(8): e0221064'
   doi: 10.1371/journal.pone.0221064
   url: ''
-  citations: 65
+  citations: 83
   openalex: W2967320423
 - type: article
   year: 2019
@@ -864,7 +864,7 @@ items:
   journal: 'International Journal of Biology and Chemistry 12(1): 11–17'
   doi: 10.26577/ijbch-2019-i1-3
   url: ''
-  citations: 9
+  citations: 10
   openalex: W2984029591
 - type: article
   year: 2019
@@ -882,16 +882,16 @@ items:
   journal: 'Proceedings of the Latvian Academy of Sciences Section B Natural Exact and Applied Sciences 73(5): 462–465'
   doi: 10.2478/prolas-2019-0071
   url: ''
-  citations: 2
+  citations: 3
   openalex: W2985568598
 - type: article
   year: 2019
   title: Распространение и характеристика ценопопуляций Amygdalus ledebouriana Schlecht. на территории Нарымского хребта
-  authors: Orazov A., Mukhitdinov N., Myrzagaliyeva A., **Turuspekov Y.**, Shramko G., Аргынбекович К.С.
+  authors: Orazov A., Mukhitdinov N., Myrzagaliyeva A., **Turuspekov Y.**, Shramko G., Кубентаев С.
   journal: 'Experimental biology 78(1): 36–45'
   doi: 10.26577/eb-2019-1-1401
   url: ''
-  citations: 1
+  citations: 2
   openalex: W2946142458
 - type: article
   year: 2018
@@ -909,7 +909,7 @@ items:
   journal: 'PLoS ONE 13(10): e0205421'
   doi: 10.1371/journal.pone.0205421
   url: ''
-  citations: 60
+  citations: 70
   openalex: W2896466518
 - type: article
   year: 2018
@@ -936,17 +936,8 @@ items:
   journal: 'Genetic Resources and Crop Evolution 65(8): 2293–2301'
   doi: 10.1007/s10722-018-0689-3
   url: ''
-  citations: 15
+  citations: 16
   openalex: W2893209453
-- type: article
-  year: 2018
-  title: Амалова А., Курманбаева М., Туруспеков Е., Иващенко А., Абидкулова К. Онтогенетическая структура ценопопуляций Tulipa Оstrowskiana Regel в Заилийском Алатау
-  authors: Amalova A., Kurmanbaeva M.S., **Turuspekov Y.**, Ivashchenko A., Abidkulova K.T.
-  journal: 'Eurasian Journal of Ecology 56(3): 101–114'
-  doi: ''
-  url: http://bulletin-ecology.kaznu.kz/index.php/1-eco/article/view/834
-  citations: 0
-  openalex: W2898924151
 - type: article
   year: 2017
   title: GWAS for plant growth stages and yield components in spring wheat (Triticum aestivum L.) harvested in three regions of Kazakhstan
@@ -954,7 +945,7 @@ items:
   journal: 'BMC Plant Biology 17(S1): 190'
   doi: 10.1186/s12870-017-1131-2
   url: ''
-  citations: 63
+  citations: 101
   openalex: W2770985158
 - type: article
   year: 2017
@@ -963,7 +954,7 @@ items:
   journal: 'BMC Plant Biology 17(S1): 179'
   doi: 10.1186/s12870-017-1125-0
   url: ''
-  citations: 40
+  citations: 48
   openalex: W2770077244
 - type: article
   year: 2017
@@ -990,7 +981,7 @@ items:
   journal: 'PLoS ONE 11(12): e0166894'
   doi: 10.1371/journal.pone.0166894
   url: ''
-  citations: 27
+  citations: 56
   openalex: W2559355749
 - type: article
   year: 2016
@@ -999,7 +990,7 @@ items:
   journal: 'Heredity 116(6): 485–490'
   doi: 10.1038/hdy.2016.2
   url: ''
-  citations: 6
+  citations: 5
   openalex: W2259816340
 - type: article
   year: 2016
@@ -1008,7 +999,7 @@ items:
   journal: 'BMC Plant Biology 16(S1): 6'
   doi: 10.1186/s12870-015-0686-z
   url: ''
-  citations: 61
+  citations: 82
   openalex: W2257330926
 - type: article
   year: 2016
@@ -1026,17 +1017,8 @@ items:
   journal: 'Plant Genetic Resources 15(1): 29–35'
   doi: 10.1017/s1479262115000325
   url: ''
-  citations: 24
+  citations: 25
   openalex: W1886698076
-- type: article
-  year: 2014
-  title: Fe, Zn AND S CONTENT IN DOUBLED HAPLOID LINES OF CHINESE SPRING × SQ1 WHEAT POPULATION
-  authors: Abugalieva A.I., Абугалиева С., Quarri S.A., **Turuspekov Y.**, Чакмак И., Savin T., Ганеев В.А.
-  journal: 'DOAJ (DOAJ: Directory of Open Access Journals)'
-  doi: ''
-  url: https://doaj.org/article/00400c56765549e2b2affb7601c34365
-  citations: 3
-  openalex: W4206854265
 - type: article
   year: 2014
   title: Genetic characterization of wild barley populations (Hordeum vulgare ssp. spontaneum) from Kazakhstan based on genome wide SNP analysis
@@ -1050,10 +1032,10 @@ items:
   year: 2014
   title: СОДЕРЖАНИЕ FE, ZN И S В ЗЕРНЕ ПОПУЛЯЦИИ ДИГАПЛОИДНЫХ ЛИНИЙ МЯГКОЙ ПШЕНИЦЫ CHINESE SPRING × SQ1
   authors: Абугалиева А.И., Абугалиева С., Кворри С.А., **Turuspekov Y.**, Чакмак И., Savin T., Ганеев В.А.
-  journal: '16: 894–901'
+  journal: 'DOAJ (DOAJ: Directory of Open Access Journals) 16: 894–901'
   doi: ''
-  url: https://vavilov.elpub.ru/jour/article/download/88/89
-  citations: 0
+  url: https://doaj.org/article/00400c56765549e2b2affb7601c34365
+  citations: 3
   openalex: W2277863552
 - type: article
   year: 2013
@@ -1062,7 +1044,7 @@ items:
   journal: 'Russian Journal of Genetics 49(2): 196–205'
   doi: 10.1134/s1022795413020129
   url: ''
-  citations: 49
+  citations: 57
   openalex: W4243036141
 - type: article
   year: 2013
