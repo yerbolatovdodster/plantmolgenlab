@@ -18,7 +18,7 @@ items:
   journal: Scientific Reports 16(1)
   doi: 10.1038/s41598-026-58942-9
   url: ''
-  citations: 0
+  citations: 2
   openalex: W7165401141
 - type: article
   year: 2026
@@ -99,7 +99,7 @@ items:
   journal: 'Crops 6(5): 89'
   doi: 10.3390/crops6050089
   url: ''
-  citations: 0
+  citations: 1
   openalex: W7213455891
 - type: article
   year: 2026
@@ -180,7 +180,7 @@ items:
   journal: BMC Plant Biology 26(1)
   doi: 10.1186/s12870-026-09260-9
   url: ''
-  citations: 1
+  citations: 2
   openalex: W7164353692
 - type: article
   year: 2026
@@ -333,7 +333,7 @@ items:
   journal: 'BMC Plant Biology 25(1): 554'
   doi: 10.1186/s12870-025-06588-6
   url: ''
-  citations: 15
+  citations: 17
   openalex: W4409871087
 - type: article
   year: 2025
@@ -342,7 +342,7 @@ items:
   journal: 'Plants 14(11): 1728'
   doi: 10.3390/plants14111728
   url: ''
-  citations: 4
+  citations: 5
   openalex: W4411062840
 - type: article
   year: 2025
@@ -378,7 +378,7 @@ items:
   journal: 'Crops 5(5): 63'
   doi: 10.3390/crops5050063
   url: ''
-  citations: 13
+  citations: 14
   openalex: W4414287647
 - type: article
   year: 2025
@@ -405,7 +405,7 @@ items:
   journal: 'Experimental biology 103(2): 4–16'
   doi: 10.26577/bb202510321
   url: ''
-  citations: 2
+  citations: 3
   openalex: W4414339197
 - type: article
   year: 2024
@@ -423,7 +423,7 @@ items:
   journal: 'Siberian Journal of Life Sciences and Agriculture 16(6): 313–338'
   doi: 10.12731/2658-6649-2024-16-6-995
   url: ''
-  citations: 2
+  citations: 3
   openalex: W4409851825
 - type: article
   year: 2024
@@ -540,7 +540,7 @@ items:
   journal: 'PeerJ 12: e16735'
   doi: 10.7717/peerj.16735
   url: ''
-  citations: 14
+  citations: 15
   openalex: W4390748747
 - type: article
   year: 2024
@@ -558,7 +558,7 @@ items:
   journal: 'Acta Botanica Yunnanica 46(5): 600–610'
   doi: 10.1016/j.pld.2024.06.001
   url: ''
-  citations: 12
+  citations: 13
   openalex: W4399732054
 - type: article
   year: 2024
@@ -594,7 +594,7 @@ items:
   journal: 'Plants 12(16): 2961'
   doi: 10.3390/plants12162961
   url: ''
-  citations: 11
+  citations: 12
   openalex: W4385872601
 - type: article
   year: 2023
@@ -612,7 +612,7 @@ items:
   journal: 'Plants 12(12): 2375'
   doi: 10.3390/plants12122375
   url: ''
-  citations: 34
+  citations: 35
   openalex: W4381433139
 - type: article
   year: 2023
@@ -621,7 +621,7 @@ items:
   journal: 'Agronomy 13(6): 1560'
   doi: 10.3390/agronomy13061560
   url: ''
-  citations: 21
+  citations: 22
   openalex: W4379648473
 - type: article
   year: 2023
@@ -666,7 +666,7 @@ items:
   journal: 'PeerJ 10: e14324'
   doi: 10.7717/peerj.14324
   url: ''
-  citations: 13
+  citations: 15
   openalex: W4308603565
 - type: article
   year: 2022
@@ -675,7 +675,7 @@ items:
   journal: 'Agronomy 12(10): 2431'
   doi: 10.3390/agronomy12102431
   url: ''
-  citations: 17
+  citations: 19
   openalex: W4303579221
 - type: article
   year: 2021
@@ -702,7 +702,7 @@ items:
   journal: 'PeerJ 9: e11857'
   doi: 10.7717/peerj.11857
   url: ''
-  citations: 24
+  citations: 25
   openalex: W3183405503
 - type: article
   year: 2021
@@ -729,7 +729,7 @@ items:
   journal: 'PeerJ 9: e10733'
   doi: 10.7717/peerj.10733
   url: ''
-  citations: 42
+  citations: 43
   openalex: W3132071276
 - type: article
   year: 2020
@@ -765,7 +765,7 @@ items:
   journal: 'Proceedings of the Latvian Academy of Sciences Section B Natural Exact and Applied Sciences 74(4): 244–251'
   doi: 10.2478/prolas-2020-0039
   url: ''
-  citations: 28
+  citations: 29
   openalex: W3091494467
 - type: article
   year: 2020
@@ -783,7 +783,7 @@ items:
   journal: 'Vavilov Journal of Genetics and Breeding 24(6): 605–612'
   doi: 10.18699/vj20.654
   url: ''
-  citations: 30
+  citations: 31
   openalex: W3096811185
 - type: article
   year: 2020
@@ -801,7 +801,7 @@ items:
   journal: 'PLoS ONE 15(6): e0234863'
   doi: 10.1371/journal.pone.0234863
   url: ''
-  citations: 72
+  citations: 76
   openalex: W3037354310
 - type: article
   year: 2020
@@ -810,7 +810,7 @@ items:
   journal: 'Vavilov Journal of Genetics and Breeding 24(7): 697–704'
   doi: 10.18699/vj20.664
   url: ''
-  citations: 4
+  citations: 5
   openalex: W3111435078
 - type: article
   year: 2020
@@ -855,7 +855,7 @@ items:
   journal: Pakistan Journal of Botany 52(3)
   doi: 10.30848/pjb2020-3(39)
   url: ''
-  citations: 2
+  citations: 3
   openalex: W3011531233
 - type: article
   year: 2019
@@ -945,7 +945,7 @@ items:
   journal: 'BMC Plant Biology 17(S1): 190'
   doi: 10.1186/s12870-017-1131-2
   url: ''
-  citations: 101
+  citations: 103
   openalex: W2770985158
 - type: article
   year: 2017
@@ -972,7 +972,7 @@ items:
   journal: 'BMC Plant Biology 17(S2): 258'
   doi: 10.1186/s12870-017-1194-0
   url: ''
-  citations: 35
+  citations: 36
   openalex: W2778852247
 - type: article
   year: 2016
@@ -981,7 +981,7 @@ items:
   journal: 'PLoS ONE 11(12): e0166894'
   doi: 10.1371/journal.pone.0166894
   url: ''
-  citations: 56
+  citations: 57
   openalex: W2559355749
 - type: article
   year: 2016
@@ -999,7 +999,7 @@ items:
   journal: 'BMC Plant Biology 16(S1): 6'
   doi: 10.1186/s12870-015-0686-z
   url: ''
-  citations: 82
+  citations: 84
   openalex: W2257330926
 - type: article
   year: 2016
@@ -1008,7 +1008,7 @@ items:
   journal: Biotechnology Theory and practice
   doi: 10.11134/btp.3.2016.2
   url: ''
-  citations: 3
+  citations: 4
   openalex: W2732129365
 - type: article
   year: 2015
@@ -1053,7 +1053,7 @@ items:
   journal: 'Генетика 49(2): 224–234'
   doi: 10.7868/s0016675813020124
   url: ''
-  citations: 7
+  citations: 8
   openalex: W2053904403
 - type: article
   year: 2010
